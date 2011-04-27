@@ -1,0 +1,4 @@
+gvimrc
+*.DS_Store
+*.swp
+.netrwhist

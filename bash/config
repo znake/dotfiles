@@ -1,0 +1,9 @@
+# to make file listings more readable with color
+export CLICOLOR=1
+# using wayneeseguin's bash-prompt within .rvm/contrib
+if [ -d ~/.rvm ]; then 
+  ps1_set --prompt $ 
+else 
+  echo "please install rvm -> https://rvm.beginrescueend.com/rvm/install/"
+fi
+
