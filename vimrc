@@ -28,7 +28,8 @@ set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
+"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " disable VIM welcome screen
 set shortmess+=I
@@ -58,7 +59,7 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>nn :NERDTreeToggle<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
@@ -202,9 +203,7 @@ let g:Tex_IgnoredWarnings ='
       \"Citation %.%# undefined\n". 
       \"\oval, \circle, or \line size unavailable\n"' 
 
-" Tab mappings.
-map <leader>nt :NERDTree<cr>
-
+" Mappings
 map <leader>ap :AlignCtrl Wr:<cr>
 map <leader>ip :Align =><cr>
 " Leader shortcuts for Rails commands
