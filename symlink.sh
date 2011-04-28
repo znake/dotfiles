@@ -1,5 +1,10 @@
 #!/bin/bash
 # Symlinks your bash and vim config files
+if [ -d ~/.rvm ]; then 
+  ps1_set --prompt $ 
+else 
+  echo "please install rvm -> https://rvm.beginrescueend.com/rvm/install/"
+fi
 echo symlinking
 echo ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
 ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
@@ -16,10 +21,6 @@ echo config command-t
 cd ~/bin/dotfiles/vim/bundle/command-t
 rake make
 cd ~/bin/dotfiles/vim/bundle/command-t/ruby/command-t/
-if [ -d ~/.rvm ]; then 
-  ruby extconf.rb
-  ps1_set --prompt $ 
-else 
-  echo "please install rvm -> https://rvm.beginrescueend.com/rvm/install/"
-fi
+ruby extconf.rb
 make
+

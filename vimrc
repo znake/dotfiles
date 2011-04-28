@@ -204,6 +204,7 @@ let g:Tex_IgnoredWarnings ='
       \"\oval, \circle, or \line size unavailable\n"' 
 
 function IndentV()
+  <
   Tabularize /^[^:]*\zs:/r1c0l0
   Tabularize /^[^=>]*\zs=>/l1
 endfunction
