@@ -152,7 +152,7 @@ set modeline
 set modelines=10
 
 " Default color scheme
-color desert
+color znake
 
 " Directories for swp files
 set backupdir=~/.vim/backup
@@ -203,9 +203,20 @@ let g:Tex_IgnoredWarnings ='
       \"Citation %.%# undefined\n". 
       \"\oval, \circle, or \line size unavailable\n"' 
 
+function IndentV()
+  Tabularize /^[^:]*\zs:/r1c0l0
+  Tabularize /^[^=>]*\zs=>/l1
+endfunction
+map <Leader>iv :call IndentV()<cr>
+
 " Mappings
-map <leader>ap :AlignCtrl Wr:<cr>
-map <leader>ip :Align =><cr>
+map <Leader>ds :nohls<cr> 
+map <Leader>id mmgg=G'm
+"insert new line
+map <leader>nl :put =''<cr>
+map <leader>ig :Tabularize /^[^:=><]*\zs=>/l1<cr>
+
+
 " Leader shortcuts for Rails commands
 map <leader>rc :Rcontroller<cr>
 map <leader>rm :Rmodel<cr>
@@ -222,13 +233,6 @@ map <Leader>sc :RScontroller<cr>
 map <Leader>sv :RSview<cr> 
 map <Leader>su :RSunittest<cr> 
 map <Leader>sf :RSfunctionaltest<cr> 
-map <Leader>ds :nohls<cr> 
-map <Leader>id mmgg=G'm
-
-map <Leader>x <Plug>ToggleAutoCloseMapping
-
-"insert new line
-map <leader>nl :put =''<cr>
 
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec
