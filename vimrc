@@ -62,7 +62,7 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>nn :NERDTreeToggle<CR>
 
 " Command-T configuration
-let g:CommandTMaxHeight=20
+let g:CommandTMaxHeight=10
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
