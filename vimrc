@@ -209,6 +209,7 @@ let g:Tex_IgnoredWarnings ='
       \"Citation %.%# undefined\n". 
       \"\oval, \circle, or \line size unavailable\n"' 
 
+" Tabularaized mappings
 function IndentV()
   <
   Tabularize /^[^:]*\zs:/r1c0l0
