@@ -17,7 +17,6 @@ set visualbell                    " No beeping.
 set title                         " Set the terminal's title
 
 " Whitespace stuff
-set nowrap
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -60,6 +59,13 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>nn :NERDTreeToggle<CR>
+
+" For usual moving behaviour in wrapped lines"
+map j gj
+map k gk
+map [Up] gk
+map [Down] gj
+
 
 " Command-T configuration
 let g:CommandTMaxHeight=10
@@ -215,8 +221,6 @@ map <Leader>ds :nohls<cr>
 map <Leader>id mmgg=G'm
 "insert new line
 map <leader>nl :put =''<cr>
-map <leader>ig :Tabularize /^[^:=><]*\zs=>/l1<cr>
-
 
 " Leader shortcuts for Rails commands
 map <leader>rc :Rcontroller<cr>
@@ -234,6 +238,11 @@ map <Leader>sc :RScontroller<cr>
 map <Leader>sv :RSview<cr> 
 map <Leader>su :RSunittest<cr> 
 map <Leader>sf :RSfunctionaltest<cr> 
+
+" Buffers
+map <Leader>bd :bd<cr>
+map <Leader>bn :bn<cr>
+map <Leader>bp :bp<cr>
 
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec
