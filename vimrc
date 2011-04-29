@@ -215,6 +215,8 @@ function IndentV()
   Tabularize /^[^=>]*\zs=>/l1
 endfunction
 map <Leader>iv :call IndentV()<cr>
+map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
+
 
 " Mappings
 map <Leader>ds :nohls<cr> 
