@@ -7,5 +7,11 @@ For proper symlinking and Command-t configuration you can run [symlink.sh](https
 Which will do all the necessary symlinking actions, backup your own config file before running this script!!!
 Such as .bashrc, .bash_profile, .vimrc, .gvimrc and .vim
 
-If you want to update your bundles use [update_bundles.rb](https://github.com/znake/dotfiles/blob/master/vim/update_bundles.rb).
+If you want to update your bundles use [update_bundles.rb](https://github.com/znake/dotfiles/blob/master/vim/update_bundles.rb) (NOTE: This will delete all your installed plugins from your bundle folder and redownload it)
+
+    ruby update_bundles.rb
+
+If you want to use your own snippets like me use [addsnippets.sh](https://github.com/znake/dotfiles/blob/master/vim/mySnippets/addsnippets.sh) which copys all snippets from /mySnippets/ into the snipMate.vim folder.
+
+    sh addsnipptes.sh
 
