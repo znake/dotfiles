@@ -21,7 +21,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -41,7 +41,7 @@ set smartcase                      " But case-sensitive if expression contains a
 "set wildset ignorecase             " Case-insensitive searching.
 
 set wrap linebreak textwidth=0
-set showbreak=>>>
+set showbreak=>>
 
 " Tab completion
 set wildmenu                      " Enhanced command line completion.
@@ -86,22 +86,22 @@ endif
 " Show 3 lines of context around the cursor.
 set scrolloff=3
 
-function s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
-endfunction
+"function s:setupWrapping()
+  "set wrap
+  "set wrapmargin=2
+  "set textwidth=72
+"endfunction
 
 function s:setupMarkup()
-  call s:setupWrapping()
+  "call s:setupWrapping()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
 " make uses real tabs
-au FileType make                                     set noexpandtab
+au FileType make set noexpandtab
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
@@ -109,7 +109,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+"au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python  set tabstop=4 textwidth=79
