@@ -230,6 +230,7 @@ map <leader>rc :Rcontroller<cr>
 map <leader>rm :Rmodel<cr>
 map <leader>rv :Rview<cr>
 map <leader>rh :Rhelper<cr>
+map <leader>rp :Rpreview<cr>
 map <leader>rj :Rjavascript<cr>
 map <leader>rl :Rlayout<cr>
 map <leader>rs :Rspec<cr>
@@ -247,6 +248,7 @@ map <Leader>sv :RSview<cr>
 map <Leader>su :RSunittest<cr> 
 map <Leader>sf :RSfunctionaltest<cr> 
 map <Leader>ga :A<cr> 
+map <Leader>gr :R<cr> 
 
 " Buffers
 map <Leader>bd :bd<cr>
