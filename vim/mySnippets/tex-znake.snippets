@@ -1,7 +1,23 @@
-# \begin{}...\end{}
-snippet test
-	\begintttttest{${1:env}}
-		${2}
-	\end{$1}
-snippet rox
- pennar
+# Figure
+snippet fig
+	\begin{figure}[H]
+		\centering
+			\includegraphics[width=1\textwidth]{pics/${1:figure name}.png}
+		\caption{${2}}
+		\label{fig:${3:$1}}
+	\end{figure}
+	${4}
+
+# Code
+snippet code
+	\begin{lstlisting}[numbers=left,label={lis:${1},caption=${2:caption}]
+	${3}
+	\end{lstlisting}
+	${4}
+
+# Shell
+snippet shell
+	\begin{lstlisting}[frame=single, keywordstyle=\color{Black}, stringstyle=\color{Black}, commentstyle=\color{Black}]
+	${1}
+	\end{lstlisting}
+	${2}	
