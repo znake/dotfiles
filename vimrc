@@ -58,7 +58,7 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>nn :NERDTreeToggle<CR>
+map <Leader>nt :NERDTreeToggle<CR>
 
 " For usual moving behaviour in wrapped lines"
 map j gj
