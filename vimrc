@@ -236,12 +236,6 @@ map <leader>rl :Rlayout<cr>
 map <leader>rs :Rspec<cr>
 map <leader>ry :Rstylesheet<cr>
 map <Leader>ru :Runittest<cr>
-map <Leader>rf :Rfunctionaltest<cr> 
-map <Leader>tm :RTmodel<cr> 
-map <Leader>tc :RTcontroller<cr> 
-map <Leader>tv :RTview<cr> 
-map <Leader>tu :RTunittest<cr> 
-map <Leader>tf :RTfunctionaltest<cr> 
 map <Leader>sm :RSmodel<cr> 
 map <Leader>sc :RScontroller<cr> 
 map <Leader>sv :RSview<cr> 
