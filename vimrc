@@ -209,6 +209,11 @@ let g:Tex_IgnoredWarnings ='
       \"Citation %.%# undefined\n". 
       \"\oval, \circle, or \line size unavailable\n"' 
 
+"For proper sync with Skim you ned to add this in your Skim Sync Settings
+  "Settings: own
+  "Command: mvim
+  "Arguments: --remote-silent +":%line;foldo!" "%file" 
+
 " Tabularaized mappings
 function IndentV()
   <
