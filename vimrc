@@ -187,7 +187,8 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':o
-let g:Tex_DefaultTargetFormat = 'pdf' 
+"let g:Tex_DefaultTargetFormat = 'pdf' 
+let g:Tex_MultipleCompileFormats = 'pdf' 
 let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*' 
 let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi' 
 let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps' 
@@ -229,6 +230,9 @@ map <Leader>ds :nohls<cr>
 map <Leader>id mmgg=G'm
 "insert new line
 map <leader>nl :put =''<cr>
+
+map <leader>so :setlocal spell spelllang=de_at<cr>
+map <leader>sn :set nospell<cr>
 
 " Leader shortcuts for Rails commands
 map <leader>rc :Rcontroller<cr>
