@@ -66,12 +66,11 @@ map k gk
 map [Up] gk
 map [Down] gj
 
-
 " Command-T configuration
 let g:CommandTMaxHeight=10
 
 " ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
+" map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
@@ -99,20 +98,6 @@ endfunction
 
 " make uses real tabs
 au FileType make set noexpandtab
-
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-
-"au BufRead,BufNewFile *.txt call s:setupWrapping()
-
-" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python  set tabstop=4 textwidth=79
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -255,18 +240,43 @@ map <Leader>sf :RSfunctionaltest<cr>
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
 
+" buffers
+map <leader>jj CTRL-W j
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>
 
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Align new buffer right to the active
+map <C-u> <C-W>L
+
 " Buffers
 map <Leader>bd :bd<cr>
 map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
+map <Leader>bo :only<cr>
 
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec
 
 " jQuery Syntax highlighting
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python  set tabstop=4 
+
