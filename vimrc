@@ -27,7 +27,7 @@ set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
 " Useful status information at bottom of screen
-set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
+set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ %{fugitive#statusline()}
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " disable VIM welcome screen
@@ -254,6 +254,11 @@ map <Leader>su :RSunittest<cr>
 map <Leader>sf :RSfunctionaltest<cr> 
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
+
+" Fugitive
+map <Leader>gd :Gdiff<cr>
+map <Leader>gs :Gstatus<cr>
+map <Leader>gc :Gcommit<cr>
 
 " Buffers
 map <Leader>bd :bd<cr>
