@@ -12,6 +12,10 @@ syntax on
 " Set encoding
 set encoding=utf-8
 
+" Autoread, files gets automatically updated when newer files are generated
+" see :h W11
+set autoread
+
 set hidden                        " Handle multiple buffers better.
 set visualbell                    " No beeping.
 set title                         " Set the terminal's title
