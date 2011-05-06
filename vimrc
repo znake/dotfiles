@@ -215,6 +215,7 @@ endfunction
 map <Leader>iv :call IndentV()<cr>
 map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
 map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
+map <Leader>ta :Tabularize /
 
 " Mappings
 map <Leader>ds :nohls<cr> 
@@ -244,8 +245,6 @@ map <Leader>sf :RSfunctionaltest<cr>
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
 
-" buffers
-map <leader>jj CTRL-W j
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
@@ -256,9 +255,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map <C-o> <C-W>o
 
 " Align new buffer right to the active
-map <C-u> <C-W>L
+map <C-ö> <C-W>L
 
 " Buffers
 map <Leader>bd :bd<cr>
