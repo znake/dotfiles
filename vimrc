@@ -256,7 +256,7 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map <C-o> <C-W>o
+map <C-h> <C-W>o
 
 " Align new buffer right to the active
 map <C-ö> <C-W>L
@@ -284,4 +284,18 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python  set tabstop=4 
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+" Tim Popes | aligning in insert mode"
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
