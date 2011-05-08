@@ -31,7 +31,8 @@ set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
 " Useful status information at bottom of screen
-set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ %{fugitive#statusline()}
+set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P 
+"set stl=%f\ %m\ %r\ Col:%c\ Buf:%n\ %{fugitive#statusline()}\ =% %l/%L[%p%%] 
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " disable VIM welcome screen
