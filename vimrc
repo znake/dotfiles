@@ -257,10 +257,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map <C-o> <C-W>o
-
-" Align new buffer right to the active
-map <C-ö> <C-W>L
 
 " Buffers
 map <Leader>bd :bd<cr>
