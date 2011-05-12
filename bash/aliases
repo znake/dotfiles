@@ -76,7 +76,7 @@ alias at='autotest'
 alias rs='rails server'
 
 # Custom
-alias cp="pwd | pbcopy"
+alias pc="pwd | pbcopy"
 
 
 
