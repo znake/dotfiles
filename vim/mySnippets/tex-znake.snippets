@@ -7,58 +7,46 @@ snippet fig
 		\label{fig:${3:$1}}
 	\end{figure}
 	${4}
-
 # Code
 snippet code
-	\begin{lstlisting}[numbers=left,label={lis:${1},caption=${2:caption}]
+	\begin{lstlisting}[numbers=left,label={lis:${1}},caption={${2:caption}}]
 	${3}
 	\end{lstlisting}
 	${4}
-
 # Shell
 snippet shell
 	\begin{lstlisting}[frame=single, keywordstyle=\color{Black}, stringstyle=\color{Black}, commentstyle=\color{Black}]
 	${1}
 	\end{lstlisting}
 	${2}	
-
 # Bold
 snippet b
 	\textbf{${1}}
-
 # Italic
 snippet i
 	\emph{${1}}
-
 # URL
 snippet url
 	\url{${1}}
-
 # footnote
 snippet fot
 	\footnote{${1}}
-
 # footnote with url
 snippet fou
 	\footnote{\url{${1}}}
-	
 # cite
 snippet cite
 	\cite{${1}}
-
 # faq
 snippet faq
 	\faq
 	{${1}}
 	{${2}}
-
 # center
 snippet c
 	\center{${1}}
-
 snippet subsection
 	${1:Subsection}~\ref{${2:sub:}}${3}
-
 snippet subssection
 	${1:Subsubsection}~\ref{${2:subs:}}${3}
 
