@@ -32,19 +32,18 @@ set showmode                      " Display the mode you're in.
 
 " Useful status information at bottom of screen
 set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P 
-"set stl=%f\ %m\ %r\ Col:%c\ Buf:%n\ %{fugitive#statusline()}\ =% %l/%L[%p%%] 
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " disable VIM welcome screen
-set shortmess+=I
+"set shortmess+=I
 
 " Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase                      " But case-sensitive if expression contains a capital letter.
-"set wildset ignorecase             " Case-insensitive searching.
+"set wildset ignorecase            " Case-insensitive searching.
 
+" Softwrap for VIM
 set wrap linebreak textwidth=0
 set showbreak=>>
 
@@ -84,31 +83,25 @@ map <C-\> :tnext<CR>
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+        \| exe "normal g'\"" | endif
 endif
 
 " Show 3 lines of context around the cursor.
 set scrolloff=3
 
 "function s:setupWrapping()
-  "set wrap
-  "set wrapmargin=2
-  "set textwidth=72
+"set wrap
+"set wrapmargin=2
+"set textwidth=72
 "endfunction
 
-function s:setupMarkup()
-  "call s:setupWrapping()
-  map <buffer> <Leader>p :Mm <CR>
-endfunction
-
-" make uses real tabs
-au FileType make set noexpandtab
+"function s:setupMarkup()
+""call s:setupWrapping()
+"map <buffer> <Leader>p :Mm <CR>
+"endfunction
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -124,11 +117,11 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+nmap <D-Up> [e
+nmap <D-Down> ]e
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+vmap <D-Up> [egv
+vmap <D-Down> ]egv
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -169,9 +162,6 @@ runtime! macros/matchit.vim
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
-
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
@@ -200,20 +190,30 @@ let g:Tex_IgnoredWarnings ='
       \"\oval, \circle, or \line size unavailable\n"' 
 
 "For proper sync with Skim you ned to add this in your Skim Sync Settings
-  "Settings: own
-  "Command: mvim
-  "Arguments: --remote-silent +":%line;foldo!" "%file" 
+"Settings: own
+"Command: mvim
+"Arguments: --remote-silent +":%line;foldo!" "%file" 
 
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
+
+
+" MAPPINGS
+
+" source vimrc
+map <Leader>sf :source ~/.vimrc<cr>
+
+" make uses real tabs
+au FileType make set noexpandtab
+
 " Tabularaized mappings
-function IndentV()
+function! IndentX()
   <
   Tabularize /^[^:]*\zs:/r1c0l0
   Tabularize /^[^=>]*\zs=>/l1
 endfunction
-map <Leader>iv :call IndentV()<cr>
+map <Leader>iv :call IndentX()<cr>
 map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
 map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
 map <Leader>ta :Tabularize /
@@ -221,7 +221,7 @@ map <Leader>ta :Tabularize /
 " Mappings
 map <Leader>ds :nohls<cr> 
 map <Leader>id mmgg=G'm
-"insert new line
+" insert new line
 map <leader>nl :put =''<cr>
 
 map <leader>so :setlocal spell spelllang=de_at<cr>
@@ -238,11 +238,11 @@ map <leader>rl :Rlayout<cr>
 map <leader>rs :Rspec<cr>
 map <leader>ry :Rstylesheet<cr>
 map <Leader>ru :Runittest<cr>
-map <Leader>sm :RSmodel<cr> 
-map <Leader>sc :RScontroller<cr> 
-map <Leader>sv :RSview<cr> 
-map <Leader>su :RSunittest<cr> 
-map <Leader>sf :RSfunctionaltest<cr> 
+"map <Leader>sm :RSmodel<cr> 
+"map <Leader>sc :RScontroller<cr> 
+"map <Leader>sv :RSview<cr> 
+"map <Leader>su :RSunittest<cr> 
+"map <Leader>sf :RSfunctionaltest<cr> 
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
 
@@ -267,20 +267,45 @@ map <Leader>bo :only<cr>
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec
 
-" jQuery Syntax highlighting
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+map <Leader>sg :set guifont=Monaco:h<cr>
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+map <buffer> <Leader>p :Mm <CR>
 
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " Enable file type detection
+  "filetype on
+  " load the plugin and indent settings for the detected filetype
+  filetype plugin indent on
+  " OPTIONAL: This enables automatic indentation as you type.
+  filetype indent on
 
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python  set tabstop=4 
+  " Customisations based on house-style (arbitrary)
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+  " jQuery Syntax highlighting
+  au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+  " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+  " md, markdown, and mk are markdown and define buffer-local preview
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+  " add json syntax highlighting
+  au BufNewFile,BufRead *.json set ft=javascript
+
+  " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+  au FileType python  set tabstop=4 
+endif
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
