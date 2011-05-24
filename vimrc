@@ -16,31 +16,30 @@ set encoding=utf-8
 " see :h W11
 set autoread
 
-set hidden                        " Handle multiple buffers better.
-set visualbell                    " No beeping.
-set title                         " Set the terminal's title
+set hidden     " Handle multiple buffers better.
+set visualbell " No beeping.
+set title      " Set the terminal's title
 
 " Whitespace stuff
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-"set list listchars=tab:\ \ ,trail:·
 
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
+set showcmd  " Display incomplete commands.
+set showmode " Display the mode you're in.
 
 " Useful status information at bottom of screen
 set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P 
 
 " disable VIM welcome screen
-"set shortmess+=I
+set shortmess+=I
 
 " Searching
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase                      " But case-sensitive if expression contains a capital letter.
+set smartcase " But case-sensitive if expression contains a capital letter.
 "set wildset ignorecase            " Case-insensitive searching.
 
 " Softwrap for VIM
@@ -48,16 +47,13 @@ set wrap linebreak textwidth=0
 set showbreak=>>
 
 " Tab completion
-set wildmenu                      " Enhanced command line completion.
+set wildmenu " Enhanced command line completion.
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " Status bar
 set laststatus=2
 
-" Without setting this, ZoomWin restores windows in a way that causes
-" equalalways behavior to be triggered the next time CommandT is used.
-" This is likely a bludgeon to solve some other issue, but it works
 set noequalalways
 
 " NERDTree configuration
@@ -73,9 +69,6 @@ map [Down] gj
 " Command-T configuration
 let g:CommandTMaxHeight=10
 
-" ZoomWin configuration
-" map <Leader><Leader> :ZoomWin<CR>
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
@@ -89,33 +82,13 @@ endif
 " Show 3 lines of context around the cursor.
 set scrolloff=3
 
-"function s:setupWrapping()
-"set wrap
-"set wrapmargin=2
-"set textwidth=72
-"endfunction
-
-"function s:setupMarkup()
-""call s:setupWrapping()
-"map <buffer> <Leader>p :Mm <CR>
-"endfunction
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-" Unimpaired configuration
 " Bubble single lines
 nmap <D-Up> [e
 nmap <D-Down> ]e
@@ -197,10 +170,7 @@ let g:Tex_IgnoredWarnings ='
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-
-
 " MAPPINGS
-
 " source vimrc
 map <Leader>sf :source ~/.vimrc<cr>
 
@@ -218,31 +188,26 @@ map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
 map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
 map <Leader>ta :Tabularize /
 
-" Mappings
+map <Leader>js ZZ
 map <Leader>ds :nohls<cr> 
 map <Leader>id mmgg=G'm
 " insert new line
-map <leader>nl :put =''<cr>
+map <Leader>nl :put =''<cr>
 
-map <leader>so :setlocal spell spelllang=de_at<cr>
-map <leader>sn :set nospell<cr>
+map <Leader>so :setlocal spell spelllang=de_at<cr>
+map <Leader>sn :set nospell<cr>
 
 " Leader shortcuts for Rails commands
-map <leader>rc :Rcontroller<cr>
-map <leader>rm :Rmodel<cr>
-map <leader>rv :Rview<cr>
-map <leader>rh :Rhelper<cr>
-map <leader>rp :Rpreview<cr>
-map <leader>rj :Rjavascript<cr>
-map <leader>rl :Rlayout<cr>
-map <leader>rs :Rspec<cr>
-map <leader>ry :Rstylesheet<cr>
+map <Leader>rc :Rcontroller<cr>
+map <Leader>rm :Rmodel<cr>
+map <Leader>rv :Rview<cr>
+map <Leader>rh :Rhelper<cr>
+map <Leader>rp :Rpreview<cr>
+map <Leader>rj :Rjavascript<cr>
+map <Leader>rl :Rlayout<cr>
+map <Leader>rs :Rspec<cr>
+map <Leader>ry :Rstylesheet<cr>
 map <Leader>ru :Runittest<cr>
-"map <Leader>sm :RSmodel<cr> 
-"map <Leader>sc :RScontroller<cr> 
-"map <Leader>sv :RSview<cr> 
-"map <Leader>su :RSunittest<cr> 
-"map <Leader>sf :RSfunctionaltest<cr> 
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
 
