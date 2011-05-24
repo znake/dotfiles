@@ -65,6 +65,7 @@ alias gnp="git-notpushed"
 alias gp='git push'
 alias g='git status'
 alias eg='mvim .git/config'
+alias gcm='git checkout master'
 
 # VIM
 alias m='mvim .'
