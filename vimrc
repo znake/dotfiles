@@ -211,6 +211,10 @@ map <Leader>ru :Runittest<cr>
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
 
+map <Leader>fh :set ft=html<cr> 
+map <Leader>fj :set ft=javascript<cr> 
+map <Leader>fr :set ft=ruby<cr> 
+
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
