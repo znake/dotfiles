@@ -211,6 +211,7 @@ map <Leader>ru :Runittest<cr>
 map <Leader>ga :A<cr> 
 map <Leader>gr :R<cr> 
 
+" Filetype mappings
 map <Leader>fh :set ft=html<cr> 
 map <Leader>fj :set ft=javascript<cr> 
 map <Leader>fr :set ft=ruby<cr> 
