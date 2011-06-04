@@ -1,5 +1,8 @@
 # to make file listings more readable with color
 export CLICOLOR=1
+export PATH=${PATH}:/Users/jakoblehner/bin/android-sdk/tools
+export PATH=${PATH}:/Users/jakoblehner/bin/android-sdk/platform-tools
+
 # using wayneeseguin's bash-prompt within .rvm/contrib
 if [ -d ~/.rvm ]; then 
   ps1_set --prompt $ 
