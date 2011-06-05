@@ -223,16 +223,21 @@ map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 
 " Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
 
 " Buffers
 map <Leader>bd :bd<cr>
 map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
 map <Leader>bo :only<cr>
+
+" Copy history
+map <Leader>re :reg<cr>
+
+map <leader>xh :call HexHighlight()<Return>
 
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec

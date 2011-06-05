@@ -45,7 +45,7 @@ hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
 highlight Normal                    guifg=#E6E1DC guibg=#000000 
-highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#ff0080 ctermbg=15	
+highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#ff5e00 ctermbg=15	
 highlight CursorLine                guibg=#39001d ctermbg=233 cterm=NONE
 highlight NonText 		              guifg=#540000 ctermfg=12
 highlight Comment                   guifg=#BC9458 ctermfg=180 gui=italic
@@ -66,7 +66,7 @@ highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NON
 highlight String                    guifg=#A5C261 ctermfg=107
 highlight Title                     guifg=#FFFFFF ctermfg=15
 highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
-highlight Visual                    guibg=#510029 ctermbg=60
+highlight Visual                    guibg=#800000 ctermbg=60
 highlight Folded 		                guibg=#262b31 guifg=#a0a8b0 gui=none
 
 highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
@@ -92,7 +92,7 @@ highlight mailSubject               guifg=#A5C261 ctermfg=107
 highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
 highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
-highlight SpellBad                  guifg=#D70000 ctermfg=160 ctermbg=NONE cterm=underline
+highlight SpellBad                  guifg=#800000 ctermfg=160 ctermbg=NONE cterm=underline
 highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE gui=underline cterm=underline
-highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#800040 ctermbg=23
+highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#a33c00 ctermbg=23
