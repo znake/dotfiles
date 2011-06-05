@@ -246,6 +246,15 @@ map <Leader>sg :set guifont=Monaco:h<cr>
 
 map <buffer> <Leader>p :Mm <CR>
 
+" Show syntax highlighting groups for word under cursor
+nmap <Leader>sy :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   " Enable file type detection

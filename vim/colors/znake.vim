@@ -66,7 +66,7 @@ highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NON
 highlight String                    guifg=#A5C261 ctermfg=107
 highlight Title                     guifg=#FFFFFF ctermfg=15
 highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
-highlight Visual                    guibg=#800000 ctermbg=60
+highlight Visual                    guibg=#420000 ctermbg=60
 highlight Folded 		                guibg=#262b31 guifg=#a0a8b0 gui=none
 
 highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
@@ -92,7 +92,8 @@ highlight mailSubject               guifg=#A5C261 ctermfg=107
 highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
 highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
-highlight SpellBad                  guifg=#800000 ctermfg=160 ctermbg=NONE cterm=underline
-highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE gui=underline cterm=underline
-highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE gui=underline cterm=underline
-highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#a33c00 ctermbg=23
+highlight SpellBad                  guifg=#ff9d80 ctermfg=160 ctermbg=NONE 
+highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE 
+highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE
+highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#8b3300 ctermbg=23
+
