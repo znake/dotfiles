@@ -197,7 +197,8 @@ map <Leader>nl :put =''<cr>
 nmap <silent> <leader>so :set spell!<CR>
 " Set region to British English
 set spelllang=de_at
-map <Leader>sn :set nospell<cr>
+
+map <leader>se :set spelllang=en_gb<cr>
 
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
