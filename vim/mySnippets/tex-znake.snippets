@@ -2,11 +2,11 @@
 snippet fig
 	\begin{figure}[H]
 		\centering
-			\includegraphics[width=1\textwidth]{pics/${1:figure name}.png}
-		\caption{${2}}
-		\label{fig:${3:$1}}
+			\includegraphics[width=${1}\textwidth]{pics/${2:figure name}.png}
+		\caption{${3}}
+		\label{fig:${4:$2}}
 	\end{figure}
-	${4}
+	${5}
 # Code
 snippet code
 	\begin{lstlisting}[numbers=left,label={lis:${1}},caption={${2:caption}}]
@@ -30,10 +30,10 @@ snippet url
 	\url{${1}}
 # footnote
 snippet fot
-	\footnote{${1}}
+	\footnote{${1}}${2}
 # footnote with url
 snippet fou
-	\footnote{\url{${1}}}
+	\footnote{\url{${1}}}${2}
 # cite
 snippet cite
 	\cite{${1}}
