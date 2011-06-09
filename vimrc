@@ -194,7 +194,9 @@ map <Leader>id mmgg=G'm
 " insert new line
 map <Leader>nl :put =''<cr>
 
-map <Leader>so :setlocal spell spelllang=de_at<cr>
+nmap <silent> <leader>so :set spell!<CR>
+" Set region to British English
+set spelllang=de_at
 map <Leader>sn :set nospell<cr>
 
 " Leader shortcuts for Rails commands
