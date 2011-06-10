@@ -152,6 +152,12 @@ let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_FormatDependency_ps  = 'dvi,ps' 
 let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf' 
 let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf' 
+let g:Tex_EnvironmentMenus = 0
+let g:Tex_FontMaps = 0
+let g:Tex_FontMenus = 0
+let g:Tex_SectionMenus = 0
+let g:Tex_SectionMaps = 0
+let g:Tex_IgnoreLevel = 8
 let g:Tex_IgnoredWarnings =' 
       \"Underfull\n". 
       \"Overfull\n". 
