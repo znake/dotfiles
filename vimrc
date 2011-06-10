@@ -158,6 +158,7 @@ let g:Tex_FontMenus = 0
 let g:Tex_SectionMenus = 0
 let g:Tex_SectionMaps = 0
 let g:Tex_IgnoreLevel = 8
+let g:Tex_GotoError = 0
 let g:Tex_IgnoredWarnings =' 
       \"Underfull\n". 
       \"Overfull\n". 
