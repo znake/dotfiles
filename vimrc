@@ -175,7 +175,7 @@ let g:Tex_IgnoredWarnings ='
 "Arguments: --remote-silent +":%line;foldo!" "%file" 
 
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
-"map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
+map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 " MAPPINGS
 " source vimrc
@@ -225,6 +225,7 @@ map <Leader>gr :R<cr>
 map <Leader>fh :set ft=html<cr> 
 map <Leader>fj :set ft=javascript<cr> 
 map <Leader>fr :set ft=ruby<cr> 
+map <Leader>fl :set ft=tex<cr> 
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
@@ -296,6 +297,9 @@ if has("autocmd")
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
+
+  " add latex syntax highlighting
+  au BufNewFile,BufRead *.tex set ft=tex
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4 
