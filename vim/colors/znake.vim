@@ -60,8 +60,8 @@ highlight Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
 highlight LineNr                    guifg=#535353 ctermfg=159 guibg=#000000
 highlight Number                    guifg=#A5C261 ctermfg=107
 highlight PreProc                   guifg=#E6E1DC ctermfg=103
-highlight Search                    guifg=#000000 ctermfg=NONE guibg=#ff8000 ctermbg=235 gui=italic cterm=underline
-highlight IncSearch                 guifg=#ff8000 guibg=#000000 ctermfg=White ctermbg=Black
+highlight Search                    guifg=#a0a8b0 ctermfg=NONE guibg=#004080 ctermbg=235 gui=italic cterm=underline
+highlight IncSearch                 guifg=#004080 guibg=#a0a8b0 ctermfg=White ctermbg=Black
 highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 highlight String                    guifg=#A5C261 ctermfg=107
 highlight Title                     guifg=#FFFFFF ctermfg=15

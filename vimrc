@@ -206,6 +206,7 @@ nmap <silent> <leader>so :set spell!<CR>
 set spelllang=de_at
 
 map <leader>se :set spelllang=en_gb<cr>
+map <leader>sd :set spelllang=de_at<cr>
 
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
