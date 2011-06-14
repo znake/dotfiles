@@ -294,13 +294,18 @@ if has("autocmd")
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
   " md, markdown, and mk are markdown and define buffer-local preview
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+  "au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
 
   " add latex syntax highlighting
-  au BufNewFile,BufRead *.tex set ft=tex
+  au BufNewFile,BufRead *.tex setlocal ft=tex scrolloff=10 spell
+
+  au BufNewFile,BufRead *.txt setlocal scrolloff=10 spell
+
+  " add latex syntax scrolloff
+  "au BufNewFile,BufRead *.tex set scrolloff=10
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4 
