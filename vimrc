@@ -197,6 +197,7 @@ map <Leader>ta :Tabularize /
 
 map <Leader>js ZZ
 map <Leader>ds :nohls<cr> 
+map <Leader>hl :set hlsearch!<cr>
 map <Leader>id mmgg=G'm
 " insert new line
 map <Leader>nl :put =''<cr>
@@ -301,11 +302,6 @@ if has("autocmd")
 
   " add latex syntax highlighting
   au BufNewFile,BufRead *.tex setlocal ft=tex scrolloff=10 spell
-
-  au BufNewFile,BufRead *.txt setlocal scrolloff=10 spell
-
-  " add latex syntax scrolloff
-  "au BufNewFile,BufRead *.tex set scrolloff=10
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4 
