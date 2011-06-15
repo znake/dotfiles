@@ -36,7 +36,7 @@ set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exist
 set shortmess+=I
 
 " Searching
-set hlsearch
+"set hlsearch
 set incsearch
 set ignorecase
 set smartcase " But case-sensitive if expression contains a capital letter.
