@@ -236,7 +236,7 @@ map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 
 " Smart way to move btw. windows
-"map <C-j> <C-W>j
+map <D-d> 
 "map <C-k> <C-W>k
 "map <C-h> <C-W>h
 "map <C-l> <C-W>l
