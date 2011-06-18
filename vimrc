@@ -234,9 +234,11 @@ map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
+map <Leader>gr :Gread<cr>
+map <Leader>gw :Gwrite<cr>
 
 " Smart way to move btw. windows
-map <D-d> 
+"map <C-j> <C-W>j
 "map <C-k> <C-W>k
 "map <C-h> <C-W>h
 "map <C-l> <C-W>l
