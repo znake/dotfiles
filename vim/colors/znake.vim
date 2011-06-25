@@ -92,8 +92,9 @@ highlight mailSubject               guifg=#A5C261 ctermfg=107
 highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
 highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
-highlight SpellBad                  guifg=#E6E1DC ctermfg=160 ctermbg=NONE 
-highlight SpellRare                 guifg=#E6E1DC ctermfg=168 guibg=NONE ctermbg=NONE 
-highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE
-highlight MatchParen                guifg=#E6E1DC ctermfg=15 guibg=#8b3300 ctermbg=23
+highlight SpellBad                   guibg=#1e0000 gui=NONE
+highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE 
+highlight SpellCap                   guifg=#D0D0FF ctermfg=189 gui=NONE guibg=NONE ctermbg=NONE
+highlight MatchParen                 guifg=#E6E1DC ctermfg=15 gui=NONE guibg=#8b3300 ctermbg=23
+highlight SpellLocal                 guibg=#1e0000 gui=NONE
 
