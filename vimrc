@@ -228,6 +228,7 @@ map <Leader>fh :set ft=html<cr>
 map <Leader>fj :set ft=javascript<cr> 
 map <Leader>fr :set ft=ruby<cr> 
 map <Leader>fl :set ft=tex<cr> 
+map <Leader>fp :set ft=php<cr> 
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
