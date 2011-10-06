@@ -79,5 +79,8 @@ alias rs='rails server'
 # Custom
 alias pc="pwd | pbcopy"
 
+# Zend
+alias zf="/usr/local/zend/share/ZendFramework/bin/zf.sh"
+
 
 

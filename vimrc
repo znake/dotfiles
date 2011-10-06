@@ -80,7 +80,7 @@ if has("autocmd")
 endif
 
 " Show 3 lines of context around the cursor.
-set scrolloff=3
+set scrolloff=15
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start

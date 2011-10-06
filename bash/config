@@ -2,6 +2,8 @@
 export CLICOLOR=1
 export PATH=${PATH}:/Users/jakoblehner/bin/android-sdk/tools
 export PATH=${PATH}:/Users/jakoblehner/bin/android-sdk/platform-tools
+PATH=$PATH:/usr/local/zend/bin:/usr/local/zend/mysql/bin
+    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/zend/lib
 
 # using wayneeseguin's bash-prompt within .rvm/contrib
 if [ -d ~/.rvm ]; then 

@@ -16,6 +16,8 @@ echo ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
 ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
 echo ln -nfs ~/bin/dotfiles/vim ~/.vim
 ln -nfs ~/bin/dotfiles/vim ~/.vim
+echo ln -nfs ~/bin/dotfiles/hgrc ~/.hgrc
+ln -nfs ~/bin/dotfiles/hgrc ~/.hgrc
 echo *************************************************
 echo config command-t
 cd ~/bin/dotfiles/vim/bundle/command-t
