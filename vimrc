@@ -304,7 +304,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.json set ft=javascript
 
   " add latex syntax highlighting
-  au BufNewFile,BufRead *.tex setlocal ft=tex scrolloff=10 spell
+  au BufNewFile,BufRead *.tex setlocal ft=tex scrolloff=10 spell 
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4 
