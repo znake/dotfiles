@@ -11,6 +11,7 @@ syntax on
 
 " Set encoding
 set encoding=utf-8
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " Autoread, files gets automatically updated when newer files are generated
 " see :h W11
@@ -80,7 +81,7 @@ if has("autocmd")
 endif
 
 " Show 3 lines of context around the cursor.
-set scrolloff=15
+"set scrolloff=15
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -201,6 +202,7 @@ map <Leader>hl :set hlsearch!<cr>
 map <Leader>id mmgg=G'm
 " insert new line
 map <Leader>nl :put =''<cr>
+map <Leader>tl :Tlist<cr>
 
 nmap <silent> <leader>so :set spell!<CR>
 " Set region to British English

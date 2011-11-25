@@ -66,3 +66,37 @@ snippet select
 	</select>${5}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+snippet html
+	<html>
+	${1}
+	</html>
+snippet body
+	<body>
+	${2}
+	</body>
+snippet &
+	&amp;
+snippet "
+	&quot;
+snippet Ä
+	&Auml;
+snippet Ö
+	&Ouml;
+snippet Ü
+	&Uuml;
+snippet ä
+	&auml;
+snippet ö
+	&ouml;
+snippet ü
+	&uuml;
+snippet flash
+	$this->_helper->FlashMessenger(
+		array('message' => '${1}',
+					'status'  => '${2:fail}'));
+snippet tra
+	$this->_translate->_('${1}')
+snippet span
+	<span>${1}</span>
+
+
