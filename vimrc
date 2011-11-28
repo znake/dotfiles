@@ -81,7 +81,7 @@ if has("autocmd")
 endif
 
 " Show 3 lines of context around the cursor.
-"set scrolloff=15
+:nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -180,7 +180,7 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 " MAPPINGS
 " source vimrc
-map <Leader>sf :source ~/.vimrc<cr>
+map <Leader>sr :source ~/.vimrc<cr>
 
 " make uses real tabs
 au FileType make set noexpandtab
@@ -304,9 +304,6 @@ if has("autocmd")
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
-
-  " add latex syntax highlighting
-  au BufNewFile,BufRead *.tex setlocal ft=tex scrolloff=10 spell 
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4 
