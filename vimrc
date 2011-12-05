@@ -82,6 +82,8 @@ endif
 
 " Show 3 lines of context around the cursor.
 :nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
+let scrolloff=15
+set scrolloff=15
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
