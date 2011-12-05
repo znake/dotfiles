@@ -82,7 +82,6 @@ endif
 
 " Show 3 lines of context around the cursor.
 :nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
-let scrolloff=15
 set scrolloff=15
 
 " allow backspacing over everything in insert mode
@@ -233,6 +232,7 @@ map <Leader>fj :set ft=javascript<cr>
 map <Leader>fr :set ft=ruby<cr> 
 map <Leader>fl :set ft=tex<cr> 
 map <Leader>fp :set ft=php<cr> 
+map <Leader>fs :set ft=sql<cr> 
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
