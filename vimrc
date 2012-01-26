@@ -11,6 +11,8 @@ syntax on
 
 " Set encoding
 set encoding=utf-8
+
+" CTags for TList
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " Autoread, files gets automatically updated when newer files are generated
@@ -29,6 +31,13 @@ set expandtab
 
 set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
+
+" Show Synstastic Errors and Warnings in status line
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+" Disable Synstastic for Latex
+let g:syntastic_disabled_filetypes = ['tex']
+" Enable this option if you want the cursor to jump to the first detected error when saving or opening a file
+let g:syntastic_auto_jump=1
 
 " Useful status information at bottom of screen
 set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P 
