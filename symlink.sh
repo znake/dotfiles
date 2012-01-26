@@ -5,26 +5,32 @@ if [ -d ~/.rvm ]; then
 else 
   echo "please install rvm -> https://rvm.beginrescueend.com/rvm/install/"
 fi
-echo symlinking
-echo ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
-ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
-echo ln -nfs ~/bin/dotfiles/bash_profile ~/.bash_profile
-ln -nfs ~/bin/dotfiles/bash_profile ~/.bash_profile
-echo ln -nfs ~/bin/dotfiles/vimrc ~/.vimrc
-ln -nfs ~/bin/dotfiles/vimrc ~/.vimrc
-echo ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
-ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
-echo ln -nfs ~/bin/dotfiles/vim ~/.vim
-ln -nfs ~/bin/dotfiles/vim ~/.vim
-echo ln -nfs ~/bin/dotfiles/hgrc ~/.hgrc
-ln -nfs ~/bin/dotfiles/hgrc ~/.hgrc
-echo ln -nfs ~/bin/dotfiles/zshrc ~/.zshrc
-ln -nfs ~/bin/dotfiles/zshrc ~/.zshrc
-echo *************************************************
-echo config command-t
-cd ~/bin/dotfiles/vim/bundle/command-t
-rake make
-cd ~/bin/dotfiles/vim/bundle/command-t/ruby/command-t/
-ruby extconf.rb
-make
+if [ -d ~/.oh-my-zsh ]; then 
+  echo symlinking
+  echo ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
+  ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
+  echo ln -nfs ~/bin/dotfiles/bash_profile ~/.bash_profile
+  ln -nfs ~/bin/dotfiles/bash_profile ~/.bash_profile
+  echo ln -nfs ~/bin/dotfiles/vimrc ~/.vimrc
+  ln -nfs ~/bin/dotfiles/vimrc ~/.vimrc
+  echo ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
+  ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
+  echo ln -nfs ~/bin/dotfiles/vim ~/.vim
+  ln -nfs ~/bin/dotfiles/vim ~/.vim
+  echo ln -nfs ~/bin/dotfiles/hgrc ~/.hgrc
+  ln -nfs ~/bin/dotfiles/hgrc ~/.hgrc
+  echo ln -nfs ~/bin/dotfiles/zshrc ~/.zshrc
+  ln -nfs ~/bin/dotfiles/zshrc ~/.zshrc
+  echo -nfs ~/bin/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
+  ln -nfs ~/bin/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
+  echo *************************************************
+  echo config command-t
+  cd ~/bin/dotfiles/vim/bundle/command-t
+  rake make
+  cd ~/bin/dotfiles/vim/bundle/command-t/ruby/command-t/
+  ruby extconf.rb
+  make
+else 
+  echo "please install oh-my-zsh"
+fi
 
