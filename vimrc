@@ -28,10 +28,15 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+" make uses real tabs
+au FileType make set noexpandtab
 
 set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
 
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
 " Show Synstastic Errors and Warnings in status line
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 " Disable Synstastic for Latex
@@ -89,27 +94,13 @@ if has("autocmd")
         \| exe "normal g'\"" | endif
 endif
 
-" Show 3 lines of context around the cursor.
-:nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
+" Show 15 lines of context around the cursor.
 set scrolloff=15
+" toggle scrolloff with ss
+:nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
-" Bubble single lines
-nmap <D-Up> [e
-nmap <D-Down> ]e
-" Bubble multiple lines
-vmap <D-Up> [egv
-vmap <D-Down> ]egv
-
-" Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
 
 " gist-vim defaults
 if has("mac")
@@ -131,22 +122,17 @@ color znake
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-" Turn off jslint errors by default
-let g:JSLintHighlightErrorLine = 0
-
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
+
+" Autoclose for following letters
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 "LaTeX Stuff
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -192,8 +178,6 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 " source vimrc
 map <Leader>sr :source ~/.vimrc<cr>
 
-" make uses real tabs
-au FileType make set noexpandtab
 
 " Tabularaized mappings
 function! IndentX()
@@ -206,15 +190,14 @@ map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
 map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
 map <Leader>ta :Tabularize /
 
-map <Leader>js ZZ
-map <Leader>ds :nohls<cr> 
-map <Leader>hl :set hlsearch!<cr>
+map <Leader>hl :set hlsearch! hlsearch?<cr>
+" indent whole file
 map <Leader>id mmgg=G'm
 " insert new line
 map <Leader>nl :put =''<cr>
 map <Leader>tl :Tlist<cr>
 
-nmap <silent> <leader>so :set spell!<CR>
+nmap <leader>so :set spell!<CR>
 " Set region to British English
 set spelllang=de_at
 
@@ -252,10 +235,10 @@ map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
 
 " Smart way to move btw. windows
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " Buffers
 map <Leader>bd :bd<cr>
@@ -270,19 +253,6 @@ map <leader>xh :call HexHighlight()<Return>
 
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec
-
-map <Leader>sg :set guifont=Monaco:h<cr>
-
-map <buffer> <Leader>p :Mm <CR>
-
-" Show syntax highlighting groups for word under cursor
-nmap <Leader>sy :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
@@ -310,17 +280,12 @@ if has("autocmd")
   " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
-  " md, markdown, and mk are markdown and define buffer-local preview
-  "au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4 
 endif
-
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 " Tim Popes | aligning in insert mode"
 function! s:align()
