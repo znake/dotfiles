@@ -118,9 +118,9 @@ set modelines=10
 " Default color scheme
 color znake
 
-" Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+" no backup-files like bla~ 
+set nobackup
+set nowritebackup 
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
