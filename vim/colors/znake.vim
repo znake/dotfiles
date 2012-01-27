@@ -48,7 +48,7 @@ highlight Normal                    guifg=#E6E1DC guibg=#000000
 highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FF0066 ctermbg=15	
 highlight MatchParen                guifg=#E6E1DC ctermfg=15 gui=NONE guibg=#660066 ctermbg=23
 highlight CursorLine                guibg=#39001d ctermbg=233 cterm=NONE
-highlight NonText 		              guifg=#540000 ctermfg=12
+highlight NonText 		              guifg=#FF0066 ctermfg=12
 highlight Comment                   guifg=#BC9458 ctermfg=180 gui=italic
 highlight Constant                  guifg=#6D9CBE ctermfg=73
 highlight Define                    guifg=#CC7833 ctermfg=173

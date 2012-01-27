@@ -59,7 +59,7 @@ set smartcase " But case-sensitive if expression contains a capital letter.
 
 " Softwrap for VIM
 set wrap linebreak textwidth=0
-set showbreak=>>
+set showbreak=>
 
 " Tab completion
 set wildmenu " Enhanced command line completion.
