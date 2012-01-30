@@ -2,12 +2,14 @@ This is just my personal VIM and bash configuration, pretty much stolen from [Ja
 
 Clone it in your ~/bin folder, to make it work! (If you don´t have one just create it)
 
-For proper symlinking and Command-t configuration you can run [symlink.sh](https://github.com/znake/dotfiles/blob/master/symlink.sh) (NOTE: If you use RVM change to your system ruby "$ rvm system" before running this command)
+For proper symlinking and Command-t configuration you can run [symlink.sh](https://github.com/znake/dotfiles/blob/master/symlink.sh) (NOTE: If you use RVM change to your system ruby "$ rvm system" before running this command). Use this carefully and check it out first!
 
     sh symlink.sh
 
 Which will do all the necessary symlinking actions, backup your own config file before running this script!!!
 Such as .bashrc, .bash_profile, .vimrc, .gvimrc and .vim
+
+Since I use this config on more than one Mac/Sreen .gvimrc is on git ignore for not changing my font size all the time.
 
 If you want to update your bundles use [update_bundles.rb](https://github.com/znake/dotfiles/blob/master/vim/update_bundles.rb) (NOTE: This will delete all your installed plugins from your bundle folder and redownload it)
 
