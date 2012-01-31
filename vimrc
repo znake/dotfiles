@@ -9,6 +9,8 @@ set number
 set ruler
 syntax on
 
+set cursorline
+
 " Set encoding
 set encoding=utf-8
 
@@ -265,6 +267,10 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+
+  " don´t highlight cursor line in LaTeX and .txt files
+  au BufRead,BufNewFile *.txt setlocal nocursorline
+  au BufRead,BufNewFile *.tex setlocal nocursorline
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
