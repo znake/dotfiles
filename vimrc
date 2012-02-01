@@ -178,7 +178,7 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 " MAPPINGS
 " source vimrc
-map <Leader>sr :source ~/.vimrc<cr>
+map <Leader>so :source ~/.vimrc<cr>
 
 
 " Tabularaized mappings
@@ -199,7 +199,7 @@ map <Leader>id mmgg=G'm
 map <Leader>nl :put =''<cr>
 map <Leader>tl :Tlist<cr>
 
-nmap <leader>so :set spell!<CR>
+nmap <leader>sp :set spell!<CR>
 " Set region to British English
 set spelllang=de_at
 
