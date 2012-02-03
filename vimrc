@@ -9,6 +9,8 @@ set number
 set ruler
 syntax on
 
+set cursorline
+
 " Set encoding
 set encoding=utf-8
 
@@ -176,7 +178,7 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 " MAPPINGS
 " source vimrc
-map <Leader>sr :source ~/.vimrc<cr>
+map <Leader>so :source ~/.vimrc<cr>
 
 
 " Tabularaized mappings
@@ -201,7 +203,7 @@ map <Leader>tl :Tlist<cr>
 " surrounds the current word with ''
 map <Leader>ys ysiw'
 
-nmap <leader>so :set spell!<CR>
+nmap <leader>sp :set spell!<CR>
 " Set region to British English
 set spelllang=de_at
 
@@ -269,6 +271,10 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+
+  " don´t highlight cursor line in LaTeX and .txt files
+  au BufRead,BufNewFile *.txt setlocal nocursorline
+  au BufRead,BufNewFile *.tex setlocal nocursorline
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
