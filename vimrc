@@ -118,9 +118,9 @@ set modelines=10
 " Default color scheme
 color znake
 
-" no backup-files like bla~ 
-set nobackup
-set nowritebackup 
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
@@ -196,6 +196,10 @@ map <Leader>id mmgg=G'm
 " insert new line
 map <Leader>nl :put =''<cr>
 map <Leader>tl :Tlist<cr>
+
+" using the surround plugin
+" surrounds the current word with ''
+map <Leader>ys ysiw'
 
 nmap <leader>so :set spell!<CR>
 " Set region to British English
