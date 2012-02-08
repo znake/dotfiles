@@ -9,7 +9,7 @@ For proper symlinking and Command-t configuration you can run [symlink.sh](https
 Which will do all the necessary symlinking actions, backup your own config file before running this script!!!
 Such as .bashrc, .bash_profile, .vimrc, .gvimrc and .vim
 
-Since I use this config on more than one Mac/Sreen .gvimrc is on git ignore for not changing my font size all the time.
+Since I use this config on more than one Mac/Screen .gvimrc is on git ignore for not changing my font size all the time. (use gvimrc mini -> delete mini)
 
 If you want to update your bundles use [update_bundles.rb](https://github.com/znake/dotfiles/blob/master/vim/update_bundles.rb) (NOTE: This will delete all your installed plugins from your bundle folder and redownload it)
 
