@@ -43,8 +43,6 @@ let g:syntastic_quiet_warnings=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 " Disable Synstastic for Latex
 let g:syntastic_disabled_filetypes = ['tex']
-" Enable this option if you want the cursor to jump to the first detected error when saving or opening a file
-let g:syntastic_auto_jump=1
 
 " Useful status information at bottom of screen
 set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P 
@@ -200,8 +198,21 @@ map <Leader>nl :put =''<cr>
 map <Leader>tl :Tlist<cr>
 
 " using the surround plugin
-" surrounds the current word with ''
-map <Leader>ys ysiw'
+" operates on a normal word w
+map <Leader>ss ysiw
+map <Leader>s' ysiw'
+map <Leader>s" ysiw"
+map <Leader>s) ysiw)
+" operates on a big word W
+map <Leader>SS ysiW
+map <Leader>S' ysiW'
+map <Leader>S" ysiW"
+map <Leader>S) ysiW)
+" operates on a line
+map <Leader>sl yss
+map <Leader>sl' yss'
+map <Leader>sl" yss"
+map <Leader>sl) yss)
 
 nmap <leader>sp :set spell!<CR>
 " Set region to British English
