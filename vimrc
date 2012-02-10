@@ -199,20 +199,13 @@ map <Leader>tl :Tlist<cr>
 
 " using the surround plugin
 " operates on a normal word w
-map <Leader>ss ysiw
-map <Leader>s' ysiw'
-map <Leader>s" ysiw"
-map <Leader>s) ysiw)
+map <Leader>s ysiw
+
 " operates on a big word W
-map <Leader>SS ysiW
-map <Leader>S' ysiW'
-map <Leader>S" ysiW"
-map <Leader>S) ysiW)
+map <Leader>S ysiW
+
 " operates on a line
 map <Leader>sl yss
-map <Leader>sl' yss'
-map <Leader>sl" yss"
-map <Leader>sl) yss)
 
 nmap <leader>sp :set spell!<CR>
 " Set region to British English

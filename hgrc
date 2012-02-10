@@ -1,2 +1,7 @@
 [ui]
 username = Jakob Lehner <jakob.lnr@gmail.com>
+merge = vimdiff
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
