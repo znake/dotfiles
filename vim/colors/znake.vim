@@ -59,7 +59,7 @@ highlight Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NON
 highlight PreCondit                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 highlight Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
 highlight LineNr                    guifg=#535353 ctermfg=159 guibg=#000000
-highlight Number                    guifg=#ffff66 ctermfg=107
+highlight Number                    guifg=#bb4bbb ctermfg=107
 highlight PreProc                   guifg=#E6E1DC ctermfg=103
 highlight Search                    guifg=#a0a8b0 ctermfg=NONE guibg=#004080 ctermbg=235 gui=italic cterm=underline
 highlight IncSearch                 guifg=#004080 guibg=#a0a8b0 ctermfg=White ctermbg=Black
