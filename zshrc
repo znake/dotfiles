@@ -48,5 +48,5 @@ alias mm='mvim'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
-# Customize to your needs...
-export PATH=/Users/jakoblehner/.rvm/gems/ruby-1.9.2-p290@rails3.1/bin:/Users/jakoblehner/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/jakoblehner/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/jakoblehner/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/Users/jakoblehner/bin:/Users/jakoblehner/bin/android-sdk/tools:/Users/jakoblehner/bin/android-sdk/platform-tools:/usr/local/zend/bin:/usr/local/zend/mysql/bin
+export PATH=$PATH:~/bin
+
