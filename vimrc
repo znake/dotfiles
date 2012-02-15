@@ -250,6 +250,11 @@ map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
 map <Leader>bo :only<cr>
 
+" VCS Command Commit
+map <Leader>vc :VCSCommit<cr>
+map <Leader>vd :VCSDiff<cr>
+map <Leader>va :VCSAdd<cr>
+
 " jump to defenition of the selected word
 " usefull in helpfiles because strg + ]
 " is not very confortable on german keyboards
