@@ -255,6 +255,9 @@ map <Leader>vc :VCSCommit<cr>
 map <Leader>vd :VCSDiff<cr>
 map <Leader>va :VCSAdd<cr>
 
+" delete empty lines
+map <Leader>dl :g/^$/d<cr>
+
 " jump to defenition of the selected word
 " usefull in helpfiles because strg + ]
 " is not very confortable on german keyboards
