@@ -199,10 +199,10 @@ map <Leader>tl :Tlist<cr>
 
 " using the surround plugin
 " operates on a normal word w
-map <Leader>s ysiw
+map <Leader>s csw
 
 " operates on a big word W
-map <Leader>S ysiW
+map <Leader>S csW
 
 " operates on a line
 map <Leader>sl yss
