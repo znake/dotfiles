@@ -1,5 +1,5 @@
-gvimrc
 hgrc
+gvimrc
 *.DS_Store
 *.swp
 .netrwhist
