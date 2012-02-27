@@ -2,6 +2,7 @@ set nocompatible
 
 let mapleader = ","
 
+" Pathogen 
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
@@ -81,6 +82,18 @@ map k gk
 map [Up] gk
 map [Down] gj
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
+inoremap jk <Esc>
+
+"Open last/alternate buffer
+noremap <Leader><Leader> <C-^>
+
 " Command-T configuration
 let g:CommandTMaxHeight=10
 
@@ -126,7 +139,7 @@ set directory=~/.vim/backup
 runtime! macros/matchit.vim
 
 " Autoclose for following letters
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "<": ">"}
 
 "LaTeX Stuff
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -200,12 +213,13 @@ map <Leader>tl :Tlist<cr>
 " using the surround plugin
 " operates on a normal word w
 map <Leader>s csw
-
 " operates on a big word W
 map <Leader>S csW
-
 " operates on a line
 map <Leader>sl yss
+
+" Use system clipboard for copy and paste
+set clipboard=unnamed
 
 nmap <leader>sp :set spell!<CR>
 " Set region to British English
