@@ -17,6 +17,7 @@ set encoding=utf-8
 
 " CTags for TList
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let TlistHighlightTag=0
 
 " Autoread, files gets automatically updated when newer files are generated
 " see :h W11
@@ -108,7 +109,7 @@ if has("autocmd")
 endif
 
 " Show 15 lines of context around the cursor.
-set scrolloff=15
+set scrolloff=3
 " toggle scrolloff with ss
 :nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
 
@@ -191,6 +192,9 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 
+" save folds
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 " Tabularaized mappings
 function! IndentX()
