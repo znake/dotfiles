@@ -1,6 +1,8 @@
 set nocompatible
 
 let mapleader = ","
+" reduce leader timeout
+set timeoutlen=250
 
 " Pathogen 
 silent! call pathogen#runtime_append_all_bundles()
@@ -14,6 +16,10 @@ set cursorline
 " Only have cursorline in current window
 autocmd WinLeave * set nocursorline
 autocmd WinEnter * set cursorline
+
+" Auto indent after pasting 
+map <leader>p p'[v']=                                                             
+map <leader>P P'[v']= 
 
 " Set encoding
 set encoding=utf-8
@@ -53,6 +59,9 @@ if exists("+undofile")
   set undodir+=~/.vim/undo//
   set undofile
 endif
+
+" find merge conflict markers
+nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -158,6 +167,12 @@ runtime! macros/matchit.vim
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "<": ">"}
 
+"Resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
+
+" Spellcheck Git commit messages
+autocmd BufRead COMMIT_EDITMSG setlocal spell!
+
 "LaTeX Stuff
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -201,9 +216,6 @@ let g:Tex_IgnoredWarnings ='
 "Command: mvim
 "Arguments: --remote-silent +":%line;foldo!" "%file" 
 
-map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
-map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
-
 " MAPPINGS
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
@@ -235,6 +247,7 @@ map <Leader>bi <C-w>10+
 cmap w!! %!sudo tee > /dev/null %
 
 map <Leader>hl :set hlsearch! hlsearch?<cr>
+
 " indent whole file
 map <Leader>id mmgg=G'm
 
