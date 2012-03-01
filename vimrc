@@ -11,6 +11,9 @@ set ruler
 syntax on
 
 set cursorline
+" Only have cursorline in current window
+autocmd WinLeave * set nocursorline
+autocmd WinEnter * set cursorline
 
 " Set encoding
 set encoding=utf-8
@@ -37,6 +40,19 @@ au FileType make set noexpandtab
 
 set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
+
+if exists("+undofile")
+  " undofile - This allows you to use undos after exiting and restarting
+  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+  " :help undo-persistence
+  " This is only present in 7.3+
+  if isdirectory($HOME . '/.vim/undo') == 0
+    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  endif
+  set undodir=./.vim-undo//
+  set undodir+=~/.vim/undo//
+  set undofile
+endif
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -192,7 +208,7 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 
-" save folds
+" save folds (works just with .vim/view directory)
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
@@ -207,12 +223,30 @@ map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
 map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
 map <Leader>ta :Tabularize /
 
+" easy split window movment
+map <Leader>hh <C-w>h
+map <Leader>jj <C-w>j
+map <Leader>kk <C-w>k
+map <Leader>ll <C-w>l
+" make the actual window bigger
+map <Leader>bi <C-w>10+
+
+" Force Saving Files that Require Root Permission
+cmap w!! %!sudo tee > /dev/null %
+
 map <Leader>hl :set hlsearch! hlsearch?<cr>
 " indent whole file
 map <Leader>id mmgg=G'm
+
 " insert new line
-map <Leader>nl :put =''<cr>
+nmap t o<ESC>k
+nmap T O<ESC>j
+
+" open Tlist (for ctags)
 map <Leader>tl :Tlist<cr>
+
+"Remove All the Trailing Whitespaces
+nnoremap <leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
 
 " using the surround plugin
 " operates on a normal word w
@@ -279,11 +313,12 @@ map <Leader>dl :g/^$/d<cr>
 " jump to defenition of the selected word
 " usefull in helpfiles because strg + ]
 " is not very confortable on german keyboards
-map <Leader>jj <C-]>
+map <Leader>jm <C-]>
 
-" Copy history
+" show copy history
 map <Leader>re :reg<cr>
 
+" show all hex colors
 map <leader>xh :call HexHighlight()<Return>
 
 " For the MakeGreen plugin and Ruby RSpec. 

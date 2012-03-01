@@ -1,0 +1,422 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <silent> <F9> <Plug>Tex_Completion
+imap <buffer> <C-CR> <Plug>Tex_InsertItemOnNextLine
+imap <buffer> <silent> <S-F7> <Plug>Tex_FastCommandChange
+imap <buffer> <silent> <F7> <Plug>Tex_FastCommandInsert
+inoremap <buffer> <silent> <S-F3> =Tex_PutEnvironment("bmatrix")
+inoremap <buffer> <silent> <S-F2> =Tex_PutEnvironment("eqnarray")
+inoremap <buffer> <silent> <S-F1> =Tex_PutEnvironment("eqnarray*")
+imap <buffer> <silent> <S-F5> <Plug>Tex_FastEnvironmentChange
+imap <buffer> <silent> <F5> <Plug>Tex_FastEnvironmentInsert
+nmap <buffer> <silent> ,rf <Plug>Tex_RefreshFolds
+nmap <buffer> ,ls <Plug>Tex_ForwardSearch
+nmap <buffer> ,lv <Plug>Tex_View
+vmap <buffer> ,ll <Plug>Tex_Compile
+nmap <buffer> ,ll <Plug>Tex_Compile
+imap <buffer> <silent> ì <Plug>Tex_LeftRight
+imap <buffer> <silent> ã <Plug>Tex_MathCal
+imap <buffer> <silent> â <Plug>Tex_MathBF
+imap <buffer> é <Plug>Tex_InsertItemOnThisLine
+nnoremap <buffer> <Plug>Tex_ForwardSearch :call Tex_ForwardSearchLaTeX()
+nnoremap <buffer> <Plug>Tex_View :call Tex_ViewLaTeX()
+vnoremap <buffer> <Plug>Tex_Compile :call Tex_PartCompile()
+nnoremap <buffer> <Plug>Tex_Compile :call Tex_RunLaTeX()
+vmap <buffer> <silent> <F7> <Plug>Tex_FastCommandInsert
+nmap <buffer> <silent> <S-F7> <Plug>Tex_FastCommandChange
+nmap <buffer> <silent> <F7> <Plug>Tex_FastCommandInsert
+nmap <buffer> <silent> <S-F5> <Plug>Tex_FastEnvironmentChange
+vmap <buffer> <silent> <F5> <Plug>Tex_FastEnvironmentInsert
+nmap <buffer> <silent> <F5> <Plug>Tex_FastEnvironmentInsert
+cnoremap <buffer> <expr>  fugitive#buffer().rev()
+nmap <buffer> <silent> ì <Plug>Tex_LeftRight
+vmap <buffer> <silent> ã <Plug>Tex_MathCal
+vmap <buffer> <silent> â <Plug>Tex_MathBF
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:%\ -,mO:%\ \ ,eO:%%,:%
+setlocal commentstring=%%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=\\\\\\([egx]\\|char\\|mathchar\\|count\\|dimen\\|muskip\\|skip\\|toks\\)\\=def\\|\\\\font\\|\\\\\\(future\\)\\=let\\|\\\\new\\(count\\|dimen\\|skip\\|muskip\\|box\\|toks\\|read\\|write\\|fam\\|insert\\)\\|\\\\\\(re\\)\\=new\\(boolean\\|command\\|counter\\|environment\\|font\\|if\\|length\\|savebox\\|theorem\\(style\\)\\=\\)\\s*\\*\\=\\s*{\\=\\|DeclareMathOperator\\s*{\\=\\s*
+setlocal dictionary=~/bin/dotfiles/vim/bundle/vim-latex/ftplugin/latex-suite/dictionaries/dictionary
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=%*[^\"]\"%f\"%*\\D%l:\ %m,\"%f\"%*\\D%l:\ %m,%-G%f:%l:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,%-G%f:%l:\ for\ each\ function\ it\ appears\ in.),%-GIn\ file\ included\ from\ %f:%l:%c:,%-GIn\ file\ included\ from\ %f:%l:%c\\,,%-GIn\ file\ included\ from\ %f:%l:%c,%-GIn\ file\ included\ from\ %f:%l,%-G%*[\ ]from\ %f:%l:%c,%-G%*[\ ]from\ %f:%l:,%-G%*[\ ]from\ %f:%l\\,,%-G%*[\ ]from\ %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,%D%*\\a[%*\\d]:\ Entering\ directory\ `%f',%X%*\\a[%*\\d]:\ Leaving\ directory\ `%f',%D%*\\a:\ Entering\ directory\ `%f',%X%*\\a:\ Leaving\ directory\ `%f',%DMaking\ %*\\a\ in\ %f,%f|%l|\ %m,%-G%.%#\ ,%E!\ LaTeX\ %trror:\ %m,%E!\ %m,%E%f:%l:\ %m,%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#,%+W%.%#\ at\ lines\ %l--%*\\d,%+WLaTeX\ %.%#Warning:\ %m,%-Cl.%l\ %m,%-Cl.%l\ ,%-C\ \ %m,%-C%.%#-%.%#,%-C%.%#[]%.%#,%-C[]%.%#,%-C%.%#%[{}\\]%.%#,%-C<%.%#>%m,%-GSee\ the\ LaTeX%m,%-GType\ \ H\ <return>%m,%-G\ ...%.%#,%-G%.%#\ (C)\ %.%#,%-G(see\ the\ transcript%.%#),%-G\\s%#,%-O(%*[^()])%r,%-P(%f%r,%-P\ %\\=(%f%r,%-P%*[^()](%f%r,%-P(%f%*[^()],%-P[%\\d%[^()]%#(%f%r,%-P%*[^()],%-Q)%r,%-Q%*[^()])%r,%-Q[%\\d%*[^()])%r,%-Q%*[^()],%-G%.%#
+setlocal expandtab
+if &filetype != 'tex'
+setlocal filetype=tex
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=TexFoldTextFunction()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=\\\\input\\|\\\\include{
+setlocal includeexpr=substitute(v:fname,\ '^.\\{-}{\\|}.*',\ '',\ 'g')
+setlocal indentexpr=GetTeXIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,},=\\item,=\\bibitem
+setlocal noinfercase
+setlocal iskeyword=48-57,a-z,A-Z,192-255
+setlocal keywordprg=
+setlocal linebreak
+setlocal nolisp
+setlocal nolist
+setlocal nomacmeta
+setlocal makeprg=pdflatex\ $*
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=de_at
+setlocal statusline=
+setlocal suffixesadd=.tex
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'tex'
+setlocal syntax=tex
+endif
+setlocal tabstop=2
+setlocal tags=./tags,tags,~/Dropbox/Public/diploma_thesis/.git/tex.tags,~/Dropbox/Public/diploma_thesis/.git/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+4,98fold
+100,124fold
+129,131fold
+136,146fold
+150,156fold
+162,168fold
+174,174fold
+175,175fold
+176,176fold
+170,189fold
+147,189fold
+196,202fold
+203,222fold
+192,222fold
+223,239fold
+242,257fold
+240,260fold
+261,268fold
+190,268fold
+269,276fold
+284,284fold
+285,285fold
+286,286fold
+300,305fold
+308,338fold
+340,363fold
+369,374fold
+364,377fold
+409,414fold
+477,482fold
+378,483fold
+487,492fold
+495,495fold
+496,496fold
+497,497fold
+498,498fold
+502,503fold
+519,519fold
+484,603fold
+607,612fold
+616,621fold
+604,623fold
+631,636fold
+624,640fold
+289,640fold
+647,647fold
+648,648fold
+649,649fold
+650,650fold
+653,658fold
+665,695fold
+696,704fold
+708,713fold
+705,717fold
+721,726fold
+793,798fold
+718,799fold
+803,808fold
+811,811fold
+812,812fold
+813,813fold
+814,814fold
+815,815fold
+820,825fold
+833,838fold
+800,845fold
+846,853fold
+641,853fold
+857,887fold
+854,889fold
+890,894fold
+277,894fold
+902,904fold
+905,907fold
+895,907fold
+908,914fold
+915,931fold
+932,936fold
+937,950fold
+4
+normal zc
+100
+normal zc
+129
+normal zc
+136
+normal zc
+147
+normal zo
+150
+normal zc
+162
+normal zc
+170
+normal zo
+174
+normal zc
+175
+normal zc
+176
+normal zc
+170
+normal zc
+147
+normal zc
+190
+normal zo
+192
+normal zo
+196
+normal zc
+203
+normal zc
+192
+normal zc
+223
+normal zc
+240
+normal zo
+242
+normal zc
+240
+normal zc
+261
+normal zc
+190
+normal zo
+269
+normal zc
+277
+normal zo
+284
+normal zc
+285
+normal zc
+286
+normal zc
+289
+normal zo
+300
+normal zc
+308
+normal zc
+340
+normal zc
+364
+normal zo
+369
+normal zc
+364
+normal zc
+378
+normal zo
+409
+normal zc
+477
+normal zc
+378
+normal zc
+484
+normal zo
+487
+normal zc
+495
+normal zc
+496
+normal zc
+497
+normal zc
+498
+normal zc
+502
+normal zc
+519
+normal zc
+484
+normal zc
+604
+normal zo
+607
+normal zc
+616
+normal zc
+604
+normal zc
+624
+normal zo
+631
+normal zc
+624
+normal zc
+289
+normal zc
+641
+normal zo
+647
+normal zc
+648
+normal zc
+649
+normal zc
+650
+normal zc
+653
+normal zc
+665
+normal zc
+696
+normal zc
+705
+normal zo
+708
+normal zc
+705
+normal zc
+718
+normal zo
+721
+normal zc
+793
+normal zc
+718
+normal zc
+800
+normal zo
+803
+normal zc
+811
+normal zc
+812
+normal zc
+813
+normal zc
+814
+normal zc
+815
+normal zc
+820
+normal zc
+833
+normal zc
+800
+normal zc
+846
+normal zc
+641
+normal zc
+854
+normal zo
+857
+normal zc
+854
+normal zc
+890
+normal zc
+277
+normal zc
+895
+normal zo
+902
+normal zc
+905
+normal zc
+895
+normal zc
+908
+normal zc
+915
+normal zc
+932
+normal zc
+937
+normal zc
+let s:l = 190 - ((91 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+190
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
