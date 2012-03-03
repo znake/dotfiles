@@ -2,7 +2,7 @@ set nocompatible
 
 let mapleader = ","
 " reduce leader timeout
-set timeoutlen=250
+"set timeoutlen=250
 
 " Pathogen 
 silent! call pathogen#runtime_append_all_bundles()
@@ -11,11 +11,6 @@ silent! call pathogen#helptags()
 set number
 set ruler
 syntax on
-
-set cursorline
-" Only have cursorline in current window
-autocmd WinLeave * set nocursorline
-autocmd WinEnter * set cursorline
 
 " Auto indent after pasting 
 map <leader>p p'[v']=                                                             
@@ -61,7 +56,7 @@ if exists("+undofile")
 endif
 
 " find merge conflict markers
-nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+nmap <silent> <leader>mc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -101,6 +96,8 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>nt :NERDTreeToggle<CR>
+
+map L @@
 
 " For usual moving behaviour in wrapped lines"
 map j gj
@@ -355,9 +352,11 @@ if has("autocmd")
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 
+
   " don´t highlight cursor line in LaTeX and .txt files
-  au BufRead,BufNewFile *.txt setlocal nocursorline
-  au BufRead,BufNewFile *.tex setlocal nocursorline
+  autocmd FileType tex setlocal nocursorline
+  autocmd FileType txt setlocal nocursorline
+  "au BufRead,BufNewFile *.txt setlocal nocursorline
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml

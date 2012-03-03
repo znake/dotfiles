@@ -59,7 +59,7 @@ setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
-setlocal nocursorline
+setlocal cursorline
 setlocal define=\\\\\\([egx]\\|char\\|mathchar\\|count\\|dimen\\|muskip\\|skip\\|toks\\)\\=def\\|\\\\font\\|\\\\\\(future\\)\\=let\\|\\\\new\\(count\\|dimen\\|skip\\|muskip\\|box\\|toks\\|read\\|write\\|fam\\|insert\\)\\|\\\\\\(re\\)\\=new\\(boolean\\|command\\|counter\\|environment\\|font\\|if\\|length\\|savebox\\|theorem\\(style\\)\\=\\)\\s*\\*\\=\\s*{\\=\\|DeclareMathOperator\\s*{\\=\\s*
 setlocal dictionary=~/bin/dotfiles/vim/bundle/vim-latex/ftplugin/latex-suite/dictionaries/dictionary
 setlocal nodiff
@@ -73,7 +73,7 @@ setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
-setlocal foldlevel=0
+setlocal foldlevel=4
 setlocal foldmarker={{{,}}}
 setlocal foldmethod=manual
 setlocal foldminlines=1
@@ -132,7 +132,7 @@ setlocal tabstop=2
 setlocal tags=./tags,tags,~/Dropbox/Public/diploma_thesis/.git/tex.tags,~/Dropbox/Public/diploma_thesis/.git/tags
 setlocal textwidth=0
 setlocal thesaurus=
-setlocal noundofile
+setlocal undofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
@@ -150,73 +150,73 @@ silent! normal! zE
 170,189fold
 147,189fold
 196,202fold
-203,222fold
-192,222fold
-223,239fold
-242,257fold
-240,260fold
-261,268fold
-190,268fold
-269,276fold
-284,284fold
-285,285fold
-286,286fold
-300,305fold
-308,338fold
-340,363fold
-369,374fold
-364,377fold
-409,414fold
-477,482fold
-378,483fold
-487,492fold
-495,495fold
-496,496fold
-497,497fold
-498,498fold
-502,503fold
-519,519fold
-484,603fold
-607,612fold
-616,621fold
-604,623fold
-631,636fold
-624,640fold
-289,640fold
-647,647fold
-648,648fold
-649,649fold
-650,650fold
-653,658fold
-665,695fold
-696,704fold
-708,713fold
-705,717fold
-721,726fold
-793,798fold
-718,799fold
-803,808fold
-811,811fold
-812,812fold
-813,813fold
-814,814fold
-815,815fold
+203,239fold
+192,239fold
+240,256fold
+259,274fold
+257,277fold
+278,285fold
+190,285fold
+286,293fold
+301,301fold
+302,302fold
+303,303fold
+317,322fold
+325,355fold
+357,380fold
+386,391fold
+381,394fold
+426,431fold
+494,499fold
+395,500fold
+504,509fold
+512,512fold
+513,513fold
+514,514fold
+515,515fold
+519,520fold
+536,536fold
+501,620fold
+624,629fold
+633,638fold
+621,640fold
+648,653fold
+641,657fold
+306,657fold
+664,664fold
+665,665fold
+666,666fold
+667,667fold
+670,675fold
+682,712fold
+713,721fold
+725,730fold
+722,734fold
+738,743fold
+810,815fold
+735,816fold
 820,825fold
-833,838fold
-800,845fold
-846,853fold
-641,853fold
-857,887fold
-854,889fold
-890,894fold
-277,894fold
-902,904fold
-905,907fold
-895,907fold
-908,914fold
-915,931fold
-932,936fold
-937,950fold
+828,828fold
+829,829fold
+830,830fold
+831,831fold
+832,832fold
+837,842fold
+850,855fold
+817,862fold
+863,870fold
+658,870fold
+874,904fold
+871,906fold
+907,911fold
+294,911fold
+919,921fold
+922,924fold
+912,924fold
+925,931fold
+932,948fold
+949,953fold
+954,967fold
 4
 normal zc
 100
@@ -248,174 +248,174 @@ normal zo
 192
 normal zo
 196
-normal zo
+normal zc
 203
-normal zo
+normal zc
 192
-normal zo
-223
-normal zc
-240
-normal zo
-242
 normal zc
 240
 normal zc
-261
+257
+normal zo
+259
+normal zc
+257
+normal zc
+278
 normal zc
 190
-normal zo
-269
-normal zc
-277
-normal zo
-284
-normal zc
-285
 normal zc
 286
 normal zc
-289
+294
 normal zo
-300
+301
 normal zc
-308
+302
 normal zc
-340
+303
 normal zc
-364
+306
 normal zo
-369
+317
 normal zc
-364
+325
 normal zc
-378
+357
+normal zc
+381
 normal zo
-409
+386
 normal zc
-477
+381
 normal zc
-378
-normal zc
-484
+395
 normal zo
-487
+426
 normal zc
-495
+494
 normal zc
-496
+395
 normal zc
-497
+501
+normal zo
+504
 normal zc
-498
+512
 normal zc
-502
+513
+normal zc
+514
+normal zc
+515
 normal zc
 519
 normal zc
-484
+536
 normal zc
-604
+501
+normal zc
+621
 normal zo
-607
-normal zc
-616
-normal zc
-604
-normal zc
-624
-normal zo
-631
-normal zc
 624
 normal zc
-289
+633
+normal zc
+621
 normal zc
 641
 normal zo
-647
-normal zc
 648
 normal zc
-649
+641
 normal zc
-650
+306
 normal zc
-653
+658
+normal zo
+664
 normal zc
 665
 normal zc
-696
+666
 normal zc
-705
+667
+normal zc
+670
+normal zc
+682
+normal zc
+713
+normal zc
+722
 normal zo
-708
+725
 normal zc
-705
+722
 normal zc
-718
+735
 normal zo
-721
+738
 normal zc
-793
+810
 normal zc
-718
+735
 normal zc
-800
+817
 normal zo
-803
-normal zc
-811
-normal zc
-812
-normal zc
-813
-normal zc
-814
-normal zc
-815
-normal zc
 820
 normal zc
-833
+828
 normal zc
-800
+829
 normal zc
-846
+830
 normal zc
-641
+831
 normal zc
-854
+832
+normal zc
+837
+normal zc
+850
+normal zc
+817
+normal zc
+863
+normal zc
+658
+normal zc
+871
 normal zo
-857
+874
 normal zc
-854
+871
 normal zc
-890
+907
 normal zc
-277
+294
 normal zc
-895
+912
 normal zo
-902
+919
 normal zc
-905
+922
 normal zc
-895
+912
 normal zc
-908
-normal zc
-915
+925
 normal zc
 932
 normal zc
-937
+949
 normal zc
-let s:l = 205 - ((15 * winheight(0) + 22) / 44)
+954
+normal zc
+let s:l = 1 - ((0 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-205
+1
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
