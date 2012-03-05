@@ -43,7 +43,7 @@ set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
 
 " find merge conflict markers
-map mc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+map F <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
