@@ -158,9 +158,6 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "<": "
 "Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
-" Spellcheck Git commit messages
-autocmd BufRead COMMIT_EDITMSG setlocal spell!
-
 "LaTeX Stuff
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
