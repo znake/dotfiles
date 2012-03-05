@@ -206,15 +206,14 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 
-" Tabularaized mappings
+" Tabularaized for rails
 function! IndentX()
   <
   Tabularize /^[^:]*\zs:/r1c0l0
   Tabularize /^[^=>]*\zs=>/l1
 endfunction
 map <Leader>iv :call IndentX()<cr>
-map <Leader>is :Tabularize /^[^"]*\zs"/l1c0<cr>
-map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
+" Invoke Tabularized
 map <Leader>ta :Tabularize /
 
 " easy split window movment
@@ -223,7 +222,7 @@ map <Leader>ta :Tabularize /
 "map <Leader>kk <C-w>k
 "map <Leader>ll <C-w>l 
 
-" make the actual window bigger
+" make the actual window bigger (horizontal split)
 map <Leader>bi <C-w>10+
 
 " Force Saving Files that Require Root Permission
@@ -287,10 +286,11 @@ map <Leader>fs :set ft=sql<cr>
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>gh :Gcommit<cr>
+map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
+map <Leader>gh :Gwrite<cr>:Gcommit<cr>i
 
 " Buffers
 map <Leader>bd :bd<cr>
