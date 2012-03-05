@@ -291,7 +291,7 @@ map <Leader>fs :set ft=sql<cr>
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>gc :Gcommit<cr>
+map <Leader>gh :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
