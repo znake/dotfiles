@@ -221,7 +221,7 @@ map <Leader>ta :Tabularize /
 "map <Leader>hh <C-w>h
 "map <Leader>jj <C-w>j
 "map <Leader>kk <C-w>k
-"map <Leader>ll <C-w>l "bla
+"map <Leader>ll <C-w>l 
 
 " make the actual window bigger
 map <Leader>bi <C-w>10+
