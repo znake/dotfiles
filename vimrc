@@ -42,21 +42,8 @@ au FileType make set noexpandtab
 set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
 
-if exists("+undofile")
-  " undofile - This allows you to use undos after exiting and restarting
-  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
-  " :help undo-persistence
-  " This is only present in 7.3+
-  if isdirectory($HOME . '/.vim/undo') == 0
-    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
-  endif
-  set undodir=./.vim-undo//
-  set undodir+=~/.vim/undo//
-  set undofile
-endif
-
 " find merge conflict markers
-nmap <silent> <leader>mc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+map mc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -223,10 +210,6 @@ map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 " MAPPINGS
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
-
-" save folds (works just with .vim/view directory)
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
 
 " Tabularaized mappings
 function! IndentX()
