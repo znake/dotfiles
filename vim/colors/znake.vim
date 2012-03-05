@@ -70,9 +70,16 @@ highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NON
 highlight Visual                    guibg=#420000 ctermbg=60
 highlight Folded 		                guibg=#000014 guifg=#a0a8b0 gui=none
 
-highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
-highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
-highlight Special                   guifg=#DA4939 ctermfg=167 
+"highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
+"highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
+"highlight Special                   guifg=#DA4939 ctermfg=167 
+"
+highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green 
+highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red 
+highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow gui=NONE guifg=bg guibg=Yellow 
+highlight DiffText cterm=NONE ctermfg=bg ctermbg=Magenta gui=NONE guifg=bg guibg=Magenta 
+
+new
 
 highlight pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
 highlight rubyBlockParameter        guifg=#FFFFFF ctermfg=15
