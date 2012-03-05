@@ -97,7 +97,11 @@ set noequalalways
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>nt :NERDTreeToggle<CR>
 
+" repeat last record
 map L @@
+
+" go to last edit point
+map ö g;
 
 " For usual moving behaviour in wrapped lines"
 map j gj
@@ -212,6 +216,9 @@ let g:Tex_IgnoredWarnings ='
 "Settings: own
 "Command: mvim
 "Arguments: --remote-silent +":%line;foldo!" "%file" 
+
+map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
+map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 " MAPPINGS
 " source vimrc
@@ -354,7 +361,7 @@ if has("autocmd")
 
 
   " don´t highlight cursor line in LaTeX and .txt files
-  autocmd FileType tex setlocal nocursorline
+  autocmd FileType tex setlocal nocursorline scrolloff=15
   autocmd FileType txt setlocal nocursorline
   "au BufRead,BufNewFile *.txt setlocal nocursorline
 
