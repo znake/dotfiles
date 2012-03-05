@@ -291,7 +291,7 @@ map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
 " save & stage current file, open commit window with insert mode
-map <Leader>gh :w:Gwrite<cr>:Gcommit<cr>i
+map <Leader>gh :w<cr>:Gwrite<cr>:Gcommit<cr>i
 
 " Buffers
 map <Leader>bd :bd<cr>
