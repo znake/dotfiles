@@ -217,10 +217,6 @@ let g:Tex_IgnoredWarnings ='
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 
-" save folds (works just with .vim/view directory)
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
-
 " Tabularaized mappings
 function! IndentX()
   <
