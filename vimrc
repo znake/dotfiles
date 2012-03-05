@@ -103,8 +103,6 @@ vnoremap > >gv
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
 
-inoremap jk <Esc>
-
 "Open last/alternate buffer
 noremap <Leader><Leader> <C-^>
 
@@ -220,10 +218,11 @@ map <Leader>ip :Tabularize /^[^:]*\zs:/l1c0<cr>
 map <Leader>ta :Tabularize /
 
 " easy split window movment
-map <Leader>hh <C-w>h
-map <Leader>jj <C-w>j
-map <Leader>kk <C-w>k
-map <Leader>ll <C-w>l
+"map <Leader>hh <C-w>h
+"map <Leader>jj <C-w>j
+"map <Leader>kk <C-w>k
+"map <Leader>ll <C-w>l
+
 " make the actual window bigger
 map <Leader>bi <C-w>10+
 
@@ -310,7 +309,7 @@ map <Leader>dl :g/^$/d<cr>
 " jump to defenition of the selected word
 " usefull in helpfiles because strg + ]
 " is not very confortable on german keyboards
-map <Leader>jm <C-]>
+map <Leader>jj <C-]>
 
 " show copy history
 map <Leader>re :reg<cr>
