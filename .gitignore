@@ -1,5 +1,6 @@
-hgrc
 gvimrc
+*.pyc
 *.DS_Store
 *.swp
+*.swo
 .netrwhist
