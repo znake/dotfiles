@@ -167,18 +167,22 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-let g:Tex_DefaultTargetFormat = 'pdf' 
-let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*' 
-let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi' 
-let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps' 
-let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi' 
-let g:Tex_CompileRule_pdf = 'pdflatex $*' 
-let g:Tex_ViewRule_dvi = 'texniscope' 
-let g:Tex_ViewRule_ps = 'Skim' 
-let g:Tex_ViewRule_pdf = 'Skim' 
-let g:Tex_FormatDependency_ps  = 'dvi,ps' 
-let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf' 
-let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf' 
+let g:Tex_DefaultTargetFormat = 'pdf'
+ 
+let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi'
+let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
+let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
+ 
+let g:Tex_ViewRule_dvi = 'texniscope'
+let g:Tex_ViewRule_ps = 'Preview'
+let g:Tex_ViewRule_pdf = 'Skim'
+ 
+let g:Tex_FormatDependency_ps  = 'dvi,ps'
+let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf'
+let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
+ 
 let g:Tex_EnvironmentMenus = 0
 let g:Tex_FontMaps = 0
 let g:Tex_FontMenus = 0
@@ -186,25 +190,25 @@ let g:Tex_SectionMenus = 0
 let g:Tex_SectionMaps = 0
 let g:Tex_IgnoreLevel = 8
 let g:Tex_GotoError = 0
-let g:Tex_IgnoredWarnings =' 
-      \"Underfull\n". 
-      \"Overfull\n". 
-      \"specifier changed to\n". 
-      \"You have requested\n". 
-      \"Missing number, treated as zero.\n". 
-      \"There were undefined references\n". 
-      \"Citation %.%# undefined\n". 
-      \"\oval, \circle, or \line size unavailable\n"' 
-
-"For proper sync with Skim you ned to add this in your Skim Sync Settings
+ let g:Tex_IgnoredWarnings ='
+       \"Underfull\n".
+       \"Overfull\n".
+       \"specifier changed to\n".
+       \"You have requested\n".
+       \"Missing number, treated as zero.\n".
+       \"There were undefined references\n".
+       \"Citation %.%# undefined\n".
+       \"\oval, \circle, or \line size unavailable\n"' 
+"For proper inverse sync with Skim you ned to add this in your Skim Sync Settings
 "Settings: own
 "Command: mvim
 "Arguments: --remote-silent +":%line;foldo!" "%file" 
 
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
-map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
+"map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 map <Leader>la ,ll :only<cr>
+map <Leader>ld ,ll :only<cr> ,ls
 
 " MAPPINGS
 " source vimrc
@@ -236,6 +240,8 @@ map <Leader>hl :set hlsearch! hlsearch?<cr>
 
 " indent whole file
 map <Leader>id mmgg=G'm
+" indent block of code
+map <Leader>ib vip=
 
 " insert new line
 nmap t o<ESC>k
