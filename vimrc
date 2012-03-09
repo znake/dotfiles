@@ -207,8 +207,8 @@ let g:Tex_GotoError = 0
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-map <Leader>la ,ll :only<cr>
-map <Leader>ld ,ll :only<cr> ,ls
+map <Leader>la :w<cr> ,ll 
+map <Leader>ld :w<cr> ,ll ,ls
 
 " MAPPINGS
 " source vimrc
