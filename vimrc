@@ -326,7 +326,7 @@ map <Leader>jj <C-]>
 map <Leader>re :reg<cr>
 
 " show all hex colors
-map <leader>xh :call HexHighlight()<Return>
+map <leader>xh :call HexHighlight()<cr>
 
 " For the MakeGreen plugin and Ruby RSpec. 
 autocmd BufNewFile, BufRead *_spec.rb compiler rspec
