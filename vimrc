@@ -151,7 +151,7 @@ set directory=~/.vim/backup
 runtime! macros/matchit.vim
 
 " Autoclose for following letters
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "<": ">"}
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 "Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
