@@ -349,7 +349,6 @@ if has("autocmd")
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 
-
   " don´t highlight cursor line in LaTeX and .txt files
   autocmd FileType tex setlocal nocursorline scrolloff=15
   autocmd FileType txt setlocal nocursorline
