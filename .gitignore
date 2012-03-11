@@ -1,3 +1,5 @@
+vim/bundle/snipmate.vim/snippets/*
+vim/bundle/vim-latex/ftplugin/latex-suite/*
 *.pyc
 *.DS_Store
 *.swp
