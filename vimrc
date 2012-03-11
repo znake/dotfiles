@@ -300,6 +300,8 @@ map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
+map <Leader>gl :Git pull<cr>
+map <Leader>gp :Git push<cr>
 " save & stage current file, open commit window with insert mode
 map <Leader>gh :w<cr>:Gwrite<cr>:Gcommit<cr>i
 
