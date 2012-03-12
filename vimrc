@@ -94,6 +94,9 @@ map m <C-o>
 " go to previous cursor position
 map M <C-i>
 
+" Redo
+map U <C-r>
+
 " For usual moving behaviour in wrapped lines"
 map j gj
 map k gk
@@ -229,10 +232,10 @@ map <Leader>iv :call IndentX()<cr>
 map <Leader>ta :Tabularize /
 
 " easy split window movment
-"map <Leader>hh <C-w>h
-"map <Leader>jj <C-w>j
-"map <Leader>kk <C-w>k
-"map <Leader>ll <C-w>l 
+map <Leader>hh <C-w>h
+map <Leader>jj <C-w>j
+map <Leader>kk <C-w>k
+map <Leader>ll <C-w>l 
 
 " make the actual window bigger (horizontal split)
 map <Leader>bi <C-w>10+
@@ -242,7 +245,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 map <Leader>hl :set hlsearch! hlsearch?<cr>
 
-" indent whole file
+" indent whole file jump back to current position
 map <Leader>id mmgg=G'm
 " indent block of code
 map <Leader>ib vip=
@@ -298,7 +301,8 @@ map <Leader>fp :set ft=php<cr>
 map <Leader>fs :set ft=sql<cr> 
 
 " Fugitive
-map <Leader>gd :Gdiff<cr>
+map <Leader>gD :Gdiff<cr>
+map <Leader>gd :Gstatus<cr>:Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
