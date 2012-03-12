@@ -89,6 +89,10 @@ map L @@
 
 " go to last edit point
 map ö g;
+" go to last cursor position
+map m <C-o>
+" go to previous cursor position
+map M <C-i>
 
 " For usual moving behaviour in wrapped lines"
 map j gj
