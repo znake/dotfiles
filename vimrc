@@ -304,7 +304,7 @@ map <Leader>fs :set ft=sql<cr>
 map <Leader>gD :Gdiff<cr>
 map <Leader>gd :Gstatus<cr>:Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>gc :Gcommit<cr>
+map <Leader>gc :Gcommit<cr>i
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
