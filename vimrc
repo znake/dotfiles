@@ -87,6 +87,9 @@ map <Leader>nt :NERDTreeToggle<CR>
 " repeat last record
 map L @@
 
+map ä ]s
+map Ä zg
+
 " go to last edit point
 map ö g;
 " go to last cursor position
