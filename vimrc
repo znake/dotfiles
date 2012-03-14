@@ -88,6 +88,7 @@ map <Leader>nt :NERDTreeToggle<CR>
 map L @@
 
 map ä ]s
+map # [s
 map Ä zg
 
 " go to last edit point
@@ -228,7 +229,7 @@ map <Leader>iv :call IndentX()<cr>
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
 
-" easy split window movment
+" easy split window movement
 map <Leader>hh <C-w>h
 map <Leader>jj <C-w>j
 map <Leader>kk <C-w>k
@@ -327,8 +328,8 @@ map <Leader>va :VCSAdd<cr>
 map <Leader>dl :g/^$/d<cr>
 
 " jump to defenition of the selected word
-" usefull in helpfiles because strg + ]
-" is not very confortable on german keyboards
+" useful in helpfiles because strg + ]
+" is not very comfortable on german keyboards
 map <Leader>jj <C-]>
 
 " show copy history
