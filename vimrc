@@ -94,9 +94,6 @@ map m <C-o>
 " go to previous cursor position
 map M <C-i>
 
-" Redo
-map U <C-r>
-
 " For usual moving behaviour in wrapped lines"
 map j gj
 map k gk
@@ -106,9 +103,6 @@ map [Down] gj
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
-
-" automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vimrc
 
 "Open last/alternate buffer
 noremap <Leader><Leader> <C-^>
@@ -253,6 +247,8 @@ map <Leader>ib vip=
 " insert new line
 nmap t o<ESC>k
 nmap T O<ESC>j
+
+map <Leader>ev :Edit ~/bin/dotfiles/vimrc<cr>,nt
 
 " open Tlist (for ctags)
 map <Leader>tl :Tlist<cr>
