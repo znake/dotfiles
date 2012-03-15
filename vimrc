@@ -88,7 +88,7 @@ map <Leader>nt :NERDTreeToggle<CR>
 map L @@
 
 map ä ]s
-map # [s
+map ü [s
 map Ä zg
 
 " go to last edit point
