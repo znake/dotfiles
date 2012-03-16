@@ -1,8 +1,6 @@
 set nocompatible
 
 let mapleader = ","
-" reduce leader timeout
-"set timeoutlen=250
 
 " Pathogen 
 silent! call pathogen#runtime_append_all_bundles()
@@ -48,8 +46,6 @@ map K <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
-" Show Synstastic Errors and Warnings in status line
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 " Disable Synstastic for Latex
 let g:syntastic_disabled_filetypes = ['tex']
 
@@ -87,22 +83,16 @@ map <Leader>nt :NERDTreeToggle<CR>
 " repeat last record
 map L @@
 
-map ä ]s
-map ü [s
-map Ä zg
-
 " go to last edit point
 map ö g;
 " go to last cursor position
-map - <C-o>
+map Ö <C-o>
 " go to previous cursor position
 map _ <C-i>
 
 " For usual moving behaviour in wrapped lines"
 map j gj
 map k gk
-map [Up] gk
-map [Down] gj
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -118,16 +108,11 @@ let g:CommandTMaxHeight=10
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
-" Remember last location in file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-        \| exe "normal g'\"" | endif
-endif
 
-" Show 15 lines of context around the cursor.
+" Show 3 lines of context around the cursor.
 set scrolloff=3
 " toggle scrolloff with ss
-:nnoremap <Leader>ss :let &scrolloff=15-&scrolloff<CR>
+nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -154,6 +139,11 @@ set directory=~/.vim/backup
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
+
+" :Ack
+map <Leader>ak :Ack<space>
+
+imap fj <esc>
 
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -230,13 +220,26 @@ map <Leader>iv :call IndentX()<cr>
 map <Leader>ta :Tabularize /
 
 " easy split window movement
-map <Leader>hh <C-w>h
+map <A-D-h> <C-w>h
+map <A-D-j> <C-w>j
 map <Leader>jj <C-w>j
 map <Leader>kk <C-w>k
 map <Leader>ll <C-w>l 
 
+" make it easy to resize windows
+map + <C-W>4+
+map - <C-W>4-
+map ' <C-W>=
+" Window/Split Switching
+noremap <tab> <C-w>w
+" close window
+map <C-c> <c-w>c
+" horizontal split window
+map <C-x> <c-w>s
+
 " make the actual window bigger (horizontal split)
 map <Leader>bi <C-w>10+
+map <Leader>bu <C-w>10-
 
 " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
@@ -251,8 +254,6 @@ map <Leader>ib vip=
 " insert new line
 nmap t o<ESC>k
 nmap T O<ESC>j
-
-map <Leader>ev :Edit ~/bin/dotfiles/vimrc<cr>,nt
 
 " open Tlist (for ctags)
 map <Leader>tl :Tlist<cr>
@@ -277,6 +278,11 @@ set spelllang=de_at
 
 map <leader>se :set spelllang=en_gb<cr>
 map <leader>sd :set spelllang=de_at<cr>
+"
+" spellchecking commands
+map ä ]s
+map ü [s
+map Ä zg
 
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
@@ -338,9 +344,6 @@ map <Leader>re :reg<cr>
 " show all hex colors
 map <leader>xh :call HexHighlight()<cr>
 
-" For the MakeGreen plugin and Ruby RSpec. 
-autocmd BufNewFile, BufRead *_spec.rb compiler rspec
-
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   " Enable file type detection
@@ -349,6 +352,10 @@ if has("autocmd")
   filetype plugin indent on
   " OPTIONAL: This enables automatic indentation as you type.
   filetype indent on
+
+  " Remember last location in file
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal g'\"" | endif
 
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -359,7 +366,8 @@ if has("autocmd")
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 
-  " don´t highlight cursor line in LaTeX and .txt files
+  " don´t highlight cursor line in LaTeX and .txt files and enable
+  " spellchecking
   autocmd FileType tex setlocal nocursorline spell
   autocmd FileType txt setlocal nocursorline spell
   "au BufRead,BufNewFile *.txt setlocal nocursorline
@@ -379,14 +387,3 @@ if has("autocmd")
   au FileType python  set tabstop=4 
 endif
 
-" Tim Popes | aligning in insert mode"
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
