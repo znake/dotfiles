@@ -2,7 +2,7 @@
 
 if [ -d ~/.vim ]; then
     if [ -d ~/.vim/bundle/snipmate.vim ]; then
-        ln -nfs ~/bin/dotfiles/vim/mySnippets/*.snippets ~/bin/dotfiles/vim/bundle/snipmate.vim/snippets
+        ln -nfs ~/Dropbox/Library/dotfiles/vim/mySnippets/*.snippets ~/Dropbox/Library/dotfiles/vim/bundle/snipmate.vim/snippets
         echo "Symlinked snippets successfully :)"
     else
         echo "Please install snipMate vim plugin first!"
