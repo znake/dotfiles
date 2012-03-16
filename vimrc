@@ -220,8 +220,7 @@ map <Leader>iv :call IndentX()<cr>
 map <Leader>ta :Tabularize /
 
 " easy split window movement
-map <A-D-h> <C-w>h
-map <A-D-j> <C-w>j
+map <Leader>hh <C-w>h
 map <Leader>jj <C-w>j
 map <Leader>kk <C-w>k
 map <Leader>ll <C-w>l 
