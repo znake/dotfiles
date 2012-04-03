@@ -18,9 +18,9 @@ For fast CommandT configuration I use /scripts/configure_command_t.sh
 
 If you want to update your bundles use [update_bundles.rb](https://github.com/znake/dotfiles/blob/master/vim/update_bundles.rb) (NOTE: This will delete all your installed plugins from your bundle folder and redownload it)
 
-    ruby update_bundles.rb
+    $ ruby update_bundles.rb
 
 If you want to use your own snippets like me which I store in my custom folder /vim/mySnippets/ and add them to Snipmate use [addsnippets.sh](https://github.com/znake/dotfiles/blob/master/vim/mySnippets/addsnippets.sh) which copys all snippets into the snipMate.vim folder.
 
-    sh addsnipptes.sh
+    $ sh addsnipptes.sh
 
