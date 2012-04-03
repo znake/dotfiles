@@ -7,7 +7,9 @@ CHECK THEM OUT AT FIRST BEFORE USING THEM!!!
 
 Fast symlinking:
 Just run 
+
     $ sh symlink_mini.sh 
+
 for quick setup. I use 2 different screen sizes so I use von gvimrc for my Mac Mini and the other for my Mac Book Air, that’s why there two!
 (NOTE: This will override all your dotfiles like .vimrc, gvimrc, zshrc, hgrc and so on)
 
