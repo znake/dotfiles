@@ -5,9 +5,9 @@ I´m used to have my dotfiles in my DropBox since I use more then one Mac for de
 For proper symlinking and faster setup I use litte bash and ruby scripts you might find useful, check them out in my /scripts/ folder.
 CHECK THEM OUT AT FIRST BEFORE USING THEM!!!
 
-Fast symlinking /script/symlink_mini.sh:
+Fast symlinking:
 Just run 
-  $ sh symlink_mini.sh 
+    $ sh symlink_mini.sh 
 for quick setup. I use 2 different screen sizes so I use von gvimrc for my Mac Mini and the other for my Mac Book Air, that’s why there two!
 (NOTE: This will override all your dotfiles like .vimrc, gvimrc, zshrc, hgrc and so on)
 
