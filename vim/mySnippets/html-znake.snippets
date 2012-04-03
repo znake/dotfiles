@@ -76,3 +76,53 @@ snippet h4
 	<h4>${1}</h4>	
 snippet h5
 	<h5>${1}</h5>	
+# jQueryMobile
+snippet ja data-role href
+	<a data-role="${1:button}" href="#${2}">${3}</a>
+snippet ja href data-icon
+	<a href="${1}" data-icon="${2}">${3}</a>
+snippet ja href data-role data-icon
+	<a href="${1}" data-role"${2}" data-icon="${3}">${4}</a>
+snippet a
+	<a ${1} </a>
+snippet cm
+	<!-- ${1:comment} -->${2}
+snippet jdiv
+	<div data-role="${1}" id="${2}">
+		${3}	
+	</div>
+snippet jqm
+	<!doctype html>
+	<html>
+	<head>
+		<title>${1:Demo}</title>
+		<link href="jquery.mobile-1.0.1/jquery.mobile-1.0.1.css" rel="stylesheet" type="text/css"/> 
+		<script src="jquery.mobile-1.0.1/jquery-1.7.1.js"></script>
+		<script src="jquery.mobile-1.0.1/jquery.mobile-1.0.1.js"></script>
+	</head>
+
+	<body>
+
+		<!-- main page --> 
+		<div data-role="page" id="main">
+			<div data-role="header">
+				<h1>main page</h1>  
+			</div>
+			<div data-role="content">
+				<h1>page nav and dialog example</h1>  
+			</div>
+			<div data-role="footer">
+				<h4>main page footer</h4>  
+			</div>
+		</div>
+		<!-- first page end --> 
+
+	</body>
+	</html>
+snippet dp
+	data-position="${1:inline}"
+snippet lab
+	<label for="${1:name}">
+		${2}
+	</label>
+	

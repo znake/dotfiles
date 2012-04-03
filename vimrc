@@ -41,7 +41,7 @@ set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
 
 " find merge conflict markers
-map K <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+map Ü <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -78,10 +78,11 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>nt :NERDTreeToggle<CR>
+map <Leader><space> :NERDTreeToggle<CR>
 
 " repeat last record
-map L @@
+map K @@
+map <Leader>kk @q
 
 " go to last edit point
 map ö g;
@@ -104,15 +105,12 @@ noremap <Leader><Leader> <C-^>
 " Command-T configuration
 let g:CommandTMaxHeight=10
 
-" CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <C-\> :tnext<CR>
-
-
 " Show 3 lines of context around the cursor.
 set scrolloff=3
 " toggle scrolloff with ss
 nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<CR>
+map <Leader>sg :set scrolloff=15<cr>
+map <Leader>sk :set scrolloff=3<cr>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -140,10 +138,16 @@ set directory=~/.vim/backup
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
+" delete Text and go switch to insert mode between HTML-Tags
+map <Leader>< F>lct<
+
 " :Ack
 map <Leader>ak :Ack<space>
 
-imap fj <esc>
+" Show tabs and Carriage Returns
+
+" Use fj as <Esc> alternative
+inoremap fj <esc>
 
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -228,7 +232,6 @@ map <Leader>ll <C-w>l
 " make it easy to resize windows
 map + <C-W>4+
 map - <C-W>4-
-map ' <C-W>=
 " Window/Split Switching
 noremap <tab> <C-w>w
 " close window
@@ -368,8 +371,8 @@ if has("autocmd")
   " don´t highlight cursor line in LaTeX and .txt files and enable
   " spellchecking
   autocmd FileType tex setlocal nocursorline spell
-  autocmd FileType txt setlocal nocursorline spell
-  "au BufRead,BufNewFile *.txt setlocal nocursorline
+  autocmd FileType txt setlocal nocursorline
+  au BufRead,BufNewFile *.txt setlocal spell
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml

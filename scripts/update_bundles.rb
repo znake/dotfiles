@@ -18,7 +18,6 @@ git_bundles = [
   "git://github.com/scrooloose/syntastic.git",
   "git://github.com/timcharper/textile.vim.git",
   "git://github.com/tpope/vim-ragtag.git",
-  "git://github.com/astashov/vim-ruby-debugger.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/timcharper/textile.vim.git",
@@ -30,9 +29,7 @@ git_bundles = [
   "git://github.com/tpope/vim-rails.git",
   "git://github.com/tpope/vim-repeat.git",
   "git://github.com/tpope/vim-surround.git",
-  "git://github.com/tsaleh/vim-align.git",
   "git://github.com/tsaleh/vim-supertab.git",
-  "git://github.com/tsaleh/vim-tcomment.git",
   "git://github.com/vim-ruby/vim-ruby.git",
 ]
 
@@ -44,7 +41,7 @@ vim_org_scripts = [
 require 'fileutils'
 require 'open-uri'
 
-bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+bundles_dir = File.join(File.dirname(__FILE__), "../vim/bundle/")
 
 FileUtils.cd(bundles_dir)
 

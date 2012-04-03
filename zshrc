@@ -49,4 +49,5 @@ alias mm='mvim'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 export PATH=$PATH:~/bin
-
+export PATH=/usr/local/bin:$PATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

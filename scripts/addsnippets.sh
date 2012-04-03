@@ -1,8 +1,10 @@
 #!/bin/bash
-
+CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+FROM=$CURRENT_DIR/../vim/mySnippets/*.snippets
+TO=$CURRENT_DIR/../vim/bundle/snipmate.vim/snippets
 if [ -d ~/.vim ]; then
     if [ -d ~/.vim/bundle/snipmate.vim ]; then
-        ln -nfs ~/Dropbox/Library/dotfiles/vim/mySnippets/*.snippets ~/Dropbox/Library/dotfiles/vim/bundle/snipmate.vim/snippets
+        ln -nfs $FROM $TO
         echo "Symlinked snippets successfully :)"
     else
         echo "Please install snipMate vim plugin first!"
