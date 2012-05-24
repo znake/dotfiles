@@ -6,7 +6,7 @@ if [ -d ~/.oh-my-zsh ]; then
   echo ln -nfs $CURRENT_DIR/../vimrc ~/.vimrc
   ln -nfs $CURRENT_DIR/../vimrc ~/.vimrc
   echo ln -nfs $CURRENT_DIR/../gvimrcAir ~/.gvimrc
-  ln -nfs $CURRENT_DIR/../gvimrcMini ~/.gvimrc
+  ln -nfs $CURRENT_DIR/../gvimrcAir ~/.gvimrc
   echo ln -nfs $CURRENT_DIR/../vim ~/.vim
   ln -nfs $CURRENT_DIR/../vim ~/.vim
   echo ln -nfs $CURRENT_DIR/../hgrc ~/.hgrc

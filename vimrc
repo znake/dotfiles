@@ -2,17 +2,19 @@ set nocompatible
 
 let mapleader = ","
 
-" Pathogen 
+" Pathogen
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
+
+set cursorline
 
 set number
 set ruler
 syntax on
 
-" Auto indent after pasting 
-map <leader>p p'[v']=                                                             
-map <leader>P P'[v']= 
+" Auto indent after pasting
+map <Leader>p p'[v']=
+map <Leader>P P'[v']=
 
 " Set encoding
 set encoding=utf-8
@@ -34,23 +36,24 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-" make uses real tabs
-au FileType make set noexpandtab
 
 set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
 
 " find merge conflict markers
-map Ü <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+map <Leader>me <ESC>/\v^[<=>]{7}( .*\|$)<cr>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 " Disable Synstastic for Latex
 let g:syntastic_disabled_filetypes = ['tex']
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['coffee', 'html', 'ruby', 'php', 'javascript', 'python', 'haml'],
+                           \ 'passive_filetypes': ['tex'] }
 
 " Useful status information at bottom of screen
-set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P 
+set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P
 
 " disable VIM welcome screen
 set shortmess+=I
@@ -78,20 +81,39 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader><space> :NERDTreeToggle<CR>
+map <Leader><space> :NERDTreeToggle<cr>
+
+"Open last/alternate buffer
+noremap <Leader><Leader> <C-^>
+map ä <C-^>
+
+map <Leader>ö "0p
 
 " repeat last record
 map K @@
-map <Leader>kk @q
+map <Leader>q @q
 
 " go to last edit point
 map ö g;
-" go to last cursor position
-map Ö <C-o>
-" go to previous cursor position
-map _ <C-i>
+" go to newer edit point
+map Ö g,
 
-" For usual moving behaviour in wrapped lines"
+" go to last cursor position
+map ü <C-o>
+
+" delete Line
+map Ü 0D
+
+" Spell checking command
+nmap <Up> zg
+nmap <Down> zug
+nmap <Right> ]s
+nmap <Left> [s
+
+" cursorline toggle
+map <Leader>cl :set cursorline!<cr>
+
+" For usual moving behaviour in wrapped lines
 map j gj
 map k gk
 
@@ -99,16 +121,13 @@ map k gk
 vnoremap < <gv
 vnoremap > >gv
 
-"Open last/alternate buffer
-noremap <Leader><Leader> <C-^>
-
 " Command-T configuration
 let g:CommandTMaxHeight=10
 
 " Show 3 lines of context around the cursor.
-set scrolloff=3
+set scrolloff=15
 " toggle scrolloff with ss
-nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<CR>
+nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
 map <Leader>sg :set scrolloff=15<cr>
 map <Leader>sk :set scrolloff=3<cr>
 
@@ -146,8 +165,9 @@ map <Leader>ak :Ack<space>
 
 " Show tabs and Carriage Returns
 
-" Use fj as <Esc> alternative
+" Use fj or jf as <Esc> alternative
 inoremap fj <esc>
+inoremap jf <esc>
 
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -167,21 +187,21 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 let g:Tex_DefaultTargetFormat = 'pdf'
- 
+
 let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi'
 let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
 let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
 let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
- 
+
 let g:Tex_ViewRule_dvi = 'texniscope'
 let g:Tex_ViewRule_ps = 'Preview'
 let g:Tex_ViewRule_pdf = 'Skim'
- 
+
 let g:Tex_FormatDependency_ps  = 'dvi,ps'
 let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf'
 let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
- 
+
 let g:Tex_EnvironmentMenus = 0
 let g:Tex_FontMaps = 0
 let g:Tex_FontMenus = 0
@@ -197,21 +217,22 @@ let g:Tex_GotoError = 0
        \"Missing number, treated as zero.\n".
        \"There were undefined references\n".
        \"Citation %.%# undefined\n".
-       \"\oval, \circle, or \line size unavailable\n"' 
+       \"\oval, \circle, or \line size unavailable\n"'
 "For proper inverse sync with Skim you ned to add this in your Skim Sync Settings
 "Settings: own
 "Command: mvim
-"Arguments: --remote-silent +":%line;foldo!" "%file" 
+"Arguments: --remote-silent +":%line;foldo!" "%file"
 
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-map <Leader>la :w<cr> ,ll 
+map <Leader>la :w<cr> ,ll
 map <Leader>ld :w<cr> ,ll ,ls
 
 " MAPPINGS
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
+map <Leader>vi :edit ~/.vimrc<cr>
 
 " Tabularaized for rails
 function! IndentX()
@@ -227,15 +248,18 @@ map <Leader>ta :Tabularize /
 map <Leader>hh <C-w>h
 map <Leader>jj <C-w>j
 map <Leader>kk <C-w>k
-map <Leader>ll <C-w>l 
+map <Leader>ll <C-w>l
 
 " make it easy to resize windows
 map + <C-W>4+
 map - <C-W>4-
-" Window/Split Switching
+
+" use tab to switch buffers
 noremap <tab> <C-w>w
-" close window
+
+" close buffer
 map <C-c> <c-w>c
+
 " horizontal split window
 map <C-x> <c-w>s
 
@@ -243,25 +267,40 @@ map <C-x> <c-w>s
 map <Leader>bi <C-w>10+
 map <Leader>bu <C-w>10-
 
-" Force Saving Files that Require Root Permission
+" force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
 
 map <Leader>hl :set hlsearch! hlsearch?<cr>
 
 " indent whole file jump back to current position
 map <Leader>id mmgg=G'm
-" indent block of code
+
+" indent paragraph of code
 map <Leader>ib vip=
 
 " insert new line
 nmap t o<ESC>k
 nmap T O<ESC>j
 
+" make :W to :w -> no annoying error Message when typend wrong
+cnoreabbrev W w
+
+" center current cursor line
+map M zz
+
 " open Tlist (for ctags)
 map <Leader>tl :Tlist<cr>
 
 "Remove All the Trailing Whitespaces
-nnoremap <leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
+nnoremap <Leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
+
+" CoffeeScript
+map <Leader>cO :CoffeeCompile watch<cr>
+map <Leader>co :CoffeeCompile watch vert<cr>
+map <Leader>cp :CoffeeCompile unwatch<cr>
+map <Leader>cr :CoffeeRun<cr>
+map <Leader>sb :set scrollbind!<cr>
+
 
 " using the surround plugin
 " operates on a normal word w
@@ -274,17 +313,12 @@ map <Leader>sl yss
 " Use system clipboard for copy and paste
 set clipboard=unnamed
 
-nmap <leader>sp :set spell!<CR>
+nmap <Leader>sp :set spell!<cr>
 " Set region to British English
 set spelllang=de_at
 
-map <leader>se :set spelllang=en_gb<cr>
-map <leader>sd :set spelllang=de_at<cr>
-"
-" spellchecking commands
-map ä ]s
-map ü [s
-map Ä zg
+map <Leader>se :set spelllang=en_gb<cr>
+map <Leader>sd :set spelllang=de_at<cr>
 
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
@@ -297,16 +331,16 @@ map <Leader>rl :Rlayout<cr>
 map <Leader>rs :Rspec<cr>
 map <Leader>ry :Rstylesheet<cr>
 map <Leader>ru :Runittest<cr>
-map <Leader>ga :A<cr> 
-map <Leader>gr :R<cr> 
+map <Leader>ga :A<cr>
+map <Leader>gr :R<cr>
 
 " Filetype mappings
-map <Leader>fh :set ft=html<cr> 
-map <Leader>fj :set ft=javascript<cr> 
-map <Leader>fr :set ft=ruby<cr> 
-map <Leader>fl :set ft=tex<cr> 
-map <Leader>fp :set ft=php<cr> 
-map <Leader>fs :set ft=sql<cr> 
+map <Leader>fh :set ft=html<cr>
+map <Leader>fj :set ft=javascript<cr>
+map <Leader>fr :set ft=ruby<cr>
+map <Leader>fl :set ft=tex<cr>
+map <Leader>fp :set ft=php<cr>
+map <Leader>fs :set ft=sql<cr>
 
 " Fugitive
 map <Leader>gD :Gdiff<cr>
@@ -344,7 +378,7 @@ map <Leader>jj <C-]>
 map <Leader>re :reg<cr>
 
 " show all hex colors
-map <leader>xh :call HexHighlight()<cr>
+map <Leader>xh :call HexHighlight()<cr>
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
@@ -354,6 +388,9 @@ if has("autocmd")
   filetype plugin indent on
   " OPTIONAL: This enables automatic indentation as you type.
   filetype indent on
+
+  " Autocompile coffeescript buffer on save
+  au BufWritePost *.coffee silent CoffeeMake!
 
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -371,8 +408,11 @@ if has("autocmd")
   " don´t highlight cursor line in LaTeX and .txt files and enable
   " spellchecking
   autocmd FileType tex setlocal nocursorline spell
-  autocmd FileType txt setlocal nocursorline
-  au BufRead,BufNewFile *.txt setlocal spell
+  "autocmd FileType txt setlocal nocursorline
+  au BufRead,BufNewFile *.txt setlocal nocursorline spell
+
+  au BufRead,BufNewFile *.md setlocal spell nocursorline
+  au BufRead,BufNewFile *.markdown setlocal spell nocursorline
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
@@ -386,6 +426,63 @@ if has("autocmd")
   au BufNewFile,BufRead *.json set ft=javascript
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-  au FileType python  set tabstop=4 
+  au FileType python  set tabstop=4
 endif
 
+map <Leader>st :SeeTab<cr>
+
+
+fu! SeeTab()
+  if !exists("g:SeeTabEnabled")
+    let g:SeeTabEnabled = 0
+  end
+  if g:SeeTabEnabled==0
+    syn match leadspace /^\s\+/ contains=syntab
+    exe "syn match syntab /\\s\\{" . &sw . "}/hs=s,he=s+1 contained"
+    hi syntab guibg=#800040
+    let g:SeeTabEnabled=1
+  else
+    syn clear leadspace
+    syn clear syntab
+    let g:SeeTabEnabled=0
+  end
+endfunc
+com! -nargs=0 SeeTab :call SeeTab()
+
+
+" Remove trailing whitespace on save
+function! Preserve(command)
+    " Save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    execute a:command
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+" Execute clear whitespace on save
+autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
+
+
+" improve performance of ctrlp
+let ctrlp_filter_greps = "".
+    \ "egrep -iv '\\.(" .
+    \ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
+    \ ")$' | " .
+    \ "egrep -v '^(\\./)?(" .
+    \ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
+    \ ")'"
+
+let my_ctrlp_git_command = "" .
+    \ "cd %s && git ls-files | " .
+    \ ctrlp_filter_greps
+
+if has("unix")
+    let my_ctrlp_user_command = "" .
+    \ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
+    \ ctrlp_filter_greps
+endif
+
+let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]

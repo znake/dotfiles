@@ -6,12 +6,13 @@ git_bundles = [
   "git://github.com/mileszs/ack.vim.git",
   "git://github.com/vim-scripts/AutoClose.git",
   "git://github.com/mineiro/vim-latex.git",
-  "git://github.com/mexpolk/vim-bufexplorer",
+  "git://github.com/vim-scripts/bufexplorer.zip.git",
   "git://github.com/wincent/Command-T.git",
   "git://github.com/tpope/vim-endwise.git",
+  "git://github.com/kien/ctrlp.vim.git",
   "git://github.com/godlygeek/tabular.git",
   "git://github.com/kchmck/vim-coffee-script.git",
-  "git://github.com/mhz/vim-matchit.git",
+  "git://github.com/edsono/vim-matchit.git",
   "git://github.com/pangloss/vim-javascript.git",
   "git://github.com/robgleeson/vim-markdown-preview.git",
   "git://github.com/scrooloose/nerdcommenter.git",
@@ -31,6 +32,7 @@ git_bundles = [
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/tsaleh/vim-supertab.git",
   "git://github.com/vim-ruby/vim-ruby.git",
+  "git://github.com/vim-scripts/taglist.git"
 ]
 
 vim_org_scripts = [
