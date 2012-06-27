@@ -1,4 +1,4 @@
-" Vim color scheme based on: 
+" Vim color scheme based on:
 "
 " Name:         railscasts.vim
 " Maintainer:   Nick Moffitt <nick@zork.net>
@@ -44,7 +44,7 @@ hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
-highlight Normal                    guifg=#E6E1DC guibg=#000000 
+highlight Normal                    guifg=#E6E1DC guibg=#000000
 highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#ff0080
 highlight MatchParen                guifg=#E6E1DC ctermfg=15 gui=NONE guibg=#660066 ctermbg=23
 highlight CursorLine                guibg=#1b000d ctermbg=233 cterm=NONE
@@ -72,7 +72,7 @@ highlight Folded 		                guibg=#00003c guifg=#a0a8b0 gui=none
 
 highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
-highlight Special                   guifg=#DA4939 ctermfg=167 
+highlight Special                   guifg=#DA4939 ctermfg=167
 
 highlight pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
 highlight rubyBlockParameter        guifg=#FFFFFF ctermfg=15
@@ -94,6 +94,6 @@ highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
 highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
 highlight SpellBad                   guibg=#2b0000 gui=NONE
-highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE 
+highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellCap                   guifg=#D0D0FF ctermfg=189 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellLocal                 guibg=#2b0000 gui=NONE

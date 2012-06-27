@@ -1,4 +1,4 @@
-set guifont=Monaco:h16            " Font family and font size. => 1280x800px
+set guifont=Monaco:h17            " Font family and font size. => 1280x800px
 set antialias                     " MacVim: smooth fonts.
 set encoding=utf-8                " Use UTF-8 everywhere.
 set guioptions-=r                 " Don't show right scrollbar
@@ -75,7 +75,7 @@ color znake
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
+  setlocal listchars=tab:\ \
 endfunction
 
 " Project Tree
@@ -106,7 +106,7 @@ function s:CdIfDirectory(directory)
 
   " Allows reading from stdin
   " ex: git diff | mvim -R -
-  if strlen(a:directory) == 0 
+  if strlen(a:directory) == 0
     return
   endif
 

@@ -22,6 +22,7 @@ set encoding=utf-8
 " CTags for TList
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let TlistHighlightTag=0
+set runtimepath+=/usr/local/share/vim/vimfiles/
 
 " Autoread, files gets automatically updated when newer files are generated
 " see :h W11
@@ -105,13 +106,18 @@ map ü <C-o>
 map Ü 0D
 
 " Spell checking command
-nmap <Up> zg
-nmap <Down> zug
-nmap <Right> ]s
-nmap <Left> [s
+nmap <S-Up> zg
+nmap <S-Down> zug
+nmap <S-Right> ]s
+nmap <S-Left> [s
+
+map <Leader>bl :set background=light<cr>
+map <Leader>bk :set background=dark<cr>
 
 " cursorline toggle
-map <Leader>cl :set cursorline!<cr>
+map <Leader>lc :set cursorline!<cr>
+
+map <Leader>hs <C-CR>
 
 " For usual moving behaviour in wrapped lines
 map j gj
@@ -233,6 +239,62 @@ map <Leader>ld :w<cr> ,ll ,ls
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 map <Leader>vi :edit ~/.vimrc<cr>
+map <Leader>to :edit ~/Dropbox/todo.org<cr>
+map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
+fu! DeleteSigns()
+  %s/"//gi
+  %s/“//gi
+  %s/„//gi
+  %s/”//gi
+endfu
+
+map <Leader>de :call DeleteSigns()<cr>
+
+fu! ReplaceWhatever()
+  %s/"//gi
+  %s/“//gi
+  %s/„//gi
+  %s/”//gi
+  %s/best. /bestimmte /g
+  %s/techn. /teschnische /g
+  %s/=>/d.h./g
+  %s/->/d.h./g
+  %s/- //g
+  %s/SW/Software/g
+  %s/HW/Hardware/g
+  %s/ISs/Informationssysteme/g
+  %s/unterschiedl. /unterschiedliche /g
+  %s/unbest. /unbestimmte /g
+  %s/untersch. /unterschiedlich /g
+  %s/bel. /beliebige /g
+  %s/zeitl. /zeitlich /g
+  %s/insbes. /insbesondere /g
+  %s/technolog. /technologische /g
+  %s/BS/Betriebssystem/g
+  %s/DBs/Datenbanken/g
+  %s/Datenbank/Datenbanken/g
+  %s/BL/Bussiness Layer/g
+  %s/AL/Application Layer/g
+  %s/TL/Technology Layer/g
+  %s/AM/ArchiMate/g
+  %s/GFs/Geschäftsfunktionen/g
+  %s/GF/Geschäftsfunktion/g
+  %s/GPs/Geschäftsprozesse/g
+  %s/GP/Geschäftsprozess/g
+  %s/SO/Service Orientation/g
+  %s/zw. /zwischen /g
+  %s/DL/Dienstleistung/g
+  %s/AI/Application Interface/g
+  %s/UA/Unternehmensarchitektur/g
+  %s/UAs/Unternehmensarchitekturen/g
+  %s/SO/Service Orientation/g
+  %s/GO/Geschäfts Objekt/g
+endfu
+
+map <Leader>rw :call ReplaceWhatever()<cr>
 
 " Tabularaized for rails
 function! IndentX()
@@ -253,12 +315,22 @@ map <Leader>ll <C-w>l
 " make it easy to resize windows
 map + <C-W>4+
 map - <C-W>4-
+map 1 <C-W>6>
+map 2 <C-W>6<
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
+" change last word
+noremap <backspace> bdW
+
+" move buffers
+map 9 <C-W>L
+map 8 <C-W>H
 
 " close buffer
 map <C-c> <c-w>c
+map <Leader>sv <c-w>v
+map <Leader>sh <c-w>s
 
 " horizontal split window
 map <C-x> <c-w>s
@@ -341,10 +413,11 @@ map <Leader>fr :set ft=ruby<cr>
 map <Leader>fl :set ft=tex<cr>
 map <Leader>fp :set ft=php<cr>
 map <Leader>fs :set ft=sql<cr>
+map <Leader>ft :set ft=txt<cr>
 
 " Fugitive
-map <Leader>gD :Gdiff<cr>
-map <Leader>gd :Gstatus<cr>:Gdiff<cr>
+map <Leader>gd :Gdiff<cr>
+map <Leader>gD :Gstatus<cr>:Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>i
 map <Leader>ge :Gedit<cr>
@@ -409,7 +482,7 @@ if has("autocmd")
   " spellchecking
   autocmd FileType tex setlocal nocursorline spell
   "autocmd FileType txt setlocal nocursorline
-  au BufRead,BufNewFile *.txt setlocal nocursorline spell
+  au BufRead,BufNewFile *.txt setlocal nocursorline
 
   au BufRead,BufNewFile *.md setlocal spell nocursorline
   au BufRead,BufNewFile *.markdown setlocal spell nocursorline
@@ -466,23 +539,29 @@ endfunction
 autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 
 
+" TESTING AREA
+autocmd FileType gitcommit DiffGitCached | wincmd p
+
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org call org#SetOrgFileType()
+
 " improve performance of ctrlp
-let ctrlp_filter_greps = "".
-    \ "egrep -iv '\\.(" .
-    \ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
-    \ ")$' | " .
-    \ "egrep -v '^(\\./)?(" .
-    \ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
-    \ ")'"
+"let ctrlp_filter_greps = "".
+    "\ "egrep -iv '\\.(" .
+    "\ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
+    "\ ")$' | " .
+    "\ "egrep -v '^(\\./)?(" .
+    "\ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
+    "\ ")'"
 
-let my_ctrlp_git_command = "" .
-    \ "cd %s && git ls-files | " .
-    \ ctrlp_filter_greps
+"let my_ctrlp_git_command = "" .
+    "\ "cd %s && git ls-files | " .
+    "\ ctrlp_filter_greps
 
-if has("unix")
-    let my_ctrlp_user_command = "" .
-    \ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
-    \ ctrlp_filter_greps
-endif
+"if has("unix")
+    "let my_ctrlp_user_command = "" .
+    "\ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
+    "\ ctrlp_filter_greps
+"endif
 
-let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
+"let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]

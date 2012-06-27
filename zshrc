@@ -10,6 +10,8 @@ ZSH_THEME="znake"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ti="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.0.2.GA/titanium.py"
+alias so="source ~/.zshrc"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -34,9 +36,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # create new folder and cd into it
-function take() { 
+function take() {
     mkdir -p "$1"
-    cd "$1" 
+    cd "$1"
 }
 
 # Finder
@@ -46,7 +48,7 @@ alias o='open .'
 alias m='mvim .'
 alias mm='mvim'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export PATH=$PATH:~/bin
 export PATH=/usr/local/bin:$PATH
