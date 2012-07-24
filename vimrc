@@ -85,7 +85,8 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
 
 "Open last/alternate buffer
-noremap <Leader><Leader> <C-^>
+noremap <Leader><Leader> :bn<cr>
+
 map ä <C-^>
 
 map <Leader>ö "0p
@@ -174,6 +175,12 @@ map <Leader>ak :Ack<space>
 " Use fj or jf as <Esc> alternative
 inoremap fj <esc>
 inoremap jf <esc>
+inoremap JF <esc>
+inoremap FJ <esc>
+inoremap jF <esc>
+inoremap Fj <esc>
+inoremap Jf <esc>
+inoremap fJ <esc>
 
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -239,6 +246,7 @@ map <Leader>ld :w<cr> ,ll ,ls
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 map <Leader>vi :edit ~/.vimrc<cr>
+map <Leader>gi :edit ~/.gvimrc<cr>
 map <Leader>to :edit ~/Dropbox/todo.org<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 " automatically reload vimrc when it's saved
@@ -263,6 +271,9 @@ fu! ReplaceWhatever()
   %s/=>/d.h./g
   %s/->/d.h./g
   %s/- //g
+  %s/u. /und /g
+  %s/v.a. /vor allem /g
+  %s/o.a. /oder anderem/g
   %s/SW/Software/g
   %s/HW/Hardware/g
   %s/ISs/Informationssysteme/g
@@ -271,27 +282,12 @@ fu! ReplaceWhatever()
   %s/untersch. /unterschiedlich /g
   %s/bel. /beliebige /g
   %s/zeitl. /zeitlich /g
+  %s/i.A. /im Allgemeinen /g
   %s/insbes. /insbesondere /g
   %s/technolog. /technologische /g
   %s/BS/Betriebssystem/g
   %s/DBs/Datenbanken/g
-  %s/Datenbank/Datenbanken/g
-  %s/BL/Bussiness Layer/g
-  %s/AL/Application Layer/g
-  %s/TL/Technology Layer/g
-  %s/AM/ArchiMate/g
-  %s/GFs/Geschäftsfunktionen/g
-  %s/GF/Geschäftsfunktion/g
-  %s/GPs/Geschäftsprozesse/g
-  %s/GP/Geschäftsprozess/g
-  %s/SO/Service Orientation/g
   %s/zw. /zwischen /g
-  %s/DL/Dienstleistung/g
-  %s/AI/Application Interface/g
-  %s/UA/Unternehmensarchitektur/g
-  %s/UAs/Unternehmensarchitekturen/g
-  %s/SO/Service Orientation/g
-  %s/GO/Geschäfts Objekt/g
 endfu
 
 map <Leader>rw :call ReplaceWhatever()<cr>
@@ -565,3 +561,69 @@ au BufEnter *.org call org#SetOrgFileType()
 "endif
 
 "let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
+
+ "function! OrgCustomColors()
+    "" various Org syntax item highlighting statements below
+    "" are the current defaults.  Uncomment and edit a line if you
+    "" want different highlighting for the element.
+
+    "" Below are defaults for any TODOS you define.  TODOS that
+    "" come before the | in a definition will use  'NOTDONETODO'
+    "" and those that come after are DONETODO
+    "hi! DONETODO guifg=green ctermfg=green
+    "hi! NOTDONETODO guifg=red ctermfg=lightred
+
+    "" Heading level highlighting is done in pairs, one for the
+    "" heading when unfolded and one for folded.  Default is to make
+    "" them the same except for the folded version being bold:
+    "" assign OL1 pair for level 1, OL2 pair for level 2, etc.
+    "hi! OL1 guifg=somecolor guibg=somecolor
+    "hi! OL1Folded guifg=somecolor guibg=somecolor gui=bold
+
+
+    "" Tags are lines below headings that have :colon:separated:tags:
+    "hi! Org_Tag guifg=lightgreen ctermfg=blue
+
+    ""  Lines that begin with '#+' in column 0 are config lines
+    "hi! Org_Config_Line guifg=darkgray ctermfg=magenta
+
+    "" Drawers are :PROPERTIES: and :LOGBOOK: lines and their associated
+    "" :END: lines
+    "hi! Org_Drawer guifg=pink ctermfg=magenta
+    "hi! Org_Drawer_Folded guifg=pink ctermfg=magenta gui=bold cterm=bold
+
+    "" This applies to value names in :PROPERTIES: blocks
+    "hi! Org_Property_Value guifg=pink ctermfg=magenta
+
+    "" Three lines below apply to different kinds of blocks
+    "hi! Org_Block guifg=#555555 ctermfg=magenta
+    "hi! Org_Src_Block guifg=#555555 ctermfg=magenta
+    "hi! Org_Table guifg=#888888 guibg=#333333 ctermfg=magenta
+
+    "" Dates are date specs between angle brackets (<>) or square brackets ([])
+    "hi! Org_Date guifg=magenta ctermfg=magenta gui=underline cterm=underline
+
+    "" Org_Star is used to "hide" initial asterisks in a heading
+    "hi! Org_Star guifg=#444444 ctermfg=darkgray
+
+    "hi! Props guifg=#ffa0a0 ctermfg=gray
+
+    "" Bold, italics, underline, and code are highlights applied
+    "" to character formatting
+    "hi! Org_Code guifg=darkgray gui=bold ctermfg=14
+    "hi! Org_Itals gui=italic guifg=#aaaaaa ctermfg=lightgray
+    "hi! Org_Bold gui=bold guifg=#aaaaaa ctermfg=lightgray
+    "hi! Org_Underline gui=underline guifg=#aaaaaa ctermfg=lightgray
+    "hi! Org_Lnumber guifg=#999999 ctermfg=gray
+
+    "" These lines apply to links: [[link]], and [[link][link desc]]
+    "if has("conceal")
+        "hi! default linkends guifg=blue ctermfg=blue
+    "endif
+    "hi! Org_Full_Link guifg=cyan gui=underline ctermfg=lightblue cterm=underline
+    "hi! Org_Half_Link guifg=cyan gui=underline ctermfg=lightblue cterm=underline
+
+    ""  Applies to the Heading line that can be displayed in column view
+    "highlight OrgColumnHeadings guibg=#444444 guifg=#aaaaaa gui=underline
+
+ "endfunction
