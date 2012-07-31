@@ -46,7 +46,7 @@ alias o='open .'
 alias m='mvim .'
 alias mm='mvim'
 
-alias ti="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.0.GA/titanium.py"
+alias titanium="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.0.GA/titanium.py"
 alias so="source ~/.zshrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

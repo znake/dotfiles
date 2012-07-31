@@ -97,3 +97,17 @@ highlight SpellBad                   guibg=#2b0000 gui=NONE
 highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellCap                   guifg=#D0D0FF ctermfg=189 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellLocal                 guibg=#2b0000 gui=NONE
+
+highlight VimwikiHeader1             guifg=#ff6666
+highlight VimwikiHeader2             guifg=#ff8000
+highlight VimwikiHeader3             guifg=#ffff66
+highlight VimwikiHeader4             guifg=#66ffcc
+highlight VimwikiHeader5             guifg=#008040
+highlight VimwikiHeader6             guifg=#66ccff
+
+"highlight VimwikiHeader1             guifg=#66ccff
+"highlight VimwikiHeader2             guifg=#66ffcc
+"highlight VimwikiHeader3             guifg=#008040
+"highlight VimwikiHeader4             guifg=#ffcc66
+"highlight VimwikiHeader5             guifg=#ffff66
+"highlight VimwikiHeader6             guifg=#ff6666

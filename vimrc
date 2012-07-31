@@ -12,6 +12,7 @@ set number
 set ruler
 syntax on
 
+
 " Auto indent after pasting
 map <Leader>p p'[v']=
 map <Leader>P P'[v']=
@@ -85,7 +86,7 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
 
 "Open last/alternate buffer
-noremap <Leader><Leader> :bn<cr>
+noremap <Leader><Leader> :only<cr>
 
 map ä <C-^>
 
@@ -242,12 +243,17 @@ map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 map <Leader>la :w<cr> ,ll
 map <Leader>ld :w<cr> ,ll ,ls
 
+let g:vimwiki_hl_cb_checked = 1
+"let g:vimwiki_fold_lists = 1
+"let g:vimwiki_folding = 1
+
 " MAPPINGS
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
 map <Leader>vi :edit ~/.vimrc<cr>
+map <Leader>to :edit ~/Dropbox/Library/vimwiki/index.wiki<cr>
+map <Leader>zi :edit ~/.zshrc<cr>
 map <Leader>gi :edit ~/.gvimrc<cr>
-map <Leader>to :edit ~/Dropbox/todo.org<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
@@ -311,8 +317,8 @@ map <Leader>ll <C-w>l
 " make it easy to resize windows
 map + <C-W>4+
 map - <C-W>4-
-map 1 <C-W>6>
-map 2 <C-W>6<
+map 2 <C-W>6>
+map 1 <C-W>6<
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
@@ -327,6 +333,7 @@ map 8 <C-W>H
 map <C-c> <c-w>c
 map <Leader>sv <c-w>v
 map <Leader>sh <c-w>s
+map <Leader>sr <c-w>r
 
 " horizontal split window
 map <C-x> <c-w>s
@@ -360,7 +367,7 @@ map M zz
 map <Leader>tl :Tlist<cr>
 
 "Remove All the Trailing Whitespaces
-nnoremap <Leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
+"nnoremap <Leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
 
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
@@ -368,6 +375,7 @@ map <Leader>co :CoffeeCompile watch vert<cr>
 map <Leader>cp :CoffeeCompile unwatch<cr>
 map <Leader>cr :CoffeeRun<cr>
 map <Leader>sb :set scrollbind!<cr>
+map <Leader>mc :CoffeeMake!<cr>
 
 
 " using the surround plugin
@@ -410,6 +418,7 @@ map <Leader>fl :set ft=tex<cr>
 map <Leader>fp :set ft=php<cr>
 map <Leader>fs :set ft=sql<cr>
 map <Leader>ft :set ft=txt<cr>
+map <Leader>fj :set fm=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
@@ -459,7 +468,7 @@ if has("autocmd")
   filetype indent on
 
   " Autocompile coffeescript buffer on save
-  au BufWritePost *.coffee silent CoffeeMake!
+  "au BufWritePost *.coffee silent CoffeeMake!
 
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -499,7 +508,6 @@ if has("autocmd")
 endif
 
 map <Leader>st :SeeTab<cr>
-
 
 fu! SeeTab()
   if !exists("g:SeeTabEnabled")
