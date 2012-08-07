@@ -45,6 +45,7 @@ alias o='open .'
 # VIM
 alias m='mvim .'
 alias mm='mvim'
+alias android='sh ~/Android\ SDKs/Titanium/tools/android'
 
 alias titanium="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.0.GA/titanium.py"
 alias so="source ~/.zshrc"

@@ -255,8 +255,9 @@ map <Leader>to :edit ~/Dropbox/Library/vimwiki/index.wiki<cr>
 map <Leader>zi :edit ~/.zshrc<cr>
 map <Leader>gi :edit ~/.gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
+
 " automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vimrc
+au BufWritePost .vimrc source ~/.vimrc
 
 fu! DeleteSigns()
   %s/"//gi
@@ -315,10 +316,10 @@ map <Leader>kk <C-w>k
 map <Leader>ll <C-w>l
 
 " make it easy to resize windows
-map + <C-W>4+
-map - <C-W>4-
-map 2 <C-W>6>
 map 1 <C-W>6<
+map 2 <C-W>6>
+map 3 <C-W>4-
+map 4 <C-W>4+
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
@@ -337,10 +338,6 @@ map <Leader>sr <c-w>r
 
 " horizontal split window
 map <C-x> <c-w>s
-
-" make the actual window bigger (horizontal split)
-map <Leader>bi <C-w>10+
-map <Leader>bu <C-w>10-
 
 " force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
@@ -376,6 +373,9 @@ map <Leader>cp :CoffeeCompile unwatch<cr>
 map <Leader>cr :CoffeeRun<cr>
 map <Leader>sb :set scrollbind!<cr>
 map <Leader>mc :CoffeeMake!<cr>
+
+map <Leader>da ggdG
+map <Leader>va ggVG
 
 
 " using the surround plugin
@@ -422,9 +422,9 @@ map <Leader>fj :set fm=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
-map <Leader>gD :Gstatus<cr>:Gdiff<cr>
+map <Leader>gD :Gstatus<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>gc :Gcommit<cr>i
+map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
@@ -438,11 +438,6 @@ map <Leader>bd :bd<cr>
 map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
 map <Leader>bo :only<cr>
-
-" VCS Command Commit
-map <Leader>vc :VCSCommit<cr>
-map <Leader>vd :VCSDiff<cr>
-map <Leader>va :VCSAdd<cr>
 
 " delete empty lines
 map <Leader>dl :g/^$/d<cr>
@@ -468,7 +463,7 @@ if has("autocmd")
   filetype indent on
 
   " Autocompile coffeescript buffer on save
-  "au BufWritePost *.coffee silent CoffeeMake!
+  au BufWritePost *.coffee silent CoffeeMake!
 
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
