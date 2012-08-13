@@ -76,6 +76,8 @@ set wildmenu " Enhanced command line completion.
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
+map ; :bn<cr>
+
 " Status bar
 set laststatus=2
 
@@ -84,6 +86,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+map <Leader>ä :TagbarToggle<cr>
 
 "Open last/alternate buffer
 noremap <Leader><Leader> :only<cr>
@@ -250,10 +253,10 @@ let g:vimwiki_hl_cb_checked = 1
 " MAPPINGS
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
-map <Leader>vi :edit ~/.vimrc<cr>
+map <Leader>vi :edit ~/Dropbox/Library/dotfiles/vimrc<cr>
 map <Leader>to :edit ~/Dropbox/Library/vimwiki/index.wiki<cr>
-map <Leader>zi :edit ~/.zshrc<cr>
-map <Leader>gi :edit ~/.gvimrc<cr>
+map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
+map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 
 " automatically reload vimrc when it's saved
@@ -316,10 +319,10 @@ map <Leader>kk <C-w>k
 map <Leader>ll <C-w>l
 
 " make it easy to resize windows
-map 1 <C-W>6<
-map 2 <C-W>6>
-map 3 <C-W>4-
-map 4 <C-W>4+
+nmap <m-Left> <C-W>6<
+nmap <m-Right> <C-W>6>
+nmap <m-Up> <C-W>4-
+nmap <m-Down> <C-W>4+
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
@@ -332,6 +335,8 @@ map 8 <C-W>H
 
 " close buffer
 map <C-c> <c-w>c
+
+" split buffer options
 map <Leader>sv <c-w>v
 map <Leader>sh <c-w>s
 map <Leader>sr <c-w>r
@@ -438,6 +443,10 @@ map <Leader>bd :bd<cr>
 map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
 map <Leader>bo :only<cr>
+
+" fast
+nmap <D-Left> :bn<cr>
+nmap <D-Right> :bp<cr>
 
 " delete empty lines
 map <Leader>dl :g/^$/d<cr>
