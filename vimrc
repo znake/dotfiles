@@ -12,8 +12,9 @@ set number
 set ruler
 syntax on
 
+map <c-9> :bn<cr>
+map <c-8> :bp<cr>
 
-" Auto indent after pasting
 map <Leader>p p'[v']=
 map <Leader>P P'[v']=
 
@@ -364,9 +365,6 @@ cnoreabbrev W w
 
 " center current cursor line
 map M zz
-
-" open Tlist (for ctags)
-map <Leader>tl :Tlist<cr>
 
 "Remove All the Trailing Whitespaces
 "nnoremap <Leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
