@@ -101,10 +101,10 @@ map <Leader>q @q
 " next buffer
 map Ö :bn<cr>
 " previous buffer
-map ö :bp<cr>
+map ö g;<cr>
 
 " go to last cursor position
-map ü g;
+map ü :bp<cr>
 
 " delete Line
 map Ü 0D
