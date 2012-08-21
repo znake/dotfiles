@@ -130,6 +130,10 @@ snippet base
 	<base href="${1}" target="${2}"`Close()`>
 snippet r
 	<br`Close()[1:]`>
+snippet div
+	<div id="${1:name}">
+		${2}
+	</div>
 # Embed QT Movie
 snippet movie
 	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
@@ -157,6 +161,8 @@ snippet form
 
 	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
+snippet h1
+	<h1 id="${1:heading}">${2:$1}</h1>
 snippet input
 	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
 snippet label
@@ -175,5 +181,10 @@ snippet select
 	<select name="${1:some_name}" id="${2:$1}">
 		<option value="${3:option}">${4:$3}</option>
 	</select>${5}
+snippet table
+	<table border="${1:0}">
+		<tr><th>${2:Header}</th></tr>
+		<tr><th>${3:Data}</th></tr>
+	</table>${4}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}

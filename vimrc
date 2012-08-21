@@ -77,8 +77,6 @@ set wildmenu " Enhanced command line completion.
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
-map ; :bn<cr>
-
 " Status bar
 set laststatus=2
 
@@ -100,13 +98,13 @@ map <Leader>ö "0p
 map K @@
 map <Leader>q @q
 
-" go to last edit point
-map ö g;
-" go to newer edit point
-map Ö g,
+" next buffer
+map Ö :bn<cr>
+" previous buffer
+map ö :bp<cr>
 
 " go to last cursor position
-map ü <C-o>
+map ü g;
 
 " delete Line
 map Ü 0D
@@ -343,7 +341,7 @@ map <Leader>sh <c-w>s
 map <Leader>sr <c-w>r
 
 " horizontal split window
-map <C-x> <c-w>s
+"map <C-x> <c-w>s
 
 " force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
@@ -434,7 +432,7 @@ map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 " save & stage current file, open commit window with insert mode
-map <Leader>gh :w<cr>:Gwrite<cr>:Gcommit<cr>i
+map <Leader>gh :w<cr>:Gwrite<cr>:Git commit -m ""<left>
 
 " Buffers
 map <Leader>bd :bd<cr>

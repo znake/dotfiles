@@ -1,7 +1,6 @@
 #!/bin/bash
-CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
-FROM=$CURRENT_DIR/../vim/mySnippets/*.snippets
-TO=$CURRENT_DIR/../vim/bundle/snipmate.vim/snippets
+FROM=~/Dropbox/Library/dotfiles/vim/mySnippets/*.snippets
+TO=~/Dropbox/Library/dotfiles/vim/bundle/snipmate.vim/snippets/
 if [ -d ~/.vim ]; then
     if [ -d ~/.vim/bundle/snipmate.vim ]; then
         ln -nfs $FROM $TO

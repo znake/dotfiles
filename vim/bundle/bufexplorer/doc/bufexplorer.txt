@@ -1,4 +1,4 @@
-*bufexplorer.txt*              Buffer Explorer       Last Change: 16 Feb 2010
+*bufexplorer.txt*              Buffer Explorer       Last Change: 22 Oct 2010
 
 Buffer Explorer                                *buffer-explorer* *bufexplorer*
                                 Version 7.2.8
