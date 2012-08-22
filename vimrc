@@ -502,8 +502,7 @@ if has("autocmd")
   au FileType python  set tabstop=4
 endif
 
-map <Leader>st :SeeTab<cr>
-
+" show tabs
 fu! SeeTab()
   if !exists("g:SeeTabEnabled")
     let g:SeeTabEnabled = 0
@@ -520,7 +519,7 @@ fu! SeeTab()
   end
 endfunc
 com! -nargs=0 SeeTab :call SeeTab()
-
+map <Leader>st :SeeTab<cr>
 
 " Remove trailing whitespace on save
 function! Preserve(command)
@@ -536,97 +535,3 @@ function! Preserve(command)
 endfunction
 " Execute clear whitespace on save
 autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
-
-
-" TESTING AREA
-autocmd FileType gitcommit DiffGitCached | wincmd p
-
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org call org#SetOrgFileType()
-
-" improve performance of ctrlp
-"let ctrlp_filter_greps = "".
-    "\ "egrep -iv '\\.(" .
-    "\ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
-    "\ ")$' | " .
-    "\ "egrep -v '^(\\./)?(" .
-    "\ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
-    "\ ")'"
-
-"let my_ctrlp_git_command = "" .
-    "\ "cd %s && git ls-files | " .
-    "\ ctrlp_filter_greps
-
-"if has("unix")
-    "let my_ctrlp_user_command = "" .
-    "\ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
-    "\ ctrlp_filter_greps
-"endif
-
-"let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
-
- "function! OrgCustomColors()
-    "" various Org syntax item highlighting statements below
-    "" are the current defaults.  Uncomment and edit a line if you
-    "" want different highlighting for the element.
-
-    "" Below are defaults for any TODOS you define.  TODOS that
-    "" come before the | in a definition will use  'NOTDONETODO'
-    "" and those that come after are DONETODO
-    "hi! DONETODO guifg=green ctermfg=green
-    "hi! NOTDONETODO guifg=red ctermfg=lightred
-
-    "" Heading level highlighting is done in pairs, one for the
-    "" heading when unfolded and one for folded.  Default is to make
-    "" them the same except for the folded version being bold:
-    "" assign OL1 pair for level 1, OL2 pair for level 2, etc.
-    "hi! OL1 guifg=somecolor guibg=somecolor
-    "hi! OL1Folded guifg=somecolor guibg=somecolor gui=bold
-
-
-    "" Tags are lines below headings that have :colon:separated:tags:
-    "hi! Org_Tag guifg=lightgreen ctermfg=blue
-
-    ""  Lines that begin with '#+' in column 0 are config lines
-    "hi! Org_Config_Line guifg=darkgray ctermfg=magenta
-
-    "" Drawers are :PROPERTIES: and :LOGBOOK: lines and their associated
-    "" :END: lines
-    "hi! Org_Drawer guifg=pink ctermfg=magenta
-    "hi! Org_Drawer_Folded guifg=pink ctermfg=magenta gui=bold cterm=bold
-
-    "" This applies to value names in :PROPERTIES: blocks
-    "hi! Org_Property_Value guifg=pink ctermfg=magenta
-
-    "" Three lines below apply to different kinds of blocks
-    "hi! Org_Block guifg=#555555 ctermfg=magenta
-    "hi! Org_Src_Block guifg=#555555 ctermfg=magenta
-    "hi! Org_Table guifg=#888888 guibg=#333333 ctermfg=magenta
-
-    "" Dates are date specs between angle brackets (<>) or square brackets ([])
-    "hi! Org_Date guifg=magenta ctermfg=magenta gui=underline cterm=underline
-
-    "" Org_Star is used to "hide" initial asterisks in a heading
-    "hi! Org_Star guifg=#444444 ctermfg=darkgray
-
-    "hi! Props guifg=#ffa0a0 ctermfg=gray
-
-    "" Bold, italics, underline, and code are highlights applied
-    "" to character formatting
-    "hi! Org_Code guifg=darkgray gui=bold ctermfg=14
-    "hi! Org_Itals gui=italic guifg=#aaaaaa ctermfg=lightgray
-    "hi! Org_Bold gui=bold guifg=#aaaaaa ctermfg=lightgray
-    "hi! Org_Underline gui=underline guifg=#aaaaaa ctermfg=lightgray
-    "hi! Org_Lnumber guifg=#999999 ctermfg=gray
-
-    "" These lines apply to links: [[link]], and [[link][link desc]]
-    "if has("conceal")
-        "hi! default linkends guifg=blue ctermfg=blue
-    "endif
-    "hi! Org_Full_Link guifg=cyan gui=underline ctermfg=lightblue cterm=underline
-    "hi! Org_Half_Link guifg=cyan gui=underline ctermfg=lightblue cterm=underline
-
-    ""  Applies to the Heading line that can be displayed in column view
-    "highlight OrgColumnHeadings guibg=#444444 guifg=#aaaaaa gui=underline
-
- "endfunction
