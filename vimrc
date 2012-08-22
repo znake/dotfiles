@@ -111,7 +111,6 @@ map Ö :bp<cr>
 map ö g;<cr>
 
 " go to last cursor position
-map ü<cr>
 
 " delete content of line (but dont delete the whole line)
 map Ü 0D
@@ -445,7 +444,7 @@ map <Leader>dl :g/^$/d<cr>
 " jump to defenition of the selected word
 " useful in helpfiles because strg + ]
 " is not very comfortable on german keyboards
-map <Leader>ju <C-]>
+map <Leader>jj <C-]>
 
 " show copy history
 map <Leader>re :reg<cr>
@@ -502,6 +501,7 @@ if has("autocmd")
   au FileType python  set tabstop=4
 endif
 
+map <Leader>st :SeeTab<cr>
 " show tabs
 fu! SeeTab()
   if !exists("g:SeeTabEnabled")
@@ -519,7 +519,6 @@ fu! SeeTab()
   end
 endfunc
 com! -nargs=0 SeeTab :call SeeTab()
-map <Leader>st :SeeTab<cr>
 
 " Remove trailing whitespace on save
 function! Preserve(command)
@@ -535,3 +534,25 @@ function! Preserve(command)
 endfunction
 " Execute clear whitespace on save
 autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
+
+
+" improve performance of ctrlp
+"let ctrlp_filter_greps = "".
+    "\ "egrep -iv '\\.(" .
+    "\ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
+    "\ ")$' | " .
+    "\ "egrep -v '^(\\./)?(" .
+    "\ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
+    "\ ")'"
+
+"let my_ctrlp_git_command = "" .
+    "\ "cd %s && git ls-files | " .
+    "\ ctrlp_filter_greps
+
+"if has("unix")
+    "let my_ctrlp_user_command = "" .
+    "\ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
+    "\ ctrlp_filter_greps
+"endif
+
+"let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
