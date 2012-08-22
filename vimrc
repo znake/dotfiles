@@ -417,8 +417,7 @@ map <Leader>fj :set fm=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
-map <Leader>gs :Git status<cr>
-map <Leader>gS :Gstatus<cr>
+map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>i
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
