@@ -85,28 +85,35 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+
+" toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
 
-"Open last/alternate buffer
+" only show current buffer
 noremap <Leader><Leader> :only<cr>
 
+" switch to last opened buffer
 map ä <C-^>
 
+" paste clipboard register 0
 map <Leader>ö "0p
 
-" repeat last record
+" repeat last macro
 map K @@
+
+" repeat macro q
 map <Leader>q @q
 
-" next buffer
-map Ö :bn<cr>
 " previous buffer
+map Ö :bp<cr>
+
+" goto last edit position
 map ö g;<cr>
 
 " go to last cursor position
-map ü :bp<cr>
+map ü<cr>
 
-" delete Line
+" delete content of line (but dont delete the whole line)
 map Ü 0D
 
 " Spell checking command
@@ -115,27 +122,23 @@ nmap <S-Down> zug
 nmap <S-Right> ]s
 nmap <S-Left> [s
 
+" set background color
 map <Leader>bl :set background=light<cr>
 map <Leader>bk :set background=dark<cr>
 
 " cursorline toggle
 map <Leader>lc :set cursorline!<cr>
 
-map <Leader>hs <C-CR>
-
-" For usual moving behaviour in wrapped lines
+" for usual moving behaviour in wrapped lines
 map j gj
 map k gk
 
-" Reselect visual block after indent/outdent
+" reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-" Command-T configuration
-let g:CommandTMaxHeight=10
-
 " Show 3 lines of context around the cursor.
-set scrolloff=15
+set scrolloff=10
 " toggle scrolloff with ss
 nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
 map <Leader>sg :set scrolloff=15<cr>
@@ -170,11 +173,6 @@ runtime! macros/matchit.vim
 " delete Text and go switch to insert mode between HTML-Tags
 map <Leader>< F>lct<
 
-" :Ack
-map <Leader>ak :Ack<space>
-
-" Show tabs and Carriage Returns
-
 " Use fj or jf as <Esc> alternative
 inoremap fj <esc>
 inoremap jf <esc>
@@ -186,12 +184,12 @@ inoremap Jf <esc>
 inoremap fJ <esc>
 
 " Autoclose for following letters
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
+"let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 "Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
-"LaTeX Stuff
+" *************** LaTeX Stuff ***************
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
@@ -245,21 +243,21 @@ map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 map <Leader>la :w<cr> ,ll
 map <Leader>ld :w<cr> ,ll ,ls
 
+
+" config for vimwiki
 let g:vimwiki_hl_cb_checked = 1
 "let g:vimwiki_fold_lists = 1
 "let g:vimwiki_folding = 1
 
-" MAPPINGS
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
+
+" MAPPINGS for quick config editing
 map <Leader>vi :edit ~/Dropbox/Library/dotfiles/vimrc<cr>
 map <Leader>to :edit ~/Dropbox/Library/vimwiki/index.wiki<cr>
 map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
 map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
-
-" automatically reload vimrc when it's saved
-au BufWritePost .vimrc source ~/.vimrc
 
 fu! DeleteSigns()
   %s/"//gi
@@ -267,7 +265,6 @@ fu! DeleteSigns()
   %s/„//gi
   %s/”//gi
 endfu
-
 map <Leader>de :call DeleteSigns()<cr>
 
 fu! ReplaceWhatever()
@@ -298,7 +295,6 @@ fu! ReplaceWhatever()
   %s/DBs/Datenbanken/g
   %s/zw. /zwischen /g
 endfu
-
 map <Leader>rw :call ReplaceWhatever()<cr>
 
 " Tabularaized for rails
@@ -318,14 +314,15 @@ map <Leader>kk <C-w>k
 map <Leader>ll <C-w>l
 
 " make it easy to resize windows
-nmap <m-Left> <C-W>6<
-nmap <m-Right> <C-W>6>
+map 6 <C-W>6<
+map 7 <C-W>6>
 nmap <m-Up> <C-W>4-
 nmap <m-Down> <C-W>4+
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
-" change last word
+
+" delete last word in normal mode
 noremap <backspace> bdW
 
 " move buffers
@@ -339,9 +336,6 @@ map <C-c> <c-w>c
 map <Leader>sv <c-w>v
 map <Leader>sh <c-w>s
 map <Leader>sr <c-w>r
-
-" horizontal split window
-"map <C-x> <c-w>s
 
 " force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
@@ -375,9 +369,10 @@ map <Leader>cr :CoffeeRun<cr>
 map <Leader>sb :set scrollbind!<cr>
 map <Leader>mc :CoffeeMake!<cr>
 
+" delete content of whole buffer
 map <Leader>da ggdG
+" select content of whole buffer
 map <Leader>va ggVG
-
 
 " using the surround plugin
 " operates on a normal word w
@@ -423,16 +418,16 @@ map <Leader>fj :set fm=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
-map <Leader>gD :Gstatus<cr>
-map <Leader>gs :Gstatus<cr>
+map <Leader>gs :Git status<cr>
+map <Leader>gS :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
-" save & stage current file, open commit window with insert mode
-map <Leader>gh :w<cr>:Gwrite<cr>:Git commit -m ""<left>
+" stage current file, and enter commit message
+map <Leader>gh :Git add %;Git commit -m ""<left>
 
 " Buffers
 map <Leader>bd :bd<cr>
@@ -450,7 +445,7 @@ map <Leader>dl :g/^$/d<cr>
 " jump to defenition of the selected word
 " useful in helpfiles because strg + ]
 " is not very comfortable on german keyboards
-map <Leader>jj <C-]>
+map <Leader>ju <C-]>
 
 " show copy history
 map <Leader>re :reg<cr>
