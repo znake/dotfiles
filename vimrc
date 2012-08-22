@@ -182,6 +182,9 @@ inoremap Fj <esc>
 inoremap Jf <esc>
 inoremap fJ <esc>
 
+inoremap öö <esc>:x<cr>
+
+
 " Autoclose for following letters
 "let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
@@ -418,7 +421,8 @@ map <Leader>fj :set fm=markdown<cr>
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>gc :Gcommit<cr>i
+map <Leader>gC :Gcommit<cr>i
+map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
 map <Leader>ge :Gedit<cr>
 map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
