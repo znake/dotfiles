@@ -12,9 +12,6 @@ set number
 set ruler
 syntax on
 
-map <c-9> :bn<cr>
-map <c-8> :bp<cr>
-
 map <Leader>p p'[v']=
 map <Leader>P P'[v']=
 
@@ -260,6 +257,8 @@ map <Leader>to :edit ~/Dropbox/Library/vimwiki/index.wiki<cr>
 map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
 map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
+map <Leader>rt :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
+map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 
 fu! DeleteSigns()
   %s/"//gi
@@ -394,6 +393,8 @@ set spelllang=de_at
 map <Leader>se :set spelllang=en_gb<cr>
 map <Leader>sd :set spelllang=de_at<cr>
 
+map <Leader>rr :set makeprg=ruby\ %<cr>:make<cr>
+
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
 map <Leader>rm :Rmodel<cr>
@@ -421,6 +422,7 @@ map <Leader>fj :set fm=markdown<cr>
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
+map <Leader>ga :Git status<cr>
 map <Leader>gC :Gcommit<cr>i
 map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
 map <Leader>ge :Gedit<cr>
