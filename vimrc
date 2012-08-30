@@ -102,13 +102,17 @@ map K @@
 map <Leader>q @q
 
 " previous buffer
-map Ö :bp<cr>
+map m :bp<cr>
+" next buffer
+map M :bn<cr>
 
 " goto last edit position
 map ö g;<cr>
+" goto previous edit position
+map Ö g,<cr>
 
 " go to last cursor position
-
+map ü <c-i>
 " delete content of line (but dont delete the whole line)
 map Ü 0D
 
@@ -179,7 +183,7 @@ inoremap Fj <esc>
 inoremap Jf <esc>
 inoremap fJ <esc>
 
-inoremap öö <esc>:x<cr>
+inoremap öö <esc>ZZ
 
 
 " Autoclose for following letters
@@ -242,11 +246,8 @@ map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 map <Leader>la :w<cr> ,ll
 map <Leader>ld :w<cr> ,ll ,ls
 
-
 " config for vimwiki
 let g:vimwiki_hl_cb_checked = 1
-"let g:vimwiki_fold_lists = 1
-"let g:vimwiki_folding = 1
 
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
@@ -356,12 +357,6 @@ nmap T O<ESC>j
 " make :W to :w -> no annoying error Message when typend wrong
 cnoreabbrev W w
 
-" center current cursor line
-map M zz
-
-"Remove All the Trailing Whitespaces
-"nnoremap <Leader>ws :%s/\s\+$//<cr>:let @/=''<cr>
-
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
 map <Leader>co :CoffeeCompile watch vert<cr>
@@ -438,10 +433,6 @@ map <Leader>bd :bd<cr>
 map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
 map <Leader>bo :only<cr>
-
-" fast
-nmap <D-Left> :bn<cr>
-nmap <D-Right> :bp<cr>
 
 " delete empty lines
 map <Leader>dl :g/^$/d<cr>
