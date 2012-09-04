@@ -46,11 +46,11 @@ alias o='open .'
 alias m='mvim .'
 alias mm='mvim'
 
-alias titanium="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.1.GA/titanium.py"
+alias titanium="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.2.GA/titanium.py"
 alias so="source ~/.zshrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-PATH=$PATH:$HOME/Android\ SDKs/Titanium/tools:$HOME/Android\ SDKs/Titanium/platform-tools:$HOME/bin:$HOME./rvm/bin:/usr/local/bin
+PATH=$PATH:$HOME/Android\ SDKs/Titanium/tools:$HOME/Android\ SDKs/Titanium/platform-tools:$HOME/bin:$HOME./rvm/bin:/usr/local/bin:/usr/local/share/npm/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
