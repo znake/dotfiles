@@ -49,7 +49,7 @@ highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#ff0080
 highlight MatchParen                guifg=#E6E1DC ctermfg=15 gui=NONE guibg=#660066 ctermbg=23
 highlight CursorLine                guibg=#1b000d ctermbg=233 cterm=NONE
 highlight NonText 		              guifg=#FF0066 ctermfg=12
-highlight Comment                   guifg=#24496e ctermfg=180 gui=italic
+highlight Comment                   guifg=#2a5680 ctermfg=180 gui=italic
 highlight Constant                  guifg=#6D9CBE ctermfg=73
 highlight Define                    guifg=#CC7833 ctermfg=173
 highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
