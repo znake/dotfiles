@@ -51,5 +51,5 @@ alias so="source ~/.zshrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-export PATH="/usr/local/bin:/usr/bin:$HOME/Android\ SDKs/Titanium/tools:$HOME/Android\ SDKs/Titanium/platform-tools:$HOME/bin:$HOME./rvm/bin:/usr/local/share/npm/bin:$PATH
+export PATH="/usr/local/bin:/usr/bin:$HOME/Android\ SDKs/Titanium/tools:$HOME/Android\ SDKs/Titanium/platform-tools:$HOME/bin:$HOME./rvm/bin:/usr/local/bin/npm:$PATH
 "
