@@ -35,8 +35,8 @@ source $ZSH/oh-my-zsh.sh
 
 # create new folder and cd into it
 function take() {
-    mkdir -p "$1"
-    cd "$1"
+  mkdir -p "$1"
+  cd "$1"
 }
 
 # Finder
@@ -51,5 +51,4 @@ alias so="source ~/.zshrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-export PATH="/usr/local/bin:/usr/bin:$HOME/Android\ SDKs/Titanium/tools:$HOME/Android\ SDKs/Titanium/platform-tools:$HOME/bin:$HOME./rvm/bin:/usr/local/bin/npm:$PATH
-"
+export PATH="/usr/local/bin:/usr/bin:$HOME/android-sdks/Titanium/tools:$HOME/android-sdks/Titanium/platform-tools:$HOME/android-sdks/Titanium/platforms:$HOME/bin:$HOME./rvm/bin:/usr/local/bin/npm:$PATH"
