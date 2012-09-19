@@ -6,6 +6,8 @@ let mapleader = ","
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
+let coffee_compiler = '/usr/local/share/npm/bin/coffee'
+
 set cursorline
 
 set number
@@ -100,11 +102,6 @@ map K @@
 
 " repeat macro q
 map <Leader>q @q
-
-" previous buffer
-map m :bp<cr>
-" next buffer
-map M :bn<cr>
 
 " goto last edit position
 map ö g;<cr>
@@ -460,6 +457,7 @@ if has("autocmd")
   " Autocompile coffeescript buffer on save
   au BufWritePost *.coffee silent CoffeeMake!
 
+
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal g'\"" | endif
@@ -472,6 +470,9 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+
+  " Get standard two-space indentation in CoffeeScript files
+  au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
   " don´t highlight cursor line in LaTeX and .txt files and enable
   " spellchecking
@@ -515,6 +516,8 @@ fu! SeeTab()
   end
 endfunc
 com! -nargs=0 SeeTab :call SeeTab()
+
+"map <Leader>go :call GoToJS()<cr>
 
 " Remove trailing whitespace on save
 function! Preserve(command)
