@@ -390,7 +390,7 @@ set spelllang=de_at
 map <Leader>se :set spelllang=en_gb<cr>
 map <Leader>sd :set spelllang=de_at<cr>
 
-map <Leader>rr :set makeprg=ruby\ %<cr>:make<cr>
+map <Leader>rr :set makeprg=~/.rvm/bin/ruby-1.9.3-p194\ %<cr>:make<cr>
 
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
