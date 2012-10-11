@@ -344,6 +344,7 @@ map <Leader>sr <c-w>r
 " force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
 
+
 map <Leader>hl :set hlsearch! hlsearch?<cr>
 
 " indent whole file jump back to current position
@@ -407,14 +408,14 @@ map <Leader>ga :A<cr>
 map <Leader>gr :R<cr>
 
 " Filetype mappings
-map <Leader>fh :set ft=html<cr>
-map <Leader>fj :set ft=javascript<cr>
-map <Leader>fr :set ft=ruby<cr>
-map <Leader>fl :set ft=tex<cr>
-map <Leader>fp :set ft=php<cr>
-map <Leader>fs :set ft=sql<cr>
-map <Leader>ft :set ft=txt<cr>
-map <Leader>fj :set fm=markdown<cr>
+map <Leader>fth :set ft=html<cr>
+map <Leader>ftj :set ft=javascript<cr>
+map <Leader>ftr :set ft=ruby<cr>
+map <Leader>ftl :set ft=tex<cr>
+map <Leader>ftp :set ft=php<cr>
+map <Leader>fts :set ft=sql<cr>
+map <Leader>ftt :set ft=txt<cr>
+map <Leader>ftj :set fm=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
@@ -428,7 +429,16 @@ map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 " stage current file, and enter commit message
-map <Leader>gh :w <cr> | Git add % | Git commit -m ""<left>
+map <Leader>gh :Git add %;Git commit -m ""<left>
+" Show Git diff in window split when commiting
+"autocmd FileType gitcommit DiffGitCached | wincmd p
+
+" Space to toggle folds
+nnoremap <Space> za
+vnoremap <Space> za
+
+"map <Leader>fs :mkview<cr>
+"au BufWinEnter * silent! loadview
 
 " Buffers
 map <Leader>bd :bd<cr>
