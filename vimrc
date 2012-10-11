@@ -428,7 +428,7 @@ map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 " stage current file, and enter commit message
-map <Leader>gh :Git add %;Git commit -m ""<left>
+map <Leader>gh :w <cr> | Git add % | Git commit -m ""<left>
 
 " Buffers
 map <Leader>bd :bd<cr>
