@@ -2,7 +2,7 @@
 " http://www.artathack.com
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
-" Pretty much stolen from  the Tomorrow theme https://github.com/chriskempson/tomorrow-theme
+" Pretty much stolen from the Tomorrow theme https://github.com/chriskempson/tomorrow-theme
 
 " Default GUI Colours
 let s:foreground = "eaeaea"
