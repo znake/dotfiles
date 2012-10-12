@@ -256,9 +256,8 @@ map <Leader>so :source ~/.vimrc<cr>
 
 " MAPPINGS for quick config editing
 map <Leader>vi :edit ~/Dropbox/Library/dotfiles/vimrc<cr>
-map <Leader>to :edit ~/Dropbox/Library/vimwiki/index.wiki<cr>
 map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
-map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
+map <Leader>gi :edit ~/.gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 map <Leader>rt :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
 map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
