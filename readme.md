@@ -11,7 +11,7 @@ For fast symlinking for my Mac Mini I use:
 
 (NOTE: This will override all your dotfiles like .vimrc, gvimrc, zshrc, hgrc and so on)
 
-I use Vundle for managing my plugins, so if you want to update the bundles use :BundleInstall.
+I use [Vundle](https://github.com/gmarik/vundle) for managing my plugins, so if you want to update the bundles use :BundleInstall.
 
 If you want to use your own snippets like me which I store in my custom folder /vim/mySnippets/ and add them to Snipmate use [addsnippets.sh](https://github.com/znake/dotfiles/blob/master/vim/mySnippets/addsnippets.sh) which copys all snippets into the snipMate.vim folder.
 
