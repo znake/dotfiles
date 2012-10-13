@@ -43,7 +43,6 @@ Bundle "Townk/vim-autoclose.git"
 Bundle "L9"
 Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
-Bundle "javascript.vim"
 Bundle "bufexplorer.zip"
 Bundle "taglist.vim"
 " Utility
@@ -66,10 +65,6 @@ filetype plugin indent on
 filetype indent on
 
 let mapleader = ","
-
-" Pathogen
-"silent! call pathogen#runtime_append_all_bundles()
-"silent! call pathogen#helptags()
 
 let coffee_compiler = '/usr/local/share/npm/bin/coffee'
 
