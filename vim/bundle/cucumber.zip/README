@@ -1,0 +1,7 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2973
+
+This provides syntax highlightling, indenting, and a filetype plugin for Cucumber, the acceptance testing framework. It's mostly self explanatory. You can use CTRL-] on a step to jump to its Ruby definition.
+
+If you want to keep up to date, use the version upstream:
+
+http://github.com/tpope/vim-cucumber
