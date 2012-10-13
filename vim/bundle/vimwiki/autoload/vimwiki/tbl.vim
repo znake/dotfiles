@@ -66,7 +66,7 @@ function! s:is_last_column(lnum, cnum) "{{{
   let line = strpart(getline(a:lnum), a:cnum - 1)
   "echomsg "DEBUG is_last_column> ".(line =~ s:rxSep.'\s*$' && line !~ s:rxSep.'.*'.s:rxSep.'\s*$')
   return line =~ s:rxSep.'\s*$'  && line !~ s:rxSep.'.*'.s:rxSep.'\s*$'
- 
+
 endfunction "}}}
 
 function! s:is_first_column(lnum, cnum) "{{{
@@ -408,7 +408,7 @@ function! vimwiki#tbl#goto_prev_col() "{{{
   let newcol = s:get_indent(lnum)
   let max_lens = s:get_cell_max_lens(lnum)
   let prev_cell_len = 0
-  echom string(max_lens) 
+  echom string(max_lens)
   for cell_len in values(max_lens)
     let delta = cell_len + 3 " +3 == 2 spaces + 1 separator |<space>...<space>
     if newcol + delta > curcol-1
@@ -506,7 +506,7 @@ function! vimwiki#tbl#format(lnum, ...) "{{{
     let row = repeat(' ', indent).row
     call setline(lnum, row)
   endfor
-  
+
   let &tw = s:textwidth
 endfunction "}}}
 
@@ -541,7 +541,7 @@ function! vimwiki#tbl#create(...) "{{{
   for r in range(rows - 1)
     call add(lines, row)
   endfor
-  
+
   call append(line('.'), lines)
 endfunction "}}}
 
@@ -558,7 +558,7 @@ function! vimwiki#tbl#reset_tw(lnum) "{{{
   if !s:is_table(line)
     return
   endif
-  
+
   let s:textwidth = &tw
   let &tw = 0
 endfunction "}}}
@@ -581,7 +581,7 @@ function! vimwiki#tbl#move_column_left() "{{{
   endif
 
   if cur_col > 0
-    call vimwiki#tbl#format(line('.'), cur_col-1, cur_col) 
+    call vimwiki#tbl#format(line('.'), cur_col-1, cur_col)
     call cursor(line('.'), 1)
 
     let sep = '\('.s:rxSep.'\).\zs'
@@ -591,7 +591,7 @@ function! vimwiki#tbl#move_column_left() "{{{
       let mpos = match(line, sep, mpos+1)
       if mpos != -1
         let col += 1
-      else 
+      else
         break
       endif
     endwhile
@@ -614,7 +614,7 @@ function! vimwiki#tbl#move_column_right() "{{{
   endif
 
   if cur_col < s:col_count(line('.'))-1
-    call vimwiki#tbl#format(line('.'), cur_col, cur_col+1) 
+    call vimwiki#tbl#format(line('.'), cur_col, cur_col+1)
     call cursor(line('.'), 1)
 
     let sep = '\('.s:rxSep.'\).\zs'
@@ -624,7 +624,7 @@ function! vimwiki#tbl#move_column_right() "{{{
       let mpos = match(line, sep, mpos+1)
       if mpos != -1
         let col += 1
-      else 
+      else
         break
       endif
     endwhile

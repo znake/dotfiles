@@ -148,7 +148,7 @@ function! s:safe_html(line) "{{{
 
   "let tags = join(split(g:vimwiki_valid_html_tags, '\s*,\s*'), '\|')
   "let line = substitute(line,'<\%(/\?\%('
-  "      \.tags.'\)\%(\s\{-1}\S\{-}\)\{-}/\?>\)\@!', 
+  "      \.tags.'\)\%(\s\{-1}\S\{-}\)\{-}/\?>\)\@!',
   "      \'\&lt;', 'g')
   "let line = substitute(line,'\%(</\?\%('
   "      \.tags.'\)\%(\s\{-1}\S\{-}\)\{-}/\?\)\@<!>',
@@ -379,8 +379,8 @@ function! vimwiki#html#linkify_link(src, descr) "{{{
   let src_str = ' href="'.a:src.'"'
   let descr = substitute(a:descr,'^\s*\(.*\)\s*$','\1','')
   let descr = (descr == "" ? a:src : descr)
-  let descr_str = (descr =~ g:vimwiki_rxWikiIncl 
-        \ ? s:tag_wikiincl(descr) 
+  let descr_str = (descr =~ g:vimwiki_rxWikiIncl
+        \ ? s:tag_wikiincl(descr)
         \ : descr)
   return '<a'.src_str.'>'.descr_str.'</a>'
 endfunction "}}}
@@ -415,7 +415,7 @@ function! s:tag_wikiincl(value) "{{{
     let descr = matchstr(str, vimwiki#html#incl_match_arg(1))
     let verbatim_str = matchstr(str, vimwiki#html#incl_match_arg(2))
     " resolve url
-    let [idx, scheme, path, subdir, lnk, ext, url] = 
+    let [idx, scheme, path, subdir, lnk, ext, url] =
           \ vimwiki#base#resolve_scheme(url_0, 1)
     " generate html output
     " TODO: migrate non-essential debugging messages into g:VimwikiLog
@@ -448,7 +448,7 @@ function! s:tag_wikilink(value) "{{{
   let descr = (substitute(descr,'^\s*\(.*\)\s*$','\1','') != '' ? descr : url)
 
   " resolve url
-  let [idx, scheme, path, subdir, lnk, ext, url] = 
+  let [idx, scheme, path, subdir, lnk, ext, url] =
         \ vimwiki#base#resolve_scheme(url, 1)
 
   " generate html output
@@ -511,7 +511,7 @@ endfunction "}}}
 function! s:make_tag(line, regexp, func) "{{{
   " Make tags for a given matched regexp.
   " Exclude preformatted text and href links.
-  " FIXME 
+  " FIXME
   let patt_splitter = '\(`[^`]\+`\)\|'.
                     \ '\('.g:vimwiki_rxPreStart.'.\+'.g:vimwiki_rxPreEnd.'\)\|'.
                     \ '\(<a href.\{-}</a>\)\|'.
@@ -612,7 +612,7 @@ endfunction "}}}
 function! s:close_tag_table(table, ldest) "{{{
   " The first element of table list is a string which tells us if table should be centered.
   " The rest elements are rows which are lists of columns:
-  " ['center', 
+  " ['center',
   "   [ CELL1, CELL2, CELL3 ],
   "   [ CELL1, CELL2, CELL3 ],
   "   [ CELL1, CELL2, CELL3 ],
@@ -623,7 +623,7 @@ function! s:close_tag_table(table, ldest) "{{{
     let table = a:table
 
     " Get max cells
-    let max_cells = 0 
+    let max_cells = 0
     for row in table[1:]
       let n_cells = len(row)
       if n_cells > max_cells
@@ -669,14 +669,14 @@ function! s:close_tag_table(table, ldest) "{{{
   function! s:close_tag_row(row, header, ldest) "{{{
     call add(a:ldest, '<tr>')
 
-    " Set tag element of columns 
+    " Set tag element of columns
     if a:header
       let tag_name = 'th'
     else
       let tag_name = 'td'
     end
 
-    " Close tag of columns 
+    " Close tag of columns
     for cell in a:row
       if cell.rowspan == 0 || cell.colspan == 0
         continue
@@ -859,7 +859,7 @@ function! s:process_tag_list(line, lists) "{{{
         endif
         " let completion = match(g:vimwiki_listsyms, '\C' . chk[1])
         let completion = s:get_completion_index(chk[1])
-        if completion >= 0 && completion <=4 
+        if completion >= 0 && completion <=4
           let st_tag = '<li class="done'.completion.'">'
         endif
       endif
@@ -1028,7 +1028,7 @@ function! s:process_tag_h(line, id) "{{{
     let h_text = vimwiki#u#trim(matchstr(line, g:vimwiki_rxHeader))
 
     if g:vimwiki_html_header_numbering
-      let num = matchstr(h_number, 
+      let num = matchstr(h_number,
             \ '^\(\d.\)\{'.(g:vimwiki_html_header_numbering-1).'}\zs.*')
       if !empty(num)
         let num .= g:vimwiki_html_header_numbering_sym
@@ -1369,7 +1369,7 @@ function! vimwiki#html#Wiki2HTML(path_html, wikifile) "{{{
 
   let wikifile = fnamemodify(a:wikifile, ":p")
 
-  let path_html = expand(a:path_html).VimwikiGet('subdir') 
+  let path_html = expand(a:path_html).VimwikiGet('subdir')
   let htmlfile = fnamemodify(wikifile, ":t:r").'.html'
 
   if s:use_custom_wiki2html()
@@ -1415,7 +1415,7 @@ function! vimwiki#html#Wiki2HTML(path_html, wikifile) "{{{
     let s:gt_pattern = '>'
     if g:vimwiki_valid_html_tags != ''
       let tags = join(split(g:vimwiki_valid_html_tags, '\s*,\s*'), '\|')
-      let s:lt_pattern = '<\%(/\?\%('.tags.'\)\%(\s\{-1}\S\{-}\)\{-}/\?>\)\@!' 
+      let s:lt_pattern = '<\%(/\?\%('.tags.'\)\%(\s\{-1}\S\{-}\)\{-}/\?>\)\@!'
       let s:gt_pattern = '\%(</\?\%('.tags.'\)\%(\s\{-1}\S\{-}\)\{-}/\?\)\@<!>'
     endif
 
@@ -1487,7 +1487,7 @@ function! vimwiki#html#Wiki2HTML(path_html, wikifile) "{{{
     call map(html_lines, 'substitute(v:val, "%encoding%", "'. enc .'", "g")')
 
     let html_lines = s:html_insert_contents(html_lines, ldest) " %contents%
-    
+
     "" make html file.
     call writefile(html_lines, path_html.htmlfile)
     let done = 1
@@ -1499,7 +1499,7 @@ function! vimwiki#html#Wiki2HTML(path_html, wikifile) "{{{
     return
   endif
 
-  " measure the elapsed time 
+  " measure the elapsed time
   let time1 = vimwiki#u#time(starttime)  "XXX
   call VimwikiLog_extend('html',[htmlfile,time1])
   "if g:vimwiki_debug

@@ -1,10 +1,75 @@
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My VIM Bundles:
+"
+" original repos on github
+" install latex suite manually
+Bundle "Lokaltog/vim-easymotion"
+Bundle "rstacruz/sparkup", {"rtp": "vim/"}
+
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-rails.git"
+Bundle "tpope/vim-endwise.git"
+Bundle "tpope/vim-surround.git"
+Bundle "tpope/vim-repeat.git"
+
+Bundle "mileszs/ack.vim.git"
+Bundle "kien/ctrlp.vim.git"
+
+Bundle "scrooloose/nerdcommenter.git"
+Bundle "scrooloose/nerdtree.git"
+Bundle "scrooloose/syntastic.git"
+
+Bundle "msanders/snipmate.vim.git"
+Bundle "ervandew/supertab.git"
+Bundle "godlygeek/tabular.git"
+Bundle "majutsushi/tagbar.git"
+Bundle "kchmck/vim-coffee-script.git"
+Bundle "altercation/vim-colors-solarized.git"
+Bundle "tsaleh/vim-matchit.git"
+Bundle "ervandew/supertab.git"
+Bundle "vim-ruby/vim-ruby.git"
+Bundle "Townk/vim-autoclose.git"
+
+" vim-scripts repos
+Bundle "L9"
+Bundle "hexHighlight.vim"
+Bundle "IndexedSearch"
+Bundle "javascript.vim"
+Bundle "bufexplorer.zip"
+Bundle "taglist.vim"
+" Utility
+Bundle "vimwiki"
+Bundle "a.vim"
+" (HT|X)ml tool
+Bundle "ragtag.vim"
+" Syntax highlight
+Bundle "cucumber.zip"
+Bundle "Markdown"
+Bundle "jQuery"
+" non github repos
+" Bundle "git://git.wincent.com/command-t.git"
+
+" Enable file type detection
+" filetype on
+" load the plugin and indent settings for the detected filetype
+filetype plugin indent on
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
 
 let mapleader = ","
 
 " Pathogen
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+"silent! call pathogen#runtime_append_all_bundles()
+"silent! call pathogen#helptags()
 
 let coffee_compiler = '/usr/local/share/npm/bin/coffee'
 
@@ -461,12 +526,6 @@ map <Leader>xh :call HexHighlight()<cr>
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
-  " Enable file type detection
-  "filetype on
-  " load the plugin and indent settings for the detected filetype
-  filetype plugin indent on
-  " OPTIONAL: This enables automatic indentation as you type.
-  filetype indent on
 
   " Autocompile coffeescript buffer on save
   au BufWritePost *.coffee silent CoffeeMake!
