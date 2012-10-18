@@ -39,6 +39,11 @@ function take() {
   cd "$1"
 }
 
+
+bindkey -v
+bindkey -M viins ‘fj’ vi-cmd-mode
+bindkey -M viins ‘jf’ vi-cmd-mode
+
 # Finder
 alias o='open .'
 

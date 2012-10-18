@@ -2,18 +2,16 @@
 "       in your path.
 " On Debian / Ubuntu:
 "   sudo apt-get install ack-grep
-" On your vimrc:
-"   let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-"
 " With MacPorts:
 "   sudo port install p5-app-ack
 
 " Location of the ack utility
 if !exists("g:ackprg")
-	let g:ackprg="ack -H --nocolor --nogroup --column"
+    let s:ackcommand = executable('ack-grep') ? 'ack-grep' : 'ack'
+    let g:ackprg=s:ackcommand." -H --nocolor --nogroup --column"
 endif
 
-function! s:Ack(cmd, args)
+function! s:Ack(cmd, args, ...)
     redraw
     echo "Searching ..."
 
@@ -21,7 +19,7 @@ function! s:Ack(cmd, args)
     if empty(a:args)
         let l:grepargs = expand("<cword>")
     else
-        let l:grepargs = a:args
+        let l:grepargs = a:args . join(a:000, ' ')
     end
 
     " Format, used to manage column jump
@@ -36,7 +34,7 @@ function! s:Ack(cmd, args)
     try
         let &grepprg=g:ackprg
         let &grepformat=g:ackformat
-        silent execute a:cmd . " " . l:grepargs
+        silent execute a:cmd . " " . escape(l:grepargs, '|')
     finally
         let &grepprg=grepprg_bak
         let &grepformat=grepformat_bak

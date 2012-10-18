@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
+" let Vundle manage Vundle :BundleInstall
 " required!
 Bundle 'gmarik/vundle'
 
@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 " install latex suite manually
-Bundle "Lokaltog/vim-easymotion"
 Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 
 Bundle "tpope/vim-fugitive"
@@ -21,15 +20,13 @@ Bundle "tpope/vim-endwise.git"
 Bundle "tpope/vim-surround.git"
 Bundle "tpope/vim-repeat.git"
 
-Bundle "mileszs/ack.vim.git"
-Bundle "kien/ctrlp.vim.git"
-
 Bundle "scrooloose/nerdcommenter.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "scrooloose/syntastic.git"
 
+Bundle "mileszs/ack.vim.git"
+Bundle "kien/ctrlp.vim.git"
 Bundle "msanders/snipmate.vim.git"
-Bundle "ervandew/supertab.git"
 Bundle "godlygeek/tabular.git"
 Bundle "majutsushi/tagbar.git"
 Bundle "kchmck/vim-coffee-script.git"

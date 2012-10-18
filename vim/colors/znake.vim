@@ -11,11 +11,12 @@ let s:selection = "420000"
 let s:line = "2a2a2a"
 let s:comment = "2a5680"
 let s:red = "da4939"
-let s:highyellow = "ffff00"
 let s:darkred = "1b000d"
 let s:orange = "ffc66d"
 let s:brown = "cc7833"
+let s:highyellow = "ffff00"
 let s:yellow = "ffc66d"
+"let s:darkyellow = "ffc66d"
 let s:green = "a5c261"
 let s:darkgreen = "519f50"
 let s:aqua = "66ccff"
@@ -258,7 +259,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
-	call <SID>X("MatchParen", "", s:selection, "")
+	call <SID>X("MatchParen", s:background, s:yellow, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
 	if version >= 700
@@ -281,7 +282,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Conditional", s:foreground, "", "")
 	call <SID>X("Repeat", s:foreground, "", "")
 	call <SID>X("Number", s:yellow, "", "")
-	call <SID>X("Structure", s:orange, "", "")
+	call <SID>X("Structure", s:darkgreen, "", "")
 	call <SID>X("Function", s:orange, "", "")
 	call <SID>X("Constant", s:blue, "", "")
 	call <SID>X("String", s:green, "", "")
@@ -368,3 +369,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	delf <SID>grey_level
 	delf <SID>grey_number
 endif
+
+highlight VimwikiHeader1             guifg=#ff6666
+highlight VimwikiHeader2             guifg=#ff8000
+highlight VimwikiHeader3             guifg=#ffff66
+highlight VimwikiHeader4             guifg=#66ffcc
+highlight VimwikiHeader5             guifg=#008040
+highlight VimwikiHeader6             guifg=#66ccff
+
