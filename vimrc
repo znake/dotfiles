@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 " My VIM Bundles:
 "
 " original repos on github
-" install latex suite manually
 Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 
 Bundle "tpope/vim-fugitive"
@@ -42,6 +41,7 @@ Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
 Bundle "bufexplorer.zip"
 Bundle "taglist.vim"
+Bundle "LaTeX-Suite-aka-Vim-LaTeX"
 " Utility
 Bundle "vimwiki"
 Bundle "a.vim"
@@ -52,7 +52,10 @@ Bundle "cucumber.zip"
 Bundle "Markdown"
 Bundle "jQuery"
 " non github repos
+
 " Bundle "git://git.wincent.com/command-t.git"
+
+map <Leader>bi :BundleInstall<cr>
 
 " Enable file type detection
 " filetype on
@@ -367,17 +370,13 @@ map <Leader>iv :call IndentX()<cr>
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
 
-" easy split window movement
-map <Leader>hh <C-w>h
-map <Leader>jj <C-w>j
-map <Leader>kk <C-w>k
-map <Leader>ll <C-w>l
-
 " make it easy to resize windows
 map 6 <C-W>6<
 map 7 <C-W>6>
-nmap <m-Up> <C-W>4-
-nmap <m-Down> <C-W>4+
+map 5 <C-W>4-
+map 4 <C-W>4+
+
+map <Leader>4 <C-W>=
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
