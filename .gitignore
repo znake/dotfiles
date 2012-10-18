@@ -1,5 +1,6 @@
 vim/bundle/snipmate.vim/snippets/**/*
 vim/bundle/vim-latex/ftplugin/latex-suite/**/*
+*.log
 *.pyc
 *.DS_Store
 *.swp
