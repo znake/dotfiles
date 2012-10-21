@@ -35,7 +35,7 @@ Bundle "ervandew/supertab.git"
 Bundle "vim-ruby/vim-ruby.git"
 Bundle "Townk/vim-autoclose.git"
 
-" vim-scripts repos
+" vim-scripts github repos
 Bundle "L9"
 Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
