@@ -16,7 +16,6 @@ let s:orange = "ffc66d"
 let s:brown = "cc7833"
 let s:highyellow = "ffff00"
 let s:yellow = "ffc66d"
-"let s:darkyellow = "ffc66d"
 let s:green = "a5c261"
 let s:darkgreen = "519f50"
 let s:aqua = "66ccff"
@@ -259,7 +258,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
-	call <SID>X("MatchParen", s:background, s:yellow, "")
+	call <SID>X("MatchParen", s:background, s:red, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
 	if version >= 700
