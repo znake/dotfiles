@@ -376,4 +376,3 @@ highlight VimwikiHeader3             guifg=#ffff66
 highlight VimwikiHeader4             guifg=#66ffcc
 highlight VimwikiHeader5             guifg=#008040
 highlight VimwikiHeader6             guifg=#66ccff
-
