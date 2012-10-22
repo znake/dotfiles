@@ -68,7 +68,8 @@ Bundle "jQuery"
 let g:Powerline_symbols = 'fancy'
 
 " vim-indent-guides plugin setup
-map <Leader>it :IndentGuidesToggle<cr>
+map <Leader>ig :IndentGuidesToggle<cr>
+
 let g:indent_guides_guide_size = 1
 
 " Enable file type detection
