@@ -46,7 +46,6 @@ Bundle "leshill/vim-json"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
-Bundle "MatchTag"
 Bundle "L9"
 Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
