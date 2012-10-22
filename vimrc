@@ -40,6 +40,7 @@ Bundle "Rykka/colorv.vim"
 Bundle "othree/html5.vim"
 Bundle "nono/vim-handlebars"
 Bundle "gmarik/sudo-gui.vim"
+Bundle "jcf/vim-latex"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -64,7 +65,7 @@ Bundle "jQuery"
 " Bundle "git://git.wincent.com/command-t.git"
 
 " vim-indent-guides plugin setup
-map <Leader>in :IndentGuidesToggle<cr>
+map <Leader>it :IndentGuidesToggle<cr>
 let g:indent_guides_guide_size = 1
 
 " Enable file type detection
