@@ -18,6 +18,7 @@ Bundle "tpope/vim-rails"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-haml"
 
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
@@ -41,15 +42,17 @@ Bundle "othree/html5.vim"
 Bundle "nono/vim-handlebars"
 Bundle "gmarik/sudo-gui.vim"
 Bundle "jcf/vim-latex"
+Bundle "pangloss/vim-javascript"
+Bundle "leshill/vim-json"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
+Bundle "MatchTag"
 Bundle "L9"
 Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
 Bundle "bufexplorer.zip"
 Bundle "taglist.vim"
-"Bundle "LaTeX-Suite-aka-Vim-LaTeX"
 
 " Utility
 Bundle "vimwiki"
@@ -63,6 +66,8 @@ Bundle "jQuery"
 " non github repos
 
 " Bundle "git://git.wincent.com/command-t.git"
+
+let g:Powerline_symbols = 'fancy'
 
 " vim-indent-guides plugin setup
 map <Leader>it :IndentGuidesToggle<cr>
