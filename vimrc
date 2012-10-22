@@ -482,7 +482,7 @@ map <Leader>ftl :set ft=tex<cr>
 map <Leader>ftp :set ft=php<cr>
 map <Leader>fts :set ft=sql<cr>
 map <Leader>ftt :set ft=txt<cr>
-map <Leader>ftj :set ft=markdown<cr>
+map <Leader>ftm :set ft=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
