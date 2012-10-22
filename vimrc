@@ -14,34 +14,42 @@ Bundle 'gmarik/vundle'
 Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 
 Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rails.git"
-Bundle "tpope/vim-endwise.git"
-Bundle "tpope/vim-surround.git"
-Bundle "tpope/vim-repeat.git"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-repeat"
 
-Bundle "scrooloose/nerdcommenter.git"
-Bundle "scrooloose/nerdtree.git"
-Bundle "scrooloose/syntastic.git"
+Bundle "scrooloose/nerdcommenter"
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/syntastic"
 
-Bundle "mileszs/ack.vim.git"
-Bundle "kien/ctrlp.vim.git"
-Bundle "msanders/snipmate.vim.git"
-Bundle "godlygeek/tabular.git"
-Bundle "majutsushi/tagbar.git"
-Bundle "kchmck/vim-coffee-script.git"
-Bundle "altercation/vim-colors-solarized.git"
-Bundle "tsaleh/vim-matchit.git"
-Bundle "ervandew/supertab.git"
-Bundle "vim-ruby/vim-ruby.git"
-Bundle "Townk/vim-autoclose.git"
+Bundle "mileszs/ack.vim"
+Bundle "kien/ctrlp.vim"
+Bundle "msanders/snipmate.vim"
+Bundle "godlygeek/tabular"
+Bundle "majutsushi/tagbar"
+Bundle "kchmck/vim-coffee-script"
+Bundle "altercation/vim-colors-solarized"
+Bundle "tsaleh/vim-matchit"
+Bundle "ervandew/supertab"
+Bundle "vim-ruby/vim-ruby"
+Bundle "Townk/vim-autoclose"
+Bundle "mutewinter/vim-indent-guides"
+Bundle "Lokaltog/vim-powerline"
+Bundle "Rykka/colorv.vim"
+Bundle "othree/html5.vim"
+Bundle "nono/vim-handlebars"
+Bundle "gmarik/sudo-gui.vim"
 
 " vim-scripts github repos
+Bundle "ZoomWin"
 Bundle "L9"
 Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
 Bundle "bufexplorer.zip"
 Bundle "taglist.vim"
-Bundle "LaTeX-Suite-aka-Vim-LaTeX"
+"Bundle "LaTeX-Suite-aka-Vim-LaTeX"
+
 " Utility
 Bundle "vimwiki"
 Bundle "a.vim"
@@ -55,7 +63,9 @@ Bundle "jQuery"
 
 " Bundle "git://git.wincent.com/command-t.git"
 
-map <Leader>bi :BundleInstall<cr>
+" vim-indent-guides plugin setup
+map <Leader>in :IndentGuidesToggle<cr>
+let g:indent_guides_guide_size = 1
 
 " Enable file type detection
 " filetype on
@@ -114,9 +124,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['coffee', 'html', 'ruby', 'php', 'javascript', 'python', 'haml'],
                            \ 'passive_filetypes': ['tex'] }
 
-" Useful status information at bottom of screen
-set stl=%f\ %m\ %r\ %{fugitive#statusline()}\ Buf:%n\ Lin:%l/%L\ Col:%c\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %)%P
-
 " disable VIM welcome screen
 set shortmess+=I
 
@@ -153,8 +160,8 @@ map <Leader><space> :NERDTreeToggle<cr>
 " toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
 
-" only show current buffer
-noremap <Leader><Leader> :only<cr>
+" use ZoomWin plugin
+noremap <Leader><Leader> <c-w>o
 
 " switch to last opened buffer
 map ä <C-^>
@@ -470,7 +477,7 @@ map <Leader>ftl :set ft=tex<cr>
 map <Leader>ftp :set ft=php<cr>
 map <Leader>fts :set ft=sql<cr>
 map <Leader>ftt :set ft=txt<cr>
-map <Leader>ftj :set fm=markdown<cr>
+map <Leader>ftj :set ft=markdown<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
