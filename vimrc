@@ -161,7 +161,7 @@ map <Leader><space> :NERDTreeToggle<cr>
 map <Leader>ä :TagbarToggle<cr>
 
 " use ZoomWin plugin
-noremap <Leader><Leader> <c-w>o
+noremap <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
