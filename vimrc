@@ -517,6 +517,12 @@ map <Leader>xh :call HexHighlight()<cr>
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
+  " Enable file type detection
+  "filetype on
+  " load the plugin and indent settings for the detected filetype
+  filetype plugin indent on
+  " OPTIONAL: This enables automatic indentation as you type.
+  filetype indent on
 
   " Autocompile coffeescript buffer on save
   au BufWritePost *.coffee silent CoffeeMake!
