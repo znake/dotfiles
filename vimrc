@@ -170,6 +170,7 @@ noremap <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
+map ü :bl<cr>
 
 " paste clipboard register 0
 map <Leader>ö "0p
@@ -185,8 +186,6 @@ map ö g;<cr>
 " goto previous edit position
 map Ö g,<cr>
 
-" go to last cursor position
-map ü <c-i>
 " delete content of line (but dont delete the whole line)
 map Ü 0D
 
@@ -258,7 +257,6 @@ inoremap Jf <esc>
 inoremap fJ <esc>
 
 inoremap öö <esc>ZZ
-
 
 " Autoclose for following letters
 "let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -579,27 +577,6 @@ if has("autocmd")
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4
 endif
-
-map <Leader>st :SeeTab<cr>
-" show tabs
-fu! SeeTab()
-  if !exists("g:SeeTabEnabled")
-    let g:SeeTabEnabled = 0
-  end
-  if g:SeeTabEnabled==0
-    syn match leadspace /^\s\+/ contains=syntab
-    exe "syn match syntab /\\s\\{" . &sw . "}/hs=s,he=s+1 contained"
-    hi syntab guibg=#800040
-    let g:SeeTabEnabled=1
-  else
-    syn clear leadspace
-    syn clear syntab
-    let g:SeeTabEnabled=0
-  end
-endfunc
-com! -nargs=0 SeeTab :call SeeTab()
-
-"map <Leader>go :call GoToJS()<cr>
 
 " Remove trailing whitespace on save
 function! Preserve(command)
