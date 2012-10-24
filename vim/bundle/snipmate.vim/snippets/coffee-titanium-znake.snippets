@@ -1,1 +1,32 @@
-/Users/jakob/Dropbox/Library/dotfiles/vim/mySnippets/coffee-titanium-znake.snippets
+snippet tii
+	Ti.API.info(${1})
+snippet tid
+	Ti.API.debug(${1})
+snippet tiu
+	Ti.UI.
+
+snippet til
+	${1:LabelName} = Ti.UI.createLabel(
+		text: "${2:text}"
+	)
+	${3:AddMeTo?}.add $1
+
+snippet tiw
+	${1:WindowName} = Ti.UI.createWindow(
+		background: "#fff"
+		title: "${2:title}"
+	)
+
+snippet tie
+	${1:origin}.addEventListener "${2:click}", (e) ->
+		${3:# do something}
+
+snippet tib
+	${1:ButtonName} = Ti.UI.createButton(
+		title: "${2:title}"
+	)
+	$1.addEventListener "click", (e) ->
+		${3:# do something}
+	${4:AddMeTo}.add $1
+
+
