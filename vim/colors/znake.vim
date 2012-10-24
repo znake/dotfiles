@@ -27,6 +27,13 @@ let s:grey1 = "535353"
 let s:grey2 = "191919"
 let s:grey3 = "868686"
 
+let s:wikired    = "ff6666"
+let s:wikiorange = "ff8000"
+let s:wikiyellow = "ffff66"
+let s:wikiaqua   = "66ffcc"
+let s:wikigreen  = "008040"
+let s:wikiblue   = "66ccff"
+
 set background=dark
 hi clear
 syntax reset
@@ -366,6 +373,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("diffAdded", s:green, "", "")
 	call <SID>X("diffRemoved", s:red, "", "")
 
+  call <SID>X("VimwikiHeader1", s:wikired, "", "")
+  call <SID>X("VimwikiHeader2", s:wikiorange, "", "")
+  call <SID>X("VimwikiHeader3", s:wikiyellow, "", "")
+  call <SID>X("VimwikiHeader4", s:wikiaqua, "", "")
+  call <SID>X("VimwikiHeader5", s:wikigreen, "", "")
+  call <SID>X("VimwikiHeader6", s:wikiblue, "", "")
 
 	" Delete Functions
 	delf <SID>X
@@ -379,9 +392,3 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	delf <SID>grey_number
 endif
 
-highlight VimwikiHeader1             guifg=#ff6666
-highlight VimwikiHeader2             guifg=#ff8000
-highlight VimwikiHeader3             guifg=#ffff66
-highlight VimwikiHeader4             guifg=#66ffcc
-highlight VimwikiHeader5             guifg=#008040
-highlight VimwikiHeader6             guifg=#66ccff
