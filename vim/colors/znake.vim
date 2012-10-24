@@ -23,6 +23,7 @@ let s:purple = "c397d8"
 let s:purplelight = "f5c5f1"
 let s:middlegrey = "4d5057"
 let s:pink = "ff0080"
+let s:darkpink = "6f0037"
 let s:grey1 = "535353"
 let s:grey2 = "191919"
 let s:grey3 = "868686"
@@ -258,7 +259,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Statusdarkgrey", s:grey2, s:yellow, "reverse")
 	call <SID>X("StatusdarkgreyNC", s:grey2, s:grey3, "reverse")
 	call <SID>X("VertSplit", s:middlegrey, s:middlegrey, "none")
-  call <SID>X("Visual", s:highgreen, s:pink, "")
+  call <SID>X("Visual", "", s:darkpink, "")
 	"call <SID>X("Visual", "", s:black, "reverse")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
