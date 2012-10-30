@@ -135,6 +135,10 @@ set shortmess+=I
 " fast switch between .js and .coffee files with the alternate plugin
 let g:alternateExtensions_coffee = 'js'
 let g:alternateExtensions_js = 'coffee'
+let g:alternateExtensions_haml = 'html'
+let g:alternateExtensions_html = 'haml'
+let g:alternateExtensions_sass = 'css'
+let g:alternateExtensions_css = 'sass'
 map <Leader>ma :A<cr>
 
 " Searching
