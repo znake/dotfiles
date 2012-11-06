@@ -8,6 +8,7 @@ RED=$fg[red]
 YELLOW=$fg[yellow]
 GREEN=$fg[green]
 WHITE=$fg[white]
+GREY=$fg[grey]
 BLUE=$fg[magenta]
 RED_BOLD=$fg_bold[red]
 YELLOW_BOLD=$fg_bold[yellow]
@@ -41,7 +42,7 @@ ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$WHITE%}]"
 
 # Prompt format
 PROMPT='
-%{$GREEN_BOLD%}%n@%m%{$WHITE%}:%{$YELLOW%}%~%u$(parse_git_dirty)$(git_prompt_ahead)%{$RESET_COLOR%}
-%{$BLUE%}ò.Ó%{$RESET_COLOR%} '
+%{$GREEN_BOLD%}%n@%m%{$WHITE%}:%{$YELLOW%}%~%u$(parse_git_dirty) %{$GREY%}$(~/.rvm/bin/rvm-prompt)$(git_prompt_ahead)%{$RESET_COLOR%}
+%{$BLUE%}»%{$RESET_COLOR%} '
 RPROMPT='%{$GREEN_BOLD%}$(current_branch)$(git_prompt_short_sha)$(git_prompt_status)%{$RESET_COLOR%}'
 
