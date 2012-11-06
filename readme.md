@@ -1,8 +1,8 @@
-This is just my personal VIM and bash configuration.
+This is just my personal VIM and zsh configuration.
 
 I´m used to have my dotfiles in my DropBox since I use more than one Mac for development. This is the reason for having more then one .gvimrc files for different font sizes.
 
-For proper symlinking and faster setup I use litte bash and ruby scripts you might find useful, check them out in my /scripts/ folder.
+For proper symlinking and faster setup I use little bash and ruby scripts you might find useful, check them out in my /scripts/ folder.
 CHECK THEM OUT AT FIRST BEFORE USING THEM!!!
 
 For fast symlinking for my Mac Mini I use:
