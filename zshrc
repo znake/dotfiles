@@ -52,9 +52,11 @@ alias mm='mvim'
 alias titanium="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
 alias so="source ~/.zshrc"
 
-export PATH="/usr/local/bin:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/bin:$HOME./rvm/bin:/usr/local/bin/npm:$PATH"
+export PATH="/usr/local/bin:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/Dropbox/Library/dotfiles/vim/bin:$HOME./rvm/bin:/usr/local/bin/npm:$PATH"
 # no need for :$HOME/android-sdks/platforms
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 __rvm_project_rvmrc
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
