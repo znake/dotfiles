@@ -337,7 +337,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("rubyStringDelimiter", s:green, "", "")
   call <SID>X("rubyInterpolation", s:darkgreen, "", "")
 	call <SID>X("rubyInterpolationDelimiter", s:darkgreen, "", "")
-	call <SID>X("rubyConditional", s:purple, "", "")
+  call <SID>X("rubyConditional", s:brown, "", "")
 	call <SID>X("rubyRepeat", s:purple, "", "")
   call <SID>X("rubyBlockParameter", s:blue, "", "")
   call <SID>X("rubyClass", s:brown, "", "")
