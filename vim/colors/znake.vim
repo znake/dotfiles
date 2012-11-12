@@ -252,6 +252,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:white, s:black, "")
+	"call <SID>X("Keyword", s:red, s:black, "")
 	call <SID>X("darkgreyNr", s:grey1, "", "")
 	call <SID>X("NonText", s:darkred, "", "")
 	call <SID>X("SpecialKey", s:darkred, "", "")
