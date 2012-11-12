@@ -85,42 +85,9 @@ snippet a
 	<a ${1}>${2}</a>
 snippet cm
 	<!-- ${1:comment} -->${2}
-snippet jdiv
-	<div data-role="${1}" id="${2}">
-		${3}
-	</div>
-snippet jqm
-	<!doctype html>
-	<html>
-	<head>
-		<title>${1:Demo}</title>
-		<link href="jquery.mobile-1.0.1/jquery.mobile-1.0.1.css" rel="stylesheet" type="text/css"/>
-		<script src="jquery.mobile-1.0.1/jquery-1.7.1.js"></script>
-		<script src="jquery.mobile-1.0.1/jquery.mobile-1.0.1.js"></script>
-	</head>
 
-	<body>
+snippet header
+	<header>${1:header}</header>
 
-		<!-- main page -->
-		<div data-role="page" id="main">
-			<div data-role="header">
-				<h1>main page</h1>
-			</div>
-			<div data-role="content">
-				<h1>page nav and dialog example</h1>
-			</div>
-			<div data-role="footer">
-				<h4>main page footer</h4>
-			</div>
-		</div>
-		<!-- first page end -->
-
-	</body>
-	</html>
-snippet dp
-	data-position="${1:inline}"
-snippet lab
-	<label for="${1:name}">
-		${2}
-	</label>
-
+snippet footer
+	<footer>${1:footer}</footer>
