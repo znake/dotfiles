@@ -20,13 +20,14 @@ let s:highgreen = "abff00"
 let s:darkgreen = "519f50"
 let s:blue = "6d9cbe"
 let s:purple = "c397d8"
-let s:purplelight = "f5c5f1"
+let s:rubyinstance = "D0D0FF"
 let s:middlegrey = "4d5057"
 let s:pink = "ff0080"
 let s:darkpink = "6f0037"
 let s:grey1 = "535353"
 let s:grey2 = "191919"
 let s:grey3 = "868686"
+let s:linenr = "2b2b2b"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -271,7 +272,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("FoldColumn", "", s:black, "")
 	if version >= 700
 		call <SID>X("Cursor", "", s:pink, "none")
-		call <SID>X("LineNr", s:grey3, "", "none")
+		call <SID>X("LineNr", s:linenr, "", "none")
 		call <SID>X("Cursordarkgrey", "", s:darkred, "none")
 		call <SID>X("CursorColumn", "", s:darkred, "none")
 		call <SID>X("CursorLine", "", s:darkred, "none")
@@ -342,11 +343,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X("rubyBlockParameter", s:blue, "", "")
   call <SID>X("rubyClass", s:brown, "", "")
   call <SID>X("rubyFunction", s:orange, "", "")
-  call <SID>X("rubyInstanceVariable", s:purplelight, "", "")
-  "call <SID>X("rubyLocalVariableOrMethod", s:brown, "", "")
-  "call <SID>X("rubyPredefinedConstant", s:brown, "", "")
-  "call <SID>X("rubyPseudoVariable", s:brown, "", "")
-
+  call <SID>X("rubyInstanceVariable", s:rubyinstance, "", "")
 
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
