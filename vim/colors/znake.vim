@@ -27,7 +27,7 @@ let s:darkpink = "6f0037"
 let s:grey1 = "535353"
 let s:grey2 = "191919"
 let s:grey3 = "868686"
-let s:linenr = "2b2b2b"
+let s:linenr = "333333"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -332,7 +332,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:blue, "", "")
 	call <SID>X("rubyConstant", s:red, "", "")
+	call <SID>X("rubyKeyword", s:red, "", "")
+	call <SID>X("rubyBeginEnd", s:brown, "", "")
 	call <SID>X("rubyAttribute", s:brown, "", "")
+	call <SID>X("rubyControl", s:brown, "", "")
 	call <SID>X("rubyInclude", s:blue, "", "")
 	call <SID>X("rubyLocalVariableOrMethod", s:brown, "", "")
 	call <SID>X("rubyCurlyBlock", s:red, "", "")
@@ -345,6 +348,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X("rubyClass", s:brown, "", "")
   call <SID>X("rubyFunction", s:orange, "", "")
   call <SID>X("rubyInstanceVariable", s:rubyinstance, "", "")
+  "call <SID>X("rubyBlock", s:brown, "", "")
+  "call <SID>X("rubyDoBlock", s:brown, "", "")
 
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
