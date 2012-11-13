@@ -85,6 +85,12 @@ let coffee_compiler = '/usr/local/share/npm/bin/coffee'
 
 set cursorline
 
+" Allow the cursor to go in to 'invalid' places
+set virtualedit=all
+map <Leader>ve :set virtualedit=all<cr>
+" Don't allow the cursor to go in to 'invalid' places
+map <Leader>vb :set virtualedit=block<cr>
+
 set number
 set ruler
 syntax on
