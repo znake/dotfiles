@@ -380,13 +380,6 @@ fu! ReplaceWhatever()
 endfu
 map <Leader>rw :call ReplaceWhatever()<cr>
 
-" Tabularaized for rails
-function! IndentX()
-  <
-  Tabularize /^[^:]*\zs:/r1c0l0
-  Tabularize /^[^=>]*\zs=>/l1
-endfunction
-map <Leader>iv :call IndentX()<cr>
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
 
@@ -455,6 +448,9 @@ map <Leader>s csw
 map <Leader>S csW
 " operates on a line
 map <Leader>sl yss
+" use S without leader to quote current selection
+" use cs to change surroundings
+
 
 " Use system clipboard for copy and paste
 set clipboard=unnamed
