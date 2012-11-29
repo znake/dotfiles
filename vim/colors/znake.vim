@@ -338,7 +338,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("rubyControl", s:brown, "", "")
 	call <SID>X("rubyInclude", s:blue, "", "")
 	call <SID>X("rubyLocalVariableOrMethod", s:brown, "", "")
-	call <SID>X("rubyCurlyBlock", s:red, "", "")
 	call <SID>X("rubyStringDelimiter", s:green, "", "")
   call <SID>X("rubyInterpolation", s:darkgreen, "", "")
 	call <SID>X("rubyInterpolationDelimiter", s:darkgreen, "", "")
@@ -346,6 +345,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("rubyRepeat", s:purple, "", "")
   call <SID>X("rubyBlockParameter", s:blue, "", "")
   call <SID>X("rubyClass", s:brown, "", "")
+  call <SID>X("rubyClassVariable", s:red, "", "")
   call <SID>X("rubyFunction", s:orange, "", "")
   call <SID>X("rubyInstanceVariable", s:rubyinstance, "", "")
   "call <SID>X("rubyBlock", s:brown, "", "")
@@ -369,6 +369,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("htmlTagName", s:orange, "", "")
 	call <SID>X("htmlArg", s:brown, "", "")
 	call <SID>X("htmlScriptTag", s:orange, "", "")
+	call <SID>X("htmlLink", s:blue, "", "")
 
   "XML Highlighting
 	call <SID>X("xmlTag", s:orange, "", "")
