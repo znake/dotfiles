@@ -67,7 +67,7 @@ Bundle "jQuery"
 
 let g:Powerline_symbols = 'fancy'
 
-" vim-indent-guides plugin setup
+" vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
 let g:indent_guides_guide_size = 1
@@ -86,7 +86,7 @@ let coffee_compiler = '/usr/local/share/npm/bin/coffee'
 set cursorline
 
 " Allow the cursor to go in to 'invalid' places
-set virtualedit=all
+"set virtualedit=all
 map <Leader>ve :set virtualedit=all<cr>
 " Don't allow the cursor to go in to 'invalid' places
 map <Leader>vb :set virtualedit=block<cr>
@@ -138,6 +138,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " disable VIM welcome screen
 set shortmess+=I
 
+" Alternate plugin
+map <Leader>ma :A<cr>
 " fast switch between .js and .coffee files with the alternate plugin
 let g:alternateExtensions_coffee = 'js'
 let g:alternateExtensions_js = 'coffee'
@@ -145,7 +147,6 @@ let g:alternateExtensions_haml = 'html'
 let g:alternateExtensions_html = 'haml'
 let g:alternateExtensions_sass = 'css'
 let g:alternateExtensions_css = 'sass'
-map <Leader>ma :A<cr>
 
 " Searching
 "set hlsearch
@@ -180,7 +181,7 @@ noremap <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
-map ü :bl<cr>
+map ü ``
 
 " paste clipboard register 0
 map <Leader>ö "0p
@@ -255,16 +256,6 @@ runtime! macros/matchit.vim
 
 " delete Text and go switch to insert mode between HTML-Tags
 map <Leader>< F>lct<
-
-" Use fj or jf as <Esc> alternative
-inoremap fj <esc>
-inoremap jf <esc>
-inoremap JF <esc>
-inoremap FJ <esc>
-inoremap jF <esc>
-inoremap Fj <esc>
-inoremap Jf <esc>
-inoremap fJ <esc>
 
 inoremap öö <esc>ZZ
 
@@ -383,6 +374,11 @@ map <Leader>rw :call ReplaceWhatever()<cr>
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
 
+map <Leader>hh <C-w>h
+map <Leader>jj <C-w>j
+map <Leader>kk <C-w>k
+map <Leader>ll <C-w>l
+
 " make it easy to resize windows
 map 6 <C-W>6<
 map 7 <C-W>6>
@@ -395,7 +391,7 @@ map <Leader>4 <C-W>=
 noremap <tab> <C-w>w
 
 " delete last word in normal mode
-noremap <backspace> bdW
+noremap <backspace> bdw
 
 " move buffers
 map 9 <C-W>L
@@ -408,10 +404,6 @@ map <C-c> <c-w>c
 map <Leader>sv <c-w>v
 map <Leader>sh <c-w>s
 map <Leader>sr <c-w>r
-
-" force saving files that require root permission
-cmap w!! %!sudo tee > /dev/null %
-
 
 map <Leader>hl :set hlsearch! hlsearch?<cr>
 
@@ -451,7 +443,6 @@ map <Leader>sl yss
 " use S without leader to quote current selection
 " use cs to change surroundings
 
-
 " Use system clipboard for copy and paste
 set clipboard=unnamed
 
@@ -459,6 +450,7 @@ nmap <Leader>sp :set spell!<cr>
 " Set region to British English
 set spelllang=de_at
 
+" switch languages
 map <Leader>se :set spelllang=en_gb<cr>
 map <Leader>sd :set spelllang=de_at<cr>
 
@@ -473,8 +465,6 @@ map <Leader>rp :Rpreview<cr>
 map <Leader>rj :Rjavascript<cr>
 map <Leader>rl :Rlayout<cr>
 map <Leader>rs :Rspec<cr>
-map <Leader>ry :Rstylesheet<cr>
-map <Leader>ru :Runittest<cr>
 map <Leader>ga :A<cr>
 map <Leader>gr :R<cr>
 
@@ -523,7 +513,7 @@ map <Leader>dl :g/^$/d<cr>
 " jump to defenition of the selected word
 " useful in helpfiles because strg + ]
 " is not very comfortable on german keyboards
-map <Leader>jj <C-]>
+map <Leader>jk <C-]>
 
 " show copy history
 map <Leader>re :reg<cr>
@@ -599,7 +589,6 @@ endfunction
 " Execute clear whitespace on save
 autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 
-
 " improve performance of ctrlp
 "let ctrlp_filter_greps = "".
     "\ "egrep -iv '\\.(" .
@@ -620,3 +609,14 @@ autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 "endif
 
 "let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
+
+"" Use fj or jf as <Esc> alternative
+"inoremap fj <esc>
+"inoremap jf <esc>
+"inoremap JF <esc>
+"inoremap FJ <esc>
+"inoremap jF <esc>
+"inoremap Fj <esc>
+"inoremap Jf <esc>
+"inoremap fJ <esc>
+
