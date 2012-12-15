@@ -449,7 +449,9 @@ map <Leader>sl yss
 " use cs to change surroundings
 
 " Use system clipboard for copy and paste
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard=unnamed
+endif
 
 nmap <Leader>sp :set spell!<cr>
 " Set region to British English
