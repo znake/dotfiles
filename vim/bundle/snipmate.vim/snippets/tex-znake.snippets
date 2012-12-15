@@ -6,7 +6,6 @@ snippet fig
 		\caption{${3}}
 		\label{fig:${4:$2}}
 	\end{figure}
-	${5}
 # Code
 snippet code
 	\begin{lstlisting}[numbers=left,label={lis:${1}},caption={${2:caption}}]
@@ -43,11 +42,11 @@ snippet faq
 	{${1}}
 	{${2}}
 # center
-snippet c
+snippet center
 	\center{${1}}
 snippet subsection
 	${1:Subsection}~\ref{${2:sub:}}${3}
-snippet subssection
+snippet subsubsection
 	${1:Subsubsection}~\ref{${2:subs:}}${3}
 snippet ref
 	~\ref{${1}}
@@ -59,3 +58,5 @@ snippet ra
 	\rightarrow
 snippet la
 	\leftarrow
+snippet cod
+	\lstinputlisting[language=${1:html}, numbers=left, label={lis:${2:label}}, caption={${3:caption}}]{code/${4:filename}}

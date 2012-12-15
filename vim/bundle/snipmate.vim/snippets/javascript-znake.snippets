@@ -1,11 +1,13 @@
 # jQuery
 snippet <
 	<${1:tag}>${2}</$1>
-snippet $
-	$(${1});
 # jQuery
 snippet jq
-	jQuery(function () {
+	$(function () {
+		${1}
+	});
+snippet $
+	$(function () {
 		${1}
 	});
 # return false
