@@ -4,6 +4,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+color znake
+
 " let Vundle manage Vundle :BundleInstall
 " required!
 Bundle 'gmarik/vundle'
@@ -42,6 +44,7 @@ Bundle "gmarik/sudo-gui.vim"
 Bundle "jcf/vim-latex"
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
+Bundle "Lokaltog/vim-easymotion"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -181,7 +184,7 @@ noremap <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
-map ü ``
+map ü :bp<cr>
 
 " paste clipboard register 0
 map <Leader>ö "0p
@@ -316,7 +319,6 @@ let g:Tex_GotoError = 0
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-map <Leader>la :w<cr> ,ll
 map <Leader>ld :w<cr> ,ll ,ls
 
 " config for vimwiki
@@ -428,6 +430,9 @@ map <Leader>cr :CoffeeRun<cr>
 map <Leader>sb :set scrollbind!<cr>
 map <Leader>mc :CoffeeMake!<cr>
 
+" Autocompile coffeescript buffer on save
+"au BufWritePost *.coffee silent CoffeeMake!
+
 " delete content of whole buffer
 map <Leader>da ggdG
 " select content of whole buffer
@@ -529,10 +534,6 @@ if has("autocmd")
   filetype plugin indent on
   " OPTIONAL: This enables automatic indentation as you type.
   filetype indent on
-
-  " Autocompile coffeescript buffer on save
-  au BufWritePost *.coffee silent CoffeeMake!
-
 
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
