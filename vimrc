@@ -13,7 +13,6 @@ Bundle 'gmarik/vundle'
 " My VIM Bundles:
 "
 " original repos on github
-Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-rails"
@@ -64,9 +63,10 @@ Bundle "ragtag.vim"
 Bundle "cucumber.zip"
 Bundle "Markdown"
 Bundle "jQuery"
-" non github repos
 
-" Bundle "git://git.wincent.com/command-t.git"
+" currently unused
+"Bundle "rstacruz/sparkup", {"rtp": "vim/"}
+"Bundle "git://git.wincent.com/command-t.git"
 
 let g:Powerline_symbols = 'fancy'
 
