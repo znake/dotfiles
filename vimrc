@@ -330,6 +330,7 @@ map <Leader>so :source ~/.vimrc<cr>
 " MAPPINGS for quick config editing
 map <Leader>vi :edit ~/Dropbox/Library/dotfiles/vimrc<cr>
 map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
+map <Leader>ti :edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
 map <Leader>gi :edit ~/.gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 map <Leader>rt :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
