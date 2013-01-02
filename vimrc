@@ -25,6 +25,8 @@ Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 
+Bundle "duwanis/tomdoc.vim"
+Bundle "jc00ke/vim-tomdoc"
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "msanders/snipmate.vim"
@@ -180,11 +182,17 @@ map <Leader><space> :NERDTreeToggle<cr>
 map <Leader>ä :TagbarToggle<cr>
 
 " use ZoomWin plugin
-noremap <Leader><Leader> :ZoomWin<cr>
+map <Leader>df :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
-map ü :bp<cr>
+map Ä :bp<cr>
+map _ :bn<cr>
+
+map ü ''
+" delete content of line (but dont delete the whole line)
+map Ü 0D
+
 
 " paste clipboard register 0
 map <Leader>ö "0p
@@ -199,9 +207,6 @@ map <Leader>q @q
 map ö g;<cr>
 " goto previous edit position
 map Ö g,<cr>
-
-" delete content of line (but dont delete the whole line)
-map Ü 0D
 
 " Spell checking command
 nmap <S-Up> zg
@@ -260,7 +265,7 @@ runtime! macros/matchit.vim
 " delete Text and go switch to insert mode between HTML-Tags
 map <Leader>< F>lct<
 
-inoremap öö <esc>ZZ
+inoremap öä <esc>ZZ
 
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -590,6 +595,7 @@ function! Preserve(command)
     let @/=_s
     call cursor(l, c)
 endfunction
+
 " Execute clear whitespace on save
 autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 

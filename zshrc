@@ -49,14 +49,18 @@ alias o='open .'
 alias m='mvim .'
 alias mm='mvim'
 
-alias titanium="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
+alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
 alias so="source ~/.zshrc"
 
-export PATH="/usr/local/bin:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/Dropbox/Library/dotfiles/vim/bin:$HOME./rvm/bin:/usr/local/bin/npm:$PATH"
+# install NPM packages in the home directory $HOME/bin. $HOME/bin must be in your PATH
+export NPM_CONFIG_PREFIX=$HOME
+
+export PATH="/usr/local/bin:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/Dropbox/Library/dotfiles/vim/bin:$HOME./rvm/bin:/usr/local/bin/npm:/usr/local/share/npm/bin:$HOME/bin:$HOME/bin.:$PATH"
 # no need for :$HOME/android-sdks/platforms
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# https://rvm.io/integration/zsh/
 __rvm_project_rvmrc
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
