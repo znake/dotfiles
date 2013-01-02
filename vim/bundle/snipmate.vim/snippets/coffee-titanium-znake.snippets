@@ -9,7 +9,7 @@ snippet til
 	${1:LabelName} = Ti.UI.createLabel(
 		text: "${2:text}"
 	)
-	${3:AddMeTo?}.add $1
+	${3:AddMeTo}.add $1
 
 snippet tiw
 	${1:WindowName} = Ti.UI.createWindow(
@@ -25,8 +25,9 @@ snippet tib
 	${1:ButtonName} = Ti.UI.createButton(
 		title: "${2:title}"
 	)
+	${3:AddMeTo}.add $1
+
 	$1.addEventListener "click", (e) ->
-		${3:# do something}
-	${4:AddMeTo}.add $1
+		${4:# do something}
 
 
