@@ -346,10 +346,10 @@ map <Leader>rt :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
 map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 
 " mappings for the quickfix window
-map <Leader>qo :copen<cr>
-map <Leader>qn :cnext<cr>
-map <Leader>qp :cprevious<cr>
-map <Leader>qc :cclose<cr>
+map <Leader>co :copen<cr>
+map <Leader>cn :cnext<cr>
+map <Leader>cp :cprevious<cr>
+map <Leader>cc :cclose<cr>
 
 fu! DeleteSigns()
   %s/"//gi
