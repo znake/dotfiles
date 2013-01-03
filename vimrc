@@ -169,6 +169,10 @@ set wildmenu " Enhanced command line completion.
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
+" Bufferexplorer
+noremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>
+noremap <silent> <c-F11> :BufExplorerVerticalSplit<CR>
+
 " Status bar
 set laststatus=2
 
@@ -522,6 +526,7 @@ map <Leader>bo :only<cr>
 
 " delete empty lines
 map <Leader>dl :g/^$/d<cr>
+map <Leader>be :BufExplorerHorizontalSplit<cr>
 
 " jump to defenition of the selected word
 " useful in helpfiles because strg + ]
