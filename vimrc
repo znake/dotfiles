@@ -345,6 +345,12 @@ map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 map <Leader>rt :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
 map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 
+" mappings for the quickfix window
+map <Leader>qo :copen<cr>
+map <Leader>qn :cnext<cr>
+map <Leader>qp :cprevious<cr>
+map <Leader>qc :cclose<cr>
+
 fu! DeleteSigns()
   %s/"//gi
   %s/“//gi
@@ -526,6 +532,8 @@ map <Leader>bo :only<cr>
 
 " delete empty lines
 map <Leader>dl :g/^$/d<cr>
+
+" always open buffer-explorer with horizontal split per default
 map <Leader>be :BufExplorerHorizontalSplit<cr>
 
 " jump to defenition of the selected word
