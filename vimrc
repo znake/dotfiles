@@ -349,7 +349,7 @@ map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 map <Leader>co :copen<cr>
 map <Leader>cn :cnext<cr>
 map <Leader>cp :cprevious<cr>
-map <Leader>cc :cclose<cr>
+map <Leader>ck :cclose<cr>
 
 fu! DeleteSigns()
   %s/"//gi
@@ -440,11 +440,12 @@ cnoreabbrev W w
 
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
-map <Leader>co :CoffeeCompile watch vert<cr>
-map <Leader>cp :CoffeeCompile unwatch<cr>
+" map <Leader>co :CoffeeCompile watch vert<cr>
+map <Leader>cP :CoffeeCompile unwatch<cr>
 map <Leader>cr :CoffeeRun<cr>
-map <Leader>sb :set scrollbind!<cr>
 map <Leader>mc :CoffeeMake!<cr>
+
+map <Leader>sb :set scrollbind!<cr>
 
 " Autocompile coffeescript buffer on save
 "au BufWritePost *.coffee silent CoffeeMake!
