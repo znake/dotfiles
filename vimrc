@@ -342,7 +342,7 @@ map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
 map <Leader>ti :edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
 map <Leader>gi :edit ~/.gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
-map <Leader>rt :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
+map <Leader>rb :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
 map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 
 " mappings for the quickfix window
@@ -491,6 +491,8 @@ map <Leader>rl :Rlayout<cr>
 map <Leader>rs :Rspec<cr>
 map <Leader>ga :A<cr>
 map <Leader>gr :R<cr>
+
+map <Leader>rt :!rspec --drb --color %<cr>
 
 " Filetype mappings
 map <Leader>fth :set ft=html<cr>
