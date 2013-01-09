@@ -14,6 +14,8 @@ if [ -d ~/.oh-my-zsh ]; then
   ln -nfs ~/Dropbox/Library/dotfiles/hgrc ~/.hgrc
   echo ln -nfs ~/Dropbox/Library/dotfiles/zshrc ~/.zshrc
   ln -nfs ~/Dropbox/Library/dotfiles/zshrc ~/.zshrc
+  echo ln -nfs ~/Dropbox/Library/dotfiles/editrc ~/.editrc
+  ln -nfs ~/Dropbox/Library/dotfiles/editrc ~/.editrc
   echo ln -nfs ~/Dropbox/Library/dotfiles/tmux.conf ~/.tmux.conf
   ln -nfs ~/Dropbox/Library/dotfiles/tmux.conf ~/.tmux.conf
   echo ln -nfs ~/Dropbox/Library/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
