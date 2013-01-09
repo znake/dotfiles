@@ -48,9 +48,12 @@ alias o='open .'
 # VIM
 alias m='mvim .'
 alias mm='mvim'
+alias setuprun='osascript ~/Dropbox/Sonst/runstastic_setup.scpt'
 
 alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
 alias so="source ~/.zshrc"
+
+bindkey \\C-R history-incremental-search-backward
 
 # install NPM packages in the home directory $HOME/bin. $HOME/bin must be in your PATH
 export NPM_CONFIG_PREFIX=$HOME
