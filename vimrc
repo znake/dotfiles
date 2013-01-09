@@ -269,7 +269,7 @@ runtime! macros/matchit.vim
 " delete Text and go switch to insert mode between HTML-Tags
 map <Leader>< F>lct<
 
-inoremap öä <esc>ZZ
+inoremap ää <esc>ZZ
 
 " Autoclose for following letters
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
@@ -400,8 +400,8 @@ map <Leader>ll <C-w>l
 " make it easy to resize windows
 map 6 <C-W>6<
 map 7 <C-W>6>
-map 5 <C-W>4-
-map 4 <C-W>4+
+map 5 <C-W>4+
+map 4 <C-W>4-
 
 map <Leader>4 <C-W>=
 
@@ -493,6 +493,7 @@ map <Leader>ga :A<cr>
 map <Leader>gr :R<cr>
 
 map <Leader>rt :!rspec --drb --color %<cr>
+map <Leader>rg :!rspec --drb --color %:
 
 " Filetype mappings
 map <Leader>fth :set ft=html<cr>
@@ -613,7 +614,7 @@ function! Preserve(command)
 endfunction
 
 " Execute clear whitespace on save
-autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
+"autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 
 " improve performance of ctrlp
 "let ctrlp_filter_greps = "".
