@@ -518,8 +518,6 @@ map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
-" Show Git diff in window split when commiting
-"autocmd FileType gitcommit DiffGitCached | wincmd p
 
 " Space to toggle folds
 nnoremap <Space> za
