@@ -183,7 +183,7 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
 
 " toggle Tagbar
-map <Leader>ä :TagbarToggle<cr>
+map <Leader>ö :TagbarToggle<cr>
 
 " use ZoomWin plugin
 map <Leader>df :ZoomWin<cr>
@@ -197,9 +197,8 @@ map ü ''
 " delete content of line (but dont delete the whole line)
 map Ü 0D
 
-
 " paste clipboard register 0
-map <Leader>ö "0p
+map <Leader>ä "0p
 
 " repeat last macro
 map K @@
@@ -348,6 +347,7 @@ map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
 map <Leader>cn :cnext<cr>
+map + :cnext<cr>
 map <Leader>cp :cprevious<cr>
 map <Leader>ck :cclose<cr>
 
@@ -465,6 +465,8 @@ map <Leader>sl yss
 " use S without leader to quote current selection
 " use cs to change surroundings
 
+map <Leader>aa :Ack<cr>
+
 " Use system clipboard for copy and paste
 if $TMUX == ''
   set clipboard=unnamed
@@ -508,7 +510,6 @@ map <Leader>ftm :set ft=markdown<cr>
 " Fugitive
 map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>ga :Git status<cr>
 map <Leader>gC :Gcommit<cr>i
 map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
 map <Leader>ge :Gedit<cr>
@@ -516,6 +517,7 @@ map <Leader>gr :Gread<cr>
 map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
+map <Leader>gg :Glog -15<cr>
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
 
