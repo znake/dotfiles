@@ -346,7 +346,6 @@ map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
-map <Leader>cn :cnext<cr>
 map + :cnext<cr>
 map <Leader>cp :cprevious<cr>
 map <Leader>ck :cclose<cr>
@@ -518,6 +517,8 @@ map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
+map <Leader>gb :Gblame<cr>
+
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
 
