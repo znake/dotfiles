@@ -339,7 +339,7 @@ map <Leader>so :source ~/.vimrc<cr>
 map <Leader>vi :edit ~/Dropbox/Library/dotfiles/vimrc<cr>
 map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
 map <Leader>ti :edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
-map <Leader>gi :edit ~/.gvimrc<cr>
+map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 map <Leader>rb :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
 map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
@@ -406,8 +406,6 @@ map <Leader>4 <C-W>=
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
-
-map <M-j> <C-w>w
 
 " delete last word in normal mode
 noremap <backspace> bdw
