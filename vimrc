@@ -179,7 +179,7 @@ set laststatus=2
 set noequalalways
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.js$']
 map <Leader><space> :NERDTreeToggle<cr>
 
 " toggle Tagbar
@@ -391,10 +391,10 @@ map <Leader>rw :call ReplaceWhatever()<cr>
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
 
-map <Leader>hh <C-w>h
-map <Leader>jj <C-w>j
-map <Leader>kk <C-w>k
-map <Leader>ll <C-w>l
+map <Leader><Leader>h <C-w>h
+map <Leader><Leader>j <C-w>j
+map <Leader><Leader>k <C-w>k
+map <Leader><Leader>l <C-w>l
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -406,6 +406,8 @@ map <Leader>4 <C-W>=
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
+
+map <M-j> <C-w>w
 
 " delete last word in normal mode
 noremap <backspace> bdw
@@ -447,7 +449,7 @@ map <Leader>mc :CoffeeMake!<cr>
 map <Leader>sb :set scrollbind!<cr>
 
 " Autocompile coffeescript buffer on save
-"au BufWritePost *.coffee silent CoffeeMake!
+au BufWritePost *.coffee silent CoffeeMake!
 
 " delete content of whole buffer
 map <Leader>da ggdG
@@ -637,14 +639,3 @@ endfunction
 "endif
 
 "let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
-
-"" Use fj or jf as <Esc> alternative
-"inoremap fj <esc>
-"inoremap jf <esc>
-"inoremap JF <esc>
-"inoremap FJ <esc>
-"inoremap jF <esc>
-"inoremap Fj <esc>
-"inoremap Jf <esc>
-"inoremap fJ <esc>
-
