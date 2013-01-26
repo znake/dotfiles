@@ -1,19 +1,14 @@
 This is just my personal VIM and zsh configuration.
 
-I´m used to have my dotfiles in my DropBox since I use more than one Mac for development. This is the reason for having more then one .gvimrc files for different font sizes.
+I'm used to have my dotfiles in my DropBox since I use more than one Mac for deveoplment.
 
-For proper symlinking and faster setup I use little bash and ruby scripts you might find useful, check them out in my /scripts/ folder.
-CHECK THEM OUT AT FIRST BEFORE USING THEM!!!
+For proper symlinking and faster setup I use the little bash script you can find in: 
 
-For fast symlinking for my Mac Mini I use:
+[/scripts/symlink.sh](https://github.com/znake/dotfiles/blob/master/scripts/symlink.sh)
 
-    $ sh symlink_mini.sh
-
+Please backup your own files, if you want to use it too. 
 (NOTE: This will override all your dotfiles like .vimrc, gvimrc, zshrc, hgrc and so on)
 
-I use [Vundle](https://github.com/gmarik/vundle) for managing my plugins, so if you want to update the bundles use :BundleInstall.
+I use [Vundle](https://github.com/gmarik/vundle) for managing my plugins, so if you want to update the bundles use 
 
-If you want to use your own snippets like me which I store in my custom folder /vim/mySnippets/ and add them to Snipmate use [addsnippets.sh](https://github.com/znake/dotfiles/blob/master/vim/mySnippets/addsnippets.sh) which copys all snippets into the snipMate.vim folder.
-
-    $ sh addsnipptes.sh
-
+    :BundleInstall
