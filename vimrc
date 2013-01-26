@@ -179,11 +179,11 @@ set laststatus=2
 set noequalalways
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.js$']
+let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
 
 " toggle Tagbar
-map <Leader>ö :TagbarToggle<cr>
+map <Leader>ä :TagbarToggle<cr>
 
 " use ZoomWin plugin
 map <Leader>df :ZoomWin<cr>
@@ -198,7 +198,7 @@ map ü ''
 map Ü 0D
 
 " paste clipboard register 0
-map <Leader>ä "0p
+map <Leader>ö "0p
 
 " repeat last macro
 map K @@
@@ -341,8 +341,6 @@ map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
 map <Leader>ti :edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
 map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
-map <Leader>rb :edit ~/Dropbox/Coding/ruby/rubytest.rb<cr>
-map <Leader>ct :edit ~/Dropbox/Coding/coffeescript/Testing/test.coffee<cr>
 
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
@@ -447,7 +445,7 @@ map <Leader>mc :CoffeeMake!<cr>
 map <Leader>sb :set scrollbind!<cr>
 
 " Autocompile coffeescript buffer on save
-au BufWritePost *.coffee silent CoffeeMake!
+"au BufWritePost *.coffee silent CoffeeMake!
 
 " delete content of whole buffer
 map <Leader>da ggdG
@@ -505,6 +503,7 @@ map <Leader>ftp :set ft=php<cr>
 map <Leader>fts :set ft=sql<cr>
 map <Leader>ftt :set ft=txt<cr>
 map <Leader>ftm :set ft=markdown<cr>
+map <Leader>ftc :set ft=coffee<cr>
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
@@ -596,6 +595,9 @@ if has("autocmd")
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
+
+  " add json syntax highlighting
+  au BufNewFile,BufRead *.coffee.erb set ft=coffee
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4
