@@ -1,5 +1,5 @@
 #!/bin/bash
-# Symlinks your bash and vim config files
+# Symlinks my bash and vim config files
 if [ -d ~/.oh-my-zsh ]; then
   echo symlinking
   echo ln -nfs ~/Dropbox/Library/dotfiles/vimrc ~/.vimrc
