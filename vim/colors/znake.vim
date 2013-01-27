@@ -287,9 +287,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
   call <SID>X("DiffAdd", s:black, s:green, "")
-  call <SID>X("DiffChange", s:black, s:blue, "")
-  call <SID>X("DiffText", s:black, s:white, "")
-  call <SID>X("DiffDelete", s:black, s:red, "")
+  call <SID>X("DiffChange", s:blue, s:black, "")
+  call <SID>X("DiffText", s:orange, s:black, "")
+  call <SID>X("DiffDelete", s:red, s:black, "")
 
 
 	" Standard Highlighting
