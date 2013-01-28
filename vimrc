@@ -345,6 +345,7 @@ map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
 map + :cnext<cr>
+map ß :cprevious<cr>
 map <Leader>cp :cprevious<cr>
 map <Leader>ck :cclose<cr>
 
@@ -393,6 +394,9 @@ map <Leader><Leader>h <C-w>h
 map <Leader><Leader>j <C-w>j
 map <Leader><Leader>k <C-w>k
 map <Leader><Leader>l <C-w>l
+
+" close left buffer
+map <Leader>md <C-w>h:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
