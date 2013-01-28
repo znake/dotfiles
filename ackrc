@@ -1,8 +1,14 @@
 --type-set
 coffee=.coffee
+
 --type-set
 haml=.haml
+
 --type-set
 scss=.scss
+
 --type-set
 sass=.sass
+
+--type-set
+hamlbars=.hamlbars
