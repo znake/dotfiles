@@ -19,6 +19,9 @@ let s:green = "a5c261"
 "let s:green = "87af00"
 let s:highgreen = "abff00"
 let s:darkgreen = "519f50"
+let s:diffgreen = "033609"
+let s:diffpink = "6a0638"
+let s:difflila = "31031a"
 let s:blue = "6d9cbe"
 let s:purple = "c397d8"
 let s:rubyinstance = "D0D0FF"
@@ -286,9 +289,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("ColorColumn", "", s:darkred, "none")
 	end
 
-  call <SID>X("DiffAdd", s:black, s:green, "")
-  call <SID>X("DiffChange", s:purple, s:black, "")
-  call <SID>X("DiffText", s:pink, s:black, "underline")
+  call <SID>X("DiffAdd", "", s:diffgreen, "")
+  call <SID>X("DiffChange", "",s:difflila, "")
+  call <SID>X("DiffText", "", s:diffpink, "")
   call <SID>X("DiffDelete", s:red, s:black, "")
 
 
@@ -376,9 +379,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("xmlTag", s:orange, "", "")
 	call <SID>X("xmlEndTag", s:orange, "", "")
 
-	" Diff Highlighting
-	call <SID>X("diffAdded", s:green, "", "")
-	call <SID>X("diffRemoved", s:red, "", "")
 
   call <SID>X("VimwikiHeader1", s:wikired, "", "")
   call <SID>X("VimwikiHeader2", s:wikiorange, "", "")
