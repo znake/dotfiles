@@ -276,61 +276,10 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 "Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
-" *************** LaTeX Stuff ***************
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-
-let g:Tex_DefaultTargetFormat = 'pdf'
-
-let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi'
-let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
-let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
-let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
-
-let g:Tex_ViewRule_dvi = 'texniscope'
-let g:Tex_ViewRule_ps = 'Preview'
-let g:Tex_ViewRule_pdf = 'Skim'
-
-let g:Tex_FormatDependency_ps  = 'dvi,ps'
-let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf'
-let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
-
-let g:Tex_EnvironmentMenus = 0
-let g:Tex_FontMaps = 0
-let g:Tex_FontMenus = 0
-let g:Tex_SectionMenus = 0
-let g:Tex_SectionMaps = 0
-let g:Tex_IgnoreLevel = 8
-let g:Tex_GotoError = 0
- let g:Tex_IgnoredWarnings ='
-       \"Underfull\n".
-       \"Overfull\n".
-       \"specifier changed to\n".
-       \"You have requested\n".
-       \"Missing number, treated as zero.\n".
-       \"There were undefined references\n".
-       \"Citation %.%# undefined\n".
-       \"\oval, \circle, or \line size unavailable\n"'
-"For proper inverse sync with Skim you ned to add this in your Skim Sync Settings
-"Settings: own
-"Command: mvim
-"Arguments: --remote-silent +":%line;foldo!" "%file"
-
-map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
-"map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
-
-map <Leader>ld :w<cr> ,ll ,ls
 
 " config for vimwiki
 let g:vimwiki_hl_cb_checked = 1
+map <Leader>do :VimwikiToggleListItem<cr>
 
 " source vimrc
 map <Leader>so :source ~/.vimrc<cr>
@@ -404,7 +353,7 @@ map 7 <C-W>6>
 map 5 <C-W>4+
 map 4 <C-W>4-
 
-map <Leader>4 <C-W>=
+map <Leader>4 <C-w>=
 
 " use tab to switch buffers
 noremap <tab> <C-w>w
@@ -622,6 +571,59 @@ endfunction
 
 " Execute clear whitespace on save
 "autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
+
+" *************** LaTeX Stuff ***************
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+let g:Tex_DefaultTargetFormat = 'pdf'
+
+let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi'
+let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
+let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
+
+let g:Tex_ViewRule_dvi = 'texniscope'
+let g:Tex_ViewRule_ps = 'Preview'
+let g:Tex_ViewRule_pdf = 'Skim'
+
+let g:Tex_FormatDependency_ps  = 'dvi,ps'
+let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf'
+let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
+
+let g:Tex_EnvironmentMenus = 0
+let g:Tex_FontMaps = 0
+let g:Tex_FontMenus = 0
+let g:Tex_SectionMenus = 0
+let g:Tex_SectionMaps = 0
+let g:Tex_IgnoreLevel = 8
+let g:Tex_GotoError = 0
+ let g:Tex_IgnoredWarnings ='
+       \"Underfull\n".
+       \"Overfull\n".
+       \"specifier changed to\n".
+       \"You have requested\n".
+       \"Missing number, treated as zero.\n".
+       \"There were undefined references\n".
+       \"Citation %.%# undefined\n".
+       \"\oval, \circle, or \line size unavailable\n"'
+"For proper inverse sync with Skim you ned to add this in your Skim Sync Settings
+"Settings: own
+"Command: mvim
+"Arguments: --remote-silent +":%line;foldo!" "%file"
+
+map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
+"map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
+
+map <Leader>ld :w<cr> ,ll ,ls
 
 " improve performance of ctrlp
 "let ctrlp_filter_greps = "".
