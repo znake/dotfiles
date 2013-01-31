@@ -257,7 +257,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:white, s:black, "")
-	"call <SID>X("Keyword", s:red, s:black, "")
 	call <SID>X("darkgreyNr", s:grey1, "", "")
 	call <SID>X("NonText", s:darkred, "", "")
 	call <SID>X("SpecialKey", s:darkred, "", "")
@@ -302,7 +301,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Title", s:white, "", "")
 	call <SID>X("Identifier", s:blue, "", "none")
 	call <SID>X("Statement", s:white, "", "")
-	call <SID>X("Conditional", s:white, "", "")
 	call <SID>X("Repeat", s:white, "", "")
 	call <SID>X("Number", s:yellow, "", "")
 	call <SID>X("Structure", s:red, "", "")
@@ -316,6 +314,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Define", s:brown, "", "none")
 	call <SID>X("Include", s:blue, "", "")
   call <SID>X("Ignore", "666666", "", "")
+  call <SID>X("Keyword", s:orange, "", "")
+  call <SID>X("Conditional", s:brown, "", "")
+	"call <SID>X("Keyword", s:red, s:black, "")
+	"call <SID>X("Conditional", s:white, "", "")
 
 	" Vim Highlighting
   call <SID>X("vimCommand", s:white, "", "none")
@@ -353,6 +355,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X("rubyClassVariable", s:red, "", "")
   call <SID>X("rubyFunction", s:orange, "", "")
   call <SID>X("rubyInstanceVariable", s:rubyinstance, "", "")
+  call <SID>X("railsClass", s:red, "", "")
   "call <SID>X("rubyBlock", s:brown, "", "")
   "call <SID>X("rubyDoBlock", s:brown, "", "")
 
