@@ -45,8 +45,8 @@ Bundle "gmarik/sudo-gui.vim"
 Bundle "jcf/vim-latex"
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
-Bundle "Lokaltog/vim-easymotion"
-
+Bundle "hallison/vim-markdown"
+Bundle "Valloric/YouCompleteMe"
 " vim-scripts github repos
 Bundle "ZoomWin"
 Bundle "L9"
@@ -63,12 +63,12 @@ Bundle "a.vim"
 Bundle "ragtag.vim"
 " Syntax highlight
 Bundle "cucumber.zip"
-Bundle "Markdown"
 Bundle "jQuery"
 
 " currently unused
 "Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 "Bundle "git://git.wincent.com/command-t.git"
+"Bundle "Lokaltog/vim-easymotion"
 
 let g:Powerline_symbols = 'fancy'
 
@@ -181,6 +181,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+let g:NERDTreeMapHelp = '<F1>'
 
 " toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
@@ -345,7 +346,7 @@ map <Leader><Leader>k <C-w>k
 map <Leader><Leader>l <C-w>l
 
 " close left buffer
-map <Leader>md <C-w>h:bd<cr>
+map <Leader>dd <C-w>h:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -441,8 +442,6 @@ map <Leader>rp :Rpreview<cr>
 map <Leader>rj :Rjavascript<cr>
 map <Leader>rl :Rlayout<cr>
 map <Leader>rs :Rspec<cr>
-map <Leader>ga :A<cr>
-map <Leader>gr :R<cr>
 
 map <Leader>rt :!rspec --drb --color %<cr>
 map <Leader>rg :!rspec --drb --color %:
@@ -470,6 +469,7 @@ map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gb :Gblame<cr>
+map <Leader>ga :Gstatus<cr>:bd<cr>
 
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
