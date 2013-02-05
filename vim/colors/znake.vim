@@ -290,7 +290,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
-  call <SID>X("DiffChange", "",s:difflila, "")
+  call <SID>X("DiffChange", "",s:middlegrey, "")
   call <SID>X("DiffText", "", s:diffpink, "")
   call <SID>X("DiffDelete", s:diffred, s:diffred, "")
 
