@@ -12,6 +12,7 @@ let s:comment = "2a5680"
 let s:red = "da4939"
 let s:darkred = "1b000d"
 let s:orange = "ffc66d"
+let s:darkorange = "865200"
 let s:brown = "cc7833"
 let s:highyellow = "ffff00"
 let s:yellow = "ffc66d"
@@ -25,6 +26,7 @@ let s:diffgreen = "033108"
 let s:diffred = "760c07"
 let s:blue = "6d9cbe"
 let s:darkblue = "19344e"
+let s:diffblue = "32679b"
 let s:purple = "c397d8"
 let s:rubyinstance = "D0D0FF"
 let s:middlegrey = "4d5057"
@@ -292,7 +294,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
   call <SID>X("DiffChange", "",s:darkblue, "")
-  call <SID>X("DiffText", "", s:diffpink, "")
+  call <SID>X("DiffText", "", s:diffblue, "")
   call <SID>X("DiffDelete", s:diffred, s:diffred, "")
 
 
