@@ -27,6 +27,9 @@ if [ -d ~/.oh-my-zsh ]; then
   echo ln -nfs ~/Dropbox/Library/dotfiles/editrc ~/.editrc
   ln -nfs ~/Dropbox/Library/dotfiles/editrc ~/.editrc
 
+  echo ln -nfs ~/Dropbox/Library/dotfiles/irbrc ~/.irbrc
+  ln -nfs ~/Dropbox/Library/dotfiles/irbrc ~/.irbrc
+
   echo ln -nfs ~/Dropbox/Library/dotfiles/tmux.conf ~/.tmux.conf
   ln -nfs ~/Dropbox/Library/dotfiles/tmux.conf ~/.tmux.conf
 
