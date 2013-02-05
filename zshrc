@@ -50,6 +50,9 @@ alias m='mvim .'
 alias mm='mvim'
 alias setuprun='osascript ~/Dropbox/Sonst/runstastic_setup.scpt'
 
+# rake
+alias rake='noglob rake'
+
 alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
 alias so="source ~/.zshrc"
 
