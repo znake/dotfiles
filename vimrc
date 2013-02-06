@@ -153,6 +153,9 @@ let g:alternateExtensions_html = 'haml'
 let g:alternateExtensions_sass = 'css'
 let g:alternateExtensions_css = 'sass'
 
+" highlight column 80 to try not to get over 80 sings a line
+set cc=80
+
 " Searching
 "set hlsearch
 set incsearch
