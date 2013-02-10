@@ -46,7 +46,6 @@ Bundle "jcf/vim-latex"
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
 Bundle "hallison/vim-markdown"
-Bundle "Valloric/YouCompleteMe"
 " vim-scripts github repos
 Bundle "ZoomWin"
 Bundle "L9"
@@ -348,8 +347,15 @@ map <Leader><Leader>j <C-w>j
 map <Leader><Leader>k <C-w>k
 map <Leader><Leader>l <C-w>l
 
-" close left buffer
-map <Leader>dd <C-w>h:bd<cr>
+" close buffers without need switching to them 
+map <Leader>hd <C-w>h:bd<cr>
+map <Leader>ld <C-w>l:bd<cr>
+map <Leader>kd <C-w>k:bd<cr>
+map <Leader>jd <C-w>j:bd<cr>
+
+" I use this together with fugitive :Gstatus
+map <Leader>md <C-w>h:bd<cr><C-w>kj
+map <Leader>dd <C-w>h:bd<cr><C-w>k:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -394,12 +400,12 @@ cnoreabbrev W w
 
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
-" map <Leader>co :CoffeeCompile watch vert<cr>
+map <Leader>cr :CoffeeCompile watch vert<cr>
 map <Leader>cP :CoffeeCompile unwatch<cr>
-map <Leader>cr :CoffeeRun<cr>
+"map <Leader>cr :CoffeeRun<cr>
 map <Leader>mc :CoffeeMake!<cr>
 
-map <Leader>sb :set scrollbind!<cr>
+map <Leader>sbb :set scrollbind!<cr>
 
 " Autocompile coffeescript buffer on save
 "au BufWritePost *.coffee silent CoffeeMake!
@@ -626,7 +632,7 @@ let g:Tex_GotoError = 0
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-map <Leader>ld :w<cr> ,ll ,ls
+"map <Leader>ld :w<cr> ,ll ,ls
 
 " improve performance of ctrlp
 "let ctrlp_filter_greps = "".
