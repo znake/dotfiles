@@ -48,7 +48,7 @@ alias o='open .'
 # VIM
 alias m='mvim .'
 alias mm='mvim'
-alias setuprun='osascript ~/Dropbox/Sonst/runstastic_setup.scpt'
+alias setuprun='osascript ~/Dropbox/Sonst/setuprun.scpt'
 
 # rake
 alias rake='noglob rake'
