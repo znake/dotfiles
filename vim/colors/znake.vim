@@ -24,6 +24,7 @@ let s:darkpink   = "6f0037"
 let s:grey1      = "535353"
 let s:grey2      = "191919"
 let s:grey3      = "868686"
+let s:darkgrey   = "0b0b0b"
 
 let s:comment = "2a5680"
 let s:linenr  = "333333"
@@ -285,7 +286,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("PMenuSel", s:white, s:darkred, "reverse")
 	end
 	if version >= 703
-		call <SID>X("ColorColumn", "", s:darkred, "none")
+		call <SID>X("ColorColumn", "", s:darkgrey, "none")
 	end
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
