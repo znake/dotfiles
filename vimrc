@@ -188,9 +188,6 @@ let g:NERDTreeMapHelp = '<F1>'
 " toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
 
-" use ZoomWin plugin
-map <Leader>df :ZoomWin<cr>
-
 " switch to last opened buffer
 map ä <C-^>
 map Ä :bp<cr>
@@ -220,6 +217,11 @@ nmap <S-Down> zug
 nmap <S-Right> ]s
 nmap <S-Left> [s
 
+map <Leader>tn :tabnext<cr>
+map <Leader>tp :tabprevious<cr>
+map <D-L> :tabnext<cr>
+map <D-H> :tabprevious<cr>
+
 " set background color
 map <Leader>bl :set background=light<cr>
 map <Leader>bk :set background=dark<cr>
@@ -236,7 +238,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Show 3 lines of context around the cursor.
-set scrolloff=10
+"set scrolloff=5
 " toggle scrolloff with ss
 nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
 map <Leader>sg :set scrolloff=15<cr>
@@ -297,8 +299,7 @@ map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
 map + :cnext<cr>
-map ß :cprevious<cr>
-map <Leader>cp :cprevious<cr>
+map - :cprevious<cr>
 map <Leader>ck :cclose<cr>
 
 fu! DeleteSigns()
@@ -341,11 +342,6 @@ map <Leader>rw :call ReplaceWhatever()<cr>
 
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
-
-map <Leader><Leader>h <C-w>h
-map <Leader><Leader>j <C-w>j
-map <Leader><Leader>k <C-w>k
-map <Leader><Leader>l <C-w>l
 
 " close buffers without need switching to them 
 map <Leader>hd <C-w>h:bd<cr>
@@ -483,12 +479,8 @@ map <Leader>ga :Gstatus<cr>:bd<cr>
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
 
-" Space to toggle folds
-nnoremap <Space> za
-vnoremap <Space> za
-
-"map <Leader>fs :mkview<cr>
-"au BufWinEnter * silent! loadview
+nnoremap <Space> :ZoomWin<cr>
+vnoremap <Space> :ZoomWin<cr>
 
 " Buffers
 map <Leader>bd :bd<cr>
