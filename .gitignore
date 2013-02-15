@@ -6,4 +6,3 @@ vim/bundle/vim-latex/ftplugin/latex-suite/**/*
 *.swp
 *.swo
 *.netrwhist
-gvimrc
