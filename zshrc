@@ -49,6 +49,7 @@ alias o='open .'
 alias m='mvim .'
 alias mm='mvim'
 alias setuprun='osascript ~/Dropbox/Sonst/setuprun.scpt'
+alias setuproute='osascript ~/Dropbox/Sonst/setuproute.scpt'
 
 # rake
 alias rake='noglob rake'
