@@ -188,10 +188,14 @@ let g:NERDTreeMapHelp = '<F1>'
 " toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
 
+nnoremap <Space> <C-^>
+vnoremap <Space> <C-^>
+
+map <Leader><Leader> :ZoomWin<cr>
+
 " switch to last opened buffer
-map ä <C-^>
-map Ä :bp<cr>
-map _ :bn<cr>
+map ä :bp<cr>
+map Ä :bn<cr>
 
 map ü ''
 " delete content of line (but dont delete the whole line)
@@ -238,7 +242,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Show 3 lines of context around the cursor.
-"set scrolloff=5
+set scrolloff=5
 " toggle scrolloff with ss
 nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
 map <Leader>sg :set scrolloff=15<cr>
@@ -436,7 +440,20 @@ set spelllang=de_at
 map <Leader>se :set spelllang=en_gb<cr>
 map <Leader>sd :set spelllang=de_at<cr>
 
-map <Leader>rr :set makeprg=~/.rvm/bin/ruby-1.9.3-p194\ %<cr>:make<cr>
+map <Leader>rr :set makeprg=~/.rvm/bin/ruby-1.9.3-p327\ %<cr>:make<cr>
+
+" Command-Shift-F for Ack
+map <D-F> :Ack<space>
+
+" Command-Option-ArrowKey to switch viewports
+map <D-M-Up> <C-w>k
+imap <D-M-Up> <Esc> <C-w>k
+map <D-M-Down> <C-w>j
+imap <D-M-Down> <Esc> <C-w>j
+map <D-M-Right> <C-w>l
+imap <D-M-Right> <Esc> <C-w>l
+map <D-M-Left> <C-w>h
+imap <D-M-Left> <C-w>h
 
 " Leader shortcuts for Rails commands
 map <Leader>rc :Rcontroller<cr>
@@ -478,9 +495,6 @@ map <Leader>ga :Gstatus<cr>:bd<cr>
 
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
-
-nnoremap <Space> :ZoomWin<cr>
-vnoremap <Space> :ZoomWin<cr>
 
 " Buffers
 map <Leader>bd :bd<cr>
