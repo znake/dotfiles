@@ -46,6 +46,7 @@ Bundle "jcf/vim-latex"
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
 Bundle "hallison/vim-markdown"
+Bundle "goldfeld/vim-seek"
 " vim-scripts github repos
 Bundle "ZoomWin"
 Bundle "L9"
@@ -70,6 +71,9 @@ Bundle "jQuery"
 "Bundle "Lokaltog/vim-easymotion"
 
 let g:Powerline_symbols = 'fancy'
+
+let g:SeekKey = '<Space>'
+let g:SeekBackKey = '<S-Space>'
 
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
@@ -189,13 +193,12 @@ let g:NERDTreeMapHelp = '<F1>'
 map <Leader>ä :TagbarToggle<cr>
 
 nnoremap <Space> <C-^>
-vnoremap <Space> <C-^>
 
 map <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
-map ä :bp<cr>
-map Ä :bn<cr>
+map ä <C-^>
+map Ä :bp<cr>
 
 map ü ''
 " delete content of line (but dont delete the whole line)
