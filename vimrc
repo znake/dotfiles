@@ -47,6 +47,7 @@ Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
 Bundle "hallison/vim-markdown"
 Bundle "goldfeld/vim-seek"
+Bundle "airblade/vim-gitgutter"
 " vim-scripts github repos
 Bundle "ZoomWin"
 Bundle "L9"
@@ -191,8 +192,6 @@ let g:NERDTreeMapHelp = '<F1>'
 
 " toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
-
-nnoremap <Space> <C-^>
 
 map <Leader><Leader> :ZoomWin<cr>
 
@@ -349,8 +348,9 @@ map <Leader>rw :call ReplaceWhatever()<cr>
 
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
+map <Leader>tj :Tabularize /=<cr>
 
-" close buffers without need switching to them 
+" close buffers without need switching to them
 map <Leader>hd <C-w>h:bd<cr>
 map <Leader>ld <C-w>l:bd<cr>
 map <Leader>kd <C-w>k:bd<cr>
@@ -410,7 +410,7 @@ map <Leader>mc :CoffeeMake!<cr>
 
 map <Leader>sbb :set scrollbind!<cr>
 
-" Autocompile coffeescript buffer on save
+" Autocompile coffeescript buffer on save xx
 "au BufWritePost *.coffee silent CoffeeMake!
 
 " delete content of whole buffer
