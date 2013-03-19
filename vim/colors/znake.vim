@@ -32,7 +32,7 @@ let s:linenr  = "333333"
 let s:diffgreen  = "033108"
 let s:diffred    = "760c07"
 let s:diffchange = "19344e"
-let s:difftext   = "3874af"
+let s:difftext   = "460704"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -335,6 +335,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("phpConditional", s:purple, "", "")
 	call <SID>X("phpStatement", s:purple, "", "")
 	call <SID>X("phpMemberSelector", s:white, "", "")
+
+	" CoffeeScript Highlighting
+	call <SID>X("coffeeInterpDelim", s:darkgreen, "", "")
+	call <SID>X("SignColumn", "", s:black, "")
 
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:blue, "", "")

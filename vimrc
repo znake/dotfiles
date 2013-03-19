@@ -90,9 +90,12 @@ filetype indent on
 
 let mapleader = ","
 
-let coffee_compiler = '/usr/local/share/npm/bin/coffee'
+let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
+
+" get file path
+nmap cp :let @" = expand("%")<cr>
 
 " Allow the cursor to go in to 'invalid' places
 "set virtualedit=all
@@ -411,7 +414,7 @@ map <Leader>mc :CoffeeMake!<cr>
 map <Leader>sbb :set scrollbind!<cr>
 
 " Autocompile coffeescript buffer on save xx
-"au BufWritePost *.coffee silent CoffeeMake!
+au BufWritePost *.coffee silent CoffeeMake!
 
 " delete content of whole buffer
 map <Leader>da ggdG

@@ -48,6 +48,7 @@ alias o='open .'
 # VIM
 alias m='mvim .'
 alias mm='mvim'
+alias xsschrome='open /Applications/Google\ Chrome.app --args --disable-web-security'
 alias setuprun='osascript ~/Dropbox/Sonst/setuprun.scpt'
 alias setupall='osascript ~/Dropbox/Sonst/setupall.scpt'
 alias setupalli='osascript ~/Dropbox/Sonst/setupallinone.scpt'
