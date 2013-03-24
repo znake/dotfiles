@@ -48,6 +48,8 @@ Bundle "leshill/vim-json"
 Bundle "hallison/vim-markdown"
 Bundle "goldfeld/vim-seek"
 Bundle "airblade/vim-gitgutter"
+Bundle "sjl/gundo.vim"
+
 " vim-scripts github repos
 Bundle "ZoomWin"
 Bundle "L9"
@@ -76,6 +78,7 @@ let g:Powerline_symbols = 'fancy'
 let g:SeekKey = '<Space>'
 let g:SeekBackKey = '<S-Space>'
 
+map <Leader>gu :GundoToggle<cr>
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
@@ -210,7 +213,7 @@ map Ü 0D
 map <Leader>ö "0p
 
 " repeat last macro
-map K @@
+map K zz
 
 " repeat macro q
 map <Leader>q @q
@@ -247,7 +250,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Show 3 lines of context around the cursor.
-set scrolloff=5
+"set scrolloff=5
 " toggle scrolloff with ss
 nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
 map <Leader>sg :set scrolloff=15<cr>
@@ -414,7 +417,7 @@ map <Leader>mc :CoffeeMake!<cr>
 map <Leader>sbb :set scrollbind!<cr>
 
 " Autocompile coffeescript buffer on save xx
-au BufWritePost *.coffee silent CoffeeMake!
+"au BufWritePost *.coffee silent CoffeeMake!
 
 " delete content of whole buffer
 map <Leader>da ggdG
