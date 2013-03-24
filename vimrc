@@ -252,9 +252,9 @@ vnoremap > >gv
 " Show 3 lines of context around the cursor.
 "set scrolloff=5
 " toggle scrolloff with ss
-nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
-map <Leader>sg :set scrolloff=15<cr>
-map <Leader>sk :set scrolloff=3<cr>
+"nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
+
+nnoremap <Leader>ss :w !sudo tee %<cr>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
