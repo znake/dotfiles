@@ -30,9 +30,9 @@ let s:comment = "2a5680"
 let s:linenr  = "333333"
 
 let s:diffgreen  = "033108"
-let s:diffred    = "760c07"
+let s:diffred    = "5e0a06"
 let s:diffchange = "19344e"
-let s:difftext   = "460704"
+let s:difftext   = "c4c4c4"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -291,7 +291,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
   call <SID>X("DiffChange", "",s:diffchange, "")
-  call <SID>X("DiffText", "", s:difftext, "")
+  call <SID>X("DiffText", s:black, s:difftext, "")
   call <SID>X("DiffDelete", s:diffred, s:diffred, "")
 
 

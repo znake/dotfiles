@@ -82,6 +82,9 @@ map <Leader>gu :GundoToggle<cr>
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
+" taglist
+map <Leader>lt :TlistToggle<cr>
+
 let g:indent_guides_guide_size = 1
 
 " Enable file type detection
@@ -97,8 +100,12 @@ let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
 
-" get file path
-nmap cp :let @" = expand("%")<cr>
+" get file path in clipboard
+nmap cp :let @" = expand("%")<cr>"0pBdE:w<cr>
+
+" faster jumping in diffs with fugitive
+nmap ne ]c
+nmap pr [c
 
 " Allow the cursor to go in to 'invalid' places
 "set virtualedit=all
@@ -252,7 +259,8 @@ vnoremap > >gv
 " Show 3 lines of context around the cursor.
 "set scrolloff=5
 " toggle scrolloff with ss
-"nnoremap <Leader>ss :let &scrolloff=3-&scrolloff<cr>
+nnoremap <Leader>su :let &scrolloff=10-&scrolloff<cr>
+set scrolloff=10
 
 nnoremap <Leader>ss :w !sudo tee %<cr>
 
@@ -521,6 +529,7 @@ map <Leader>be :BufExplorerHorizontalSplit<cr>
 " useful in helpfiles because strg + ]
 " is not very comfortable on german keyboards
 map <Leader>jk <C-]>
+map <Leader>jj <C-]>
 
 " show copy history
 map <Leader>re :reg<cr>
