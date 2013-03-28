@@ -83,7 +83,9 @@ map <Leader>gu :GundoToggle<cr>
 map <Leader>ig :IndentGuidesToggle<cr>
 
 " taglist
-map <Leader>lt :TlistToggle<cr>
+"map <Leader>gk :TlistToggle<cr>
+
+let Tlist_Use_Right_Window = 1
 
 let g:indent_guides_guide_size = 1
 
@@ -104,8 +106,8 @@ set cursorline
 nmap cp :let @" = expand("%")<cr>"0pBdE:w<cr>
 
 " faster jumping in diffs with fugitive
-nmap ne ]c
-nmap pr [c
+map<Leader> ne ]c
+map<Leader> pr [c
 
 " Allow the cursor to go in to 'invalid' places
 "set virtualedit=all
@@ -396,8 +398,8 @@ map 8 <C-W>H
 map <C-c> <c-w>c
 
 " split buffer options
-map <Leader>sv <c-w>v
-map <Leader>sh <c-w>s
+map <Leader>sv <c-w>v<c-w>l
+map <Leader>sh <c-w>s<c-w>j
 map <Leader>sr <c-w>r
 
 map <Leader>hl :set hlsearch! hlsearch?<cr>
