@@ -78,12 +78,14 @@ let g:Powerline_symbols = 'fancy'
 let g:SeekKey = '<Space>'
 let g:SeekBackKey = '<S-Space>'
 
-map <Leader>gu :GundoToggle<cr>
+
+noremap <Leader>tg :GundoToggle<cr>
+
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
 " taglist
-"map <Leader>gk :TlistToggle<cr>
+noremap <Leader>tl :TlistToggle<cr>
 
 let Tlist_Use_Right_Window = 1
 
@@ -102,8 +104,6 @@ let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
 
-" get file path in clipboard
-nmap cp :let @" = expand("%")<cr>"0pBdE:w<cr>
 
 " faster jumping in diffs with fugitive
 map<Leader> ne ]c
@@ -176,7 +176,7 @@ let g:alternateExtensions_css = 'sass'
 set cc=80
 
 " Searching
-"set hlsearch
+set hlsearch
 set incsearch
 set ignorecase
 set smartcase " But case-sensitive if expression contains a capital letter.
@@ -212,17 +212,17 @@ map <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
-map Ä :bp<cr>
+map Ä @@
 
 map ü ''
 " delete content of line (but dont delete the whole line)
 map Ü 0D
 
 " paste clipboard register 0
-map <Leader>ö "0p
+"map <Leader>ö "0p
 
 " repeat last macro
-map K zz
+map K :set hlsearch! hlsearch?<CR>
 
 " repeat macro q
 map <Leader>q @q
@@ -372,9 +372,6 @@ map <Leader>ld <C-w>l:bd<cr>
 map <Leader>kd <C-w>k:bd<cr>
 map <Leader>jd <C-w>j:bd<cr>
 
-" I use this together with fugitive :Gstatus
-map <Leader>md <C-w>h:bd<cr><C-w>kj
-map <Leader>dd <C-w>h:bd<cr><C-w>k:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -397,12 +394,13 @@ map 8 <C-W>H
 " close buffer
 map <C-c> <c-w>c
 
+" sudo save
+cmap w!! %!sudo tee > /dev/null %
+
 " split buffer options
 map <Leader>sv <c-w>v<c-w>l
 map <Leader>sh <c-w>s<c-w>j
 map <Leader>sr <c-w>r
-
-map <Leader>hl :set hlsearch! hlsearch?<cr>
 
 " indent whole file jump back to current position
 map <Leader>id mmgg=G'm
@@ -510,7 +508,8 @@ map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gb :Gblame<cr>
-map <Leader>ga :Gstatus<cr>:bd<cr>
+
+map <Leader>dd :Gstatus<cr>:bd<cr>
 
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
@@ -530,7 +529,6 @@ map <Leader>be :BufExplorerHorizontalSplit<cr>
 " jump to defenition of the selected word
 " useful in helpfiles because strg + ]
 " is not very comfortable on german keyboards
-map <Leader>jk <C-]>
 map <Leader>jj <C-]>
 
 " show copy history
@@ -603,6 +601,9 @@ function! Preserve(command)
     let @/=_s
     call cursor(l, c)
 endfunction
+
+" get file path in clipboard
+nmap cp :let @" = expand("%")<cr>"0pBdE:w<cr>
 
 " Execute clear whitespace on save
 "autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")

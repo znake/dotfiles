@@ -260,7 +260,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("darkgreyNr", s:grey1, "", "")
 	call <SID>X("NonText", s:darkred, "", "")
 	call <SID>X("SpecialKey", s:darkred, "", "")
-	call <SID>X("Search", s:black, s:yellow, "")
+	call <SID>X("Search", s:black, s:blue, "")
 	call <SID>X("Tabdarkgrey", s:white, s:black, "reverse")
 	call <SID>X("Statusdarkgrey", s:grey2, s:yellow, "reverse")
 	call <SID>X("StatusdarkgreyNC", s:grey2, s:grey3, "reverse")
