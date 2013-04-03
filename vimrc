@@ -73,24 +73,6 @@ Bundle "jQuery"
 "Bundle "git://git.wincent.com/command-t.git"
 "Bundle "Lokaltog/vim-easymotion"
 
-let g:Powerline_symbols = 'fancy'
-
-let g:SeekKey = '<Space>'
-let g:SeekBackKey = '<S-Space>'
-
-
-noremap <Leader>tg :GundoToggle<cr>
-
-" vim-indent-guides plugin setup tabs
-map <Leader>ig :IndentGuidesToggle<cr>
-
-" taglist
-noremap <Leader>tl :TlistToggle<cr>
-
-let Tlist_Use_Right_Window = 1
-
-let g:indent_guides_guide_size = 1
-
 " Enable file type detection
 " filetype on
 " load the plugin and indent settings for the detected filetype
@@ -104,11 +86,22 @@ let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
 
+let g:Powerline_symbols = 'fancy'
 
-" faster jumping in diffs with fugitive
-map<Leader> ne ]c
-map<Leader> pr [c
+let g:SeekKey = '<Space>'
+let g:SeekBackKey = '<S-Space>'
 
+map <Leader>tg :GundoToggle<cr>
+
+" vim-indent-guides plugin setup tabs
+map <Leader>ig :IndentGuidesToggle<cr>
+
+"" taglist
+map <Leader>tl :TlistToggle<cr>
+
+let Tlist_Use_Right_Window = 1
+
+"let g:indent_guides_guide_size = 1
 " Allow the cursor to go in to 'invalid' places
 "set virtualedit=all
 map <Leader>ve :set virtualedit=all<cr>
@@ -156,8 +149,8 @@ let g:syntastic_quiet_warnings=1
 " Disable Synstastic for Latex
 let g:syntastic_disabled_filetypes = ['tex']
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['coffee', 'html', 'ruby', 'php', 'javascript', 'python', 'haml'],
-                           \ 'passive_filetypes': ['tex'] }
+			   \ 'active_filetypes': ['coffee', 'html', 'ruby', 'php', 'javascript', 'python', 'haml'],
+			   \ 'passive_filetypes': ['tex'] }
 
 " disable VIM welcome screen
 set shortmess+=I
@@ -176,7 +169,7 @@ let g:alternateExtensions_css = 'sass'
 set cc=80
 
 " Searching
-set hlsearch
+"set hlsearch
 set incsearch
 set ignorecase
 set smartcase " But case-sensitive if expression contains a capital letter.
