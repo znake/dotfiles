@@ -97,7 +97,7 @@ map <Leader>tg :GundoToggle<cr>
 map <Leader>ig :IndentGuidesToggle<cr>
 
 "" taglist
-map <Leader>tl :TlistToggle<cr>
+map <Leader>tl :TlistToggle<cr><C-w>l
 
 let Tlist_Use_Right_Window = 1
 
