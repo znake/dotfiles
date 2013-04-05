@@ -364,7 +364,7 @@ map <Leader>hd <C-w>h:bd<cr>
 map <Leader>ld <C-w>l:bd<cr>
 map <Leader>kd <C-w>k:bd<cr>
 map <Leader>jd <C-w>j:bd<cr>
-
+map <Leader>dd <C-w>l:bd<cr>:Gstatus<cr>:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -502,7 +502,6 @@ map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gb :Gblame<cr>
 
-map <Leader>dd :Gstatus<cr>:bd<cr>
 
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
