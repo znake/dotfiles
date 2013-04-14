@@ -48,7 +48,11 @@ alias o='open .'
 # VIM
 alias m='mvim .'
 alias mm='mvim'
+
+# open chrome with web secuity disabled
 alias xsschrome='open /Applications/Google\ Chrome.app --args --disable-web-security'
+
+# apple scripts
 alias setuprun='osascript ~/Dropbox/Sonst/setuprun.scpt'
 alias setupall='osascript ~/Dropbox/Sonst/setupall.scpt'
 alias setupalli='osascript ~/Dropbox/Sonst/setupallinone.scpt'
@@ -59,6 +63,7 @@ alias setupsmall='osascript ~/Dropbox/Sonst/setupsmall.scpt'
 alias rake='noglob rake'
 
 alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
+
 alias so="source ~/.zshrc"
 
 bindkey \\C-R history-incremental-search-backward
