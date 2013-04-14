@@ -71,7 +71,7 @@ Bundle "jQuery"
 " currently unused
 "Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 "Bundle "git://git.wincent.com/command-t.git"
-"Bundle "Lokaltog/vim-easymotion"
+Bundle "Lokaltog/vim-easymotion"
 
 " Enable file type detection
 " filetype on
@@ -305,11 +305,11 @@ map <Leader>do :VimwikiToggleListItem<cr>
 map <Leader>so :source ~/.vimrc<cr>
 
 " MAPPINGS for quick config editing
-map <Leader>vi :edit ~/Dropbox/Library/dotfiles/vimrc<cr>
-map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
-map <Leader>ti :edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
-map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
-map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
+map <Leader>vi <c-w>v<c-w>l:edit ~/Dropbox/Library/dotfiles/vimrc<cr>
+map <Leader>zi <c-w>v<c-w>l:edit ~/Dropbox/Library/dotfiles/zshrc<cr>
+map <Leader>ti <c-w>v<c-w>l:edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
+map <Leader>gi <c-w>v<c-w>l:edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
+map <Leader>zn <c-w>v<c-w>l:edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
@@ -364,7 +364,7 @@ map <Leader>hd <C-w>h:bd<cr>
 map <Leader>ld <C-w>l:bd<cr>
 map <Leader>kd <C-w>k:bd<cr>
 map <Leader>jd <C-w>j:bd<cr>
-map <Leader>dd <C-w>l:bd<cr>:Gstatus<cr>:bd<cr>
+map <Leader>dd <C-w>h:bd<cr>:Gstatus<cr>:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -408,6 +408,9 @@ nmap T O<ESC>j
 " make :W to :w -> no annoying error Message when typend wrong
 cnoreabbrev W w
 
+" Autocompile coffeescript buffer on save
+au BufWritePost *.coffee silent CoffeeMake!
+
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
 map <Leader>cr :CoffeeCompile watch vert<cr>
@@ -417,8 +420,6 @@ map <Leader>mc :CoffeeMake!<cr>
 
 map <Leader>sbb :set scrollbind!<cr>
 
-" Autocompile coffeescript buffer on save xx
-"au BufWritePost *.coffee silent CoffeeMake!
 
 " delete content of whole buffer
 map <Leader>da ggdG
