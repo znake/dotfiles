@@ -314,7 +314,7 @@ map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
 map + :cnext<cr>
-map - :cprevious<cr>
+map <D-+> :cprevious<cr>
 map <Leader>ck :cclose<cr>
 
 fu! DeleteSigns()
