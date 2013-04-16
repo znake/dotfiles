@@ -39,6 +39,22 @@ function take() {
   cd "$1"
 }
 
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+# If on master: gbin branch1 <-- this will show you what's in branch1 and not in master
+function gbin { 
+    echo branch \($1\) has these commits and \($(parse_git_branch)\) does not 
+    git log ..$1 --no-merges --format='%h | Author:%an | Date:%ad | %s' --date=local
+}
+
+# If on master: gbout branch1 <-- this will show you what's in master that's not in branch1
+function gbout { 
+    echo branch \($(parse_git_branch)\) has these commits and \($1\) does not 
+    git log $1.. --no-merges --format='%h | Author:%an | Date:%ad | %s' --date=local
+}
+
 # use VI mode instead of emacs in terminal
 bindkey -v
 
