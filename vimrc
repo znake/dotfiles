@@ -365,6 +365,7 @@ map <Leader>ld <C-w>l:bd<cr>
 map <Leader>kd <C-w>k:bd<cr>
 map <Leader>jd <C-w>j:bd<cr>
 map <Leader>dd <C-w>h:bd<cr>:Gstatus<cr>:bd<cr>
+map <Leader>dg :Gstatus<cr>:bd<cr>
 
 " make it easy to resize windows
 map 6 <C-W>6<
@@ -503,6 +504,7 @@ map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gb :Gblame<cr>
 
+noremap _ ]c
 
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
@@ -674,3 +676,18 @@ map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "endif
 
 "let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
