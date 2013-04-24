@@ -421,6 +421,10 @@ map <Leader>mc :CoffeeMake!<cr>
 
 map <Leader>sbb :set scrollbind!<cr>
 
+" replaces ruby 1.8 hash syntax with 1.9 in the whole file
+map <Leader>si ma:%s/:\(\w*\) =>/\1:/g<cr>'a
+" for visual selection
+map <Leader>sI :s/:\(\w*\) =>/\1:/g<cr> 
 
 " delete content of whole buffer
 map <Leader>da ggdG
