@@ -500,9 +500,6 @@ map <Leader>gd :Gdiff<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gC :Gcommit<cr>i
 map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
-map <Leader>ge :Gedit<cr>
-map <Leader>gr :Gread<cr>
-map <Leader>gw :Gwrite<cr>
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
@@ -510,6 +507,8 @@ map <Leader>gb :Gblame<cr>
 
 noremap _ ]c
 
+" reverts current file to the last commit
+map <Leader>gr :Git checkout %<cr>
 " stage current file, and enter commit message
 map <Leader>gh :Git add %;Git commit -m ""<left>
 
