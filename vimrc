@@ -96,8 +96,8 @@ map <Leader>tg :GundoToggle<cr>
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
-"" taglist
-map <Leader>tl :TlistToggle<cr><C-w>l
+" taglist
+map <Leader>tl :TlistOpen<cr>
 
 let Tlist_Use_Right_Window = 1
 
