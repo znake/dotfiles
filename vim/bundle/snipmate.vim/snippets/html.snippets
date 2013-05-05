@@ -109,13 +109,17 @@ snippet body
 	</body>
 snippet head
 	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
+
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
 	</head>
 snippet title
 	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
 snippet script
 	<script type="text/javascript" charset="utf-8">
 		${1}
-	</script>
+	</script>${2}
 snippet scriptsrc
 	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
 snippet style
@@ -127,8 +131,8 @@ snippet base
 snippet r
 	<br`Close()[1:]`>
 snippet div
-	<div ${1:class}="${2:name}">
-		${3}
+	<div id="${1:name}">
+		${2}
 	</div>
 # Embed QT Movie
 snippet movie
@@ -158,7 +162,7 @@ snippet form
 	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
 snippet h1
-	<h1>${1:heading1}</h1>
+	<h1 id="${1:heading}">${2:$1}</h1>
 snippet input
 	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
 snippet label

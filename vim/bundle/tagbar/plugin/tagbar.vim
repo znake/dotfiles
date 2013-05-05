@@ -4,7 +4,7 @@
 " Author:      Jan Larres <jan@majutsushi.net>
 " Licence:     Vim licence
 " Website:     http://majutsushi.github.com/tagbar/
-" Version:     2.4.1
+" Version:     2.5
 " Note:        This plugin was heavily inspired by the 'Taglist' plugin by
 "              Yegappan Lakshmanan and uses a small amount of code from it.
 "
@@ -70,6 +70,10 @@ if !exists('g:tagbar_indent')
     let g:tagbar_indent = 2
 endif
 
+if !exists('g:tagbar_show_visibility')
+    let g:tagbar_show_visibility = 1
+endif
+
 if !exists('g:tagbar_expand')
     let g:tagbar_expand = 0
 endif
@@ -115,6 +119,7 @@ command! -nargs=? TagbarCurrentTag    echo tagbar#currenttag('%s', 'No current t
 command! -nargs=1 TagbarGetTypeConfig call tagbar#gettypeconfig(<f-args>)
 command! -nargs=? TagbarDebug         call tagbar#StartDebug(<f-args>)
 command! -nargs=0 TagbarDebugEnd      call tagbar#StopDebug()
+command! -nargs=0 TagbarTogglePause   call tagbar#PauseAutocommands()
 
 " Modeline {{{1
 " vim: ts=8 sw=4 sts=4 et foldenable foldmethod=marker foldcolumn=1

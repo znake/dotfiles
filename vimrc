@@ -71,7 +71,7 @@ Bundle "jQuery"
 " currently unused
 "Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 "Bundle "git://git.wincent.com/command-t.git"
-Bundle "Lokaltog/vim-easymotion"
+"Bundle "Lokaltog/vim-easymotion"
 
 " Enable file type detection
 " filetype on
@@ -410,7 +410,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-"au BufWritePost *.coffee silent CoffeeMake!
+au BufWritePost *.coffee silent CoffeeMake!
 
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>

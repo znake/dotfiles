@@ -13,7 +13,7 @@
 " }}}
 "
 " License: {{{
-"   Copyright (c) 2002 - 2012
+"   Copyright (c) 2002 - 2013
 "   All rights reserved.
 "
 "   Redistribution and use of this software in source and binary forms, with
@@ -48,7 +48,7 @@
 " }}}
 "
 " Testing Info: {{{
-"   Running vim + supertab with the absolute bar minimum settings:
+"   Running vim + supertab with the absolute bare minimum settings:
 "     $ vim -u NONE -U NONE -c "set nocp | runtime plugin/supertab.vim"
 " }}}
 
@@ -353,7 +353,7 @@ function! s:SetDefaultCompletionType() " {{{
   endif
 endfunction " }}}
 
-function! s:SuperTab(command) " {{{
+function! SuperTab(command) " {{{
   " Used to perform proper cycle navigation as the user requests the next or
   " previous entry in a completion list, and determines whether or not to simply
   " retain the normal usage of <tab> based on the cursor position.
@@ -445,7 +445,10 @@ function! s:SuperTab(command) " {{{
     return complType
   endif
 
-  return g:SuperTabMappingForward ==? '<tab>' ? "\<tab>" : ''
+  return (
+      \ g:SuperTabMappingForward ==? '<tab>' ||
+      \ g:SuperTabMappingBackward ==? '<tab>'
+    \ ) ? "\<tab>" : ''
 endfunction " }}}
 
 function! s:SuperTabHelp() " {{{
@@ -459,13 +462,10 @@ function! s:SuperTabHelp() " {{{
     setlocal buftype=nowrite
     setlocal bufhidden=delete
 
-    let saved = @"
-    let @" = s:tabHelp
-    silent put
+    silent put =s:tabHelp
     call cursor(1, 1)
-    silent 1,delete
+    silent 1,delete _
     call cursor(4, 1)
-    let @" = saved
     exec "resize " . line('$')
 
     syntax match Special "|.\{-}|"
@@ -493,20 +493,34 @@ function! s:WillComplete() " {{{
 
   " honor SuperTabNoCompleteAfter
   let pre = cnum >= 2 ? line[:cnum - 2] : ''
-  for pattern in b:SuperTabNoCompleteAfter
-    if pre =~ pattern . '$'
-      return 0
-    endif
-  endfor
+  let complAfterType = type(b:SuperTabNoCompleteAfter)
+  if complAfterType == 3
+    " the option was provided as a list of patterns
+    for pattern in b:SuperTabNoCompleteAfter
+      if pre =~ pattern . '$'
+        return 0
+      endif
+    endfor
+  elseif complAfterType == 2
+    " the option was provided as a funcref
+    return !b:SuperTabNoCompleteAfter(pre)
+  endif
 
   " honor SuperTabNoCompleteBefore
   " Within a word, but user does not have mid word completion enabled.
   let post = line[cnum - 1:]
-  for pattern in b:SuperTabNoCompleteBefore
-    if post =~ '^' . pattern
-      return 0
-    endif
-  endfor
+  let complBeforeType = type(b:SuperTabNoCompleteBefore)
+  if complBeforeType == 3
+    " a list of patterns
+    for pattern in b:SuperTabNoCompleteBefore
+      if post =~ '^' . pattern
+        return 0
+      endif
+    endfor
+  elseif complBeforeType == 2
+    " the option was provided as a funcref
+    return !b:SuperTabNoCompleteBefore(post)
+  endif
 
   return 1
 endfunction " }}}
@@ -674,7 +688,7 @@ function! s:ContextText() " {{{
       \ ((has('win32') || has('win64')) && curline =~ '.*\\\w*\%' . cnum . 'c')
       return "\<c-x>\<c-f>"
 
-    elseif curline =~ '.*\(\w\|[\])]\)\(\.\|::\|->\)\w*\%' . cnum . 'c' &&
+    elseif curline =~ '.*\(\w\|[\])]\)\(\.\|>\?::\|->\)\w*\%' . cnum . 'c' &&
       \ synname !~ '\(String\|Comment\)'
       let omniPrecedence = exists('g:SuperTabContextTextOmniPrecedence') ?
         \ g:SuperTabContextTextOmniPrecedence : ['&completefunc', '&omnifunc']
@@ -754,46 +768,22 @@ endfunction " }}}
   " map a regular tab to ctrl-tab (note: doesn't work in console vim)
   exec 'inoremap ' . g:SuperTabMappingTabLiteral . ' <tab>'
 
-  imap <c-x> <c-r>=<SID>ManualCompletionEnter()<cr>
+  imap <silent> <c-x> <c-r>=<SID>ManualCompletionEnter()<cr>
 
-  imap <script> <Plug>SuperTabForward <c-r>=<SID>SuperTab('n')<cr>
-  imap <script> <Plug>SuperTabBackward <c-r>=<SID>SuperTab('p')<cr>
+  imap <script> <Plug>SuperTabForward <c-r>=SuperTab('n')<cr>
+  imap <script> <Plug>SuperTabBackward <c-r>=SuperTab('p')<cr>
 
   exec 'imap ' . g:SuperTabMappingForward . ' <Plug>SuperTabForward'
   exec 'imap ' . g:SuperTabMappingBackward . ' <Plug>SuperTabBackward'
 
-  " After hitting <Tab>, hitting it once more will go to next match
-  " (because in XIM mode <c-n> and <c-p> mappings are ignored)
-  " and wont start a brand new completion
-  " The side effect, that in the beginning of line <c-n> and <c-p> inserts a
-  " <Tab>, but I hope it may not be a problem...
-  let ctrl_n = maparg('<c-n>', 'i')
-  if ctrl_n != ''
-    let ctrl_n = substitute(ctrl_n, '<', '<lt>', 'g')
-    exec 'imap <c-n> <c-r>=<SID>ForwardBack("n", "' . ctrl_n . '")<cr>'
-  else
-    imap <c-n> <Plug>SuperTabForward
-  endif
-  let ctrl_p = maparg('<c-p>', 'i')
-  if ctrl_p != ''
-    let ctrl_p = substitute(ctrl_p, '<', '<lt>', 'g')
-    exec 'imap <c-p> <c-r>=<SID>ForwardBack("p", "' . ctrl_p . '")<cr>'
-  else
-    imap <c-p> <Plug>SuperTabBackward
-  endif
-  function! s:ForwardBack(command, map)
-    exec "let map = \"" . escape(a:map, '<') . "\""
-    return pumvisible() ? s:SuperTab(a:command) : map
-  endfunction
-
   if g:SuperTabCrMapping
     let expr_map = 0
-    try
+    if v:version > 703 || (v:version == 703 && has('patch32'))
       let map_dict = maparg('<cr>', 'i', 0, 1)
-      let expr_map = map_dict.expr
-    catch
+      let expr_map = has_key(map_dict, 'expr') && map_dict.expr
+    else
       let expr_map = maparg('<cr>', 'i') =~? '\<cr>'
-    endtry
+    endif
 
     if expr_map
       " Not compatible w/ expr mappings. This is most likely a user mapping,
@@ -808,7 +798,7 @@ endfunction " }}}
       let map = s:ExpandMap(map)
       exec "inoremap <script> <cr> <c-r>=<SID>SelectCompletion(" . cr . ")<cr>" . map
     else
-      inoremap <cr> <c-r>=<SID>SelectCompletion(1)<cr>
+      inoremap <silent> <cr> <c-r>=<SID>SelectCompletion(1)<cr>
     endif
     function! s:SelectCompletion(cr)
       " selecting a completion
