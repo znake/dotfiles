@@ -86,6 +86,8 @@ let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
 
+let g:SuperTabDefaultCompletionType = "context"
+
 let g:Powerline_symbols = 'fancy'
 
 let g:SeekKey = '<Space>'
@@ -412,6 +414,9 @@ cnoreabbrev W w
 " Autocompile coffeescript buffer on save
 au BufWritePost *.coffee silent CoffeeMake!
 
+" CoffeeScript for ctags
+let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
+
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
 map <Leader>cr :CoffeeCompile watch vert<cr>
@@ -423,8 +428,13 @@ map <Leader>sbb :set scrollbind!<cr>
 
 " replaces ruby 1.8 hash syntax with 1.9 in the whole file
 map <Leader>si ma:%s/:\(\w*\) =>/\1:/g<cr>'a
-" for visual selection
+" just within visual selection
 map <Leader>sI :s/:\(\w*\) =>/\1:/g<cr> 
+
+" replaces under_score to camelCase
+map <Leader>cu ma:%s#_\(\l\)#\u\1#g<cr>'a
+" just within visual selection
+map <Leader>cU :s#_\(\l\)#\u\1#g<cr>
 
 " delete content of whole buffer
 map <Leader>da ggdG
