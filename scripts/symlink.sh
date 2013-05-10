@@ -33,6 +33,9 @@ if [ -d ~/.oh-my-zsh ]; then
   echo ln -nfs ~/Dropbox/Library/dotfiles/tmux.conf ~/.tmux.conf
   ln -nfs ~/Dropbox/Library/dotfiles/tmux.conf ~/.tmux.conf
 
+  echo ln -nfs ~/Dropbox/Library/dotfiles/ctags ~/.ctags
+  ln -nfs ~/Dropbox/Library/dotfiles/ctags ~/.ctags
+
   echo ln -nfs ~/Dropbox/Library/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
   ln -nfs ~/Dropbox/Library/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
 
