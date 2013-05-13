@@ -410,7 +410,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-au BufWritePost *.coffee silent CoffeeMake!
+"au BufWritePost *.coffee silent CoffeeMake!
 
 " CoffeeScript for ctags
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
