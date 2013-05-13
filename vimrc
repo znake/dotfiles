@@ -86,8 +86,6 @@ let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
 
-let g:SuperTabDefaultCompletionType = "context"
-
 let g:Powerline_symbols = 'fancy'
 
 let g:SeekKey = '<Space>'
