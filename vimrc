@@ -212,7 +212,7 @@ map ü ''
 map Ü 0D
 
 " paste clipboard register 0
-"map <Leader>ö "0p
+map <Leader>ö "0p
 
 " repeat last macro
 map K :set hlsearch! hlsearch?<CR>
@@ -613,7 +613,7 @@ nmap cp :let @" = expand("%")<cr>"0pBdE:w<cr>
 
 " Execute clear whitespace on save
 "autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
-map <Leader>ws :call Preserve("%s/\\s\\+$//e")<cr>
+map <Leader>sw :call Preserve("%s/\\s\\+$//e")<cr>
 
 " *************** LaTeX Stuff ***************
 " IMPORTANT: grep will sometimes skip displaying the file name if you
