@@ -38,6 +38,7 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
+	create-pull-request = !sh -c 'stash pull-request $0'
 
 [core]
 	excludesfile = /Users/jakob/.gitignore_global
