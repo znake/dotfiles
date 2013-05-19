@@ -49,6 +49,7 @@ Bundle "hallison/vim-markdown"
 Bundle "goldfeld/vim-seek"
 Bundle "airblade/vim-gitgutter"
 Bundle "sjl/gundo.vim"
+Bundle 'FredKSchott/CoVim'
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -358,6 +359,7 @@ map <Leader>rw :call ReplaceWhatever()<cr>
 " Invoke Tabularized
 map <Leader>ta :Tabularize /
 map <Leader>tj :Tabularize /=<cr>
+map <Leader>ib vip:Tabularize /=<cr>
 
 " close buffers without need switching to them
 map <Leader>hd <C-w>h:bd<cr>
@@ -399,9 +401,6 @@ map <Leader>sr <c-w>r
 " indent whole file jump back to current position
 map <Leader>id mmgg=G'm
 
-" indent paragraph of code
-map <Leader>ib vip=
-
 " insert new line
 nmap t o<ESC>k
 nmap T O<ESC>j
@@ -410,7 +409,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-"au BufWritePost *.coffee silent CoffeeMake!
+au BufWritePost *.coffee silent CoffeeMake!
 
 " CoffeeScript for ctags
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
