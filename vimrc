@@ -202,7 +202,7 @@ let g:NERDTreeMapHelp = '<F1>'
 " toggle Tagbar
 map <Leader>ä :TagbarToggle<cr>
 
-map <Leader><Leader> :ZoomWin<cr>
+"map <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
@@ -216,7 +216,8 @@ map Ü 0D
 map <Leader>ö "0p
 
 " repeat last macro
-map K :set hlsearch! hlsearch?<CR>
+map K @@
+map <Leader>K :set hlsearch! hlsearch?<CR>
 
 " repeat macro q
 map <Leader>q @q
@@ -409,7 +410,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-au BufWritePost *.coffee silent CoffeeMake!
+"au BufWritePost *.coffee silent CoffeeMake!
 
 " CoffeeScript for ctags
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
@@ -429,9 +430,9 @@ map <Leader>si ma:%s/:\(\w*\) =>/\1:/g<cr>'a
 map <Leader>sI :s/:\(\w*\) =>/\1:/g<cr> 
 
 " replaces under_score to camelCase
-map <Leader>cu ma:%s#_\(\l\)#\u\1#g<cr>'a
+map <Leader>Cu ma:%s#_\(\l\)#\u\1#g<cr>'a
 " just within visual selection
-map <Leader>cU :s#_\(\l\)#\u\1#g<cr>
+map <Leader>CU :s#_\(\l\)#\u\1#g<cr>
 
 " delete content of whole buffer
 map <Leader>da ggdG
@@ -583,6 +584,9 @@ if has("autocmd")
 
   " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+  " add haml syntax highlighting for hamljs files
+  au BufNewFile,BufRead *.hamljs set ft=haml
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
