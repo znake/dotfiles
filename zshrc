@@ -65,6 +65,10 @@ alias o='open .'
 alias m='mvim .'
 alias mm='mvim'
 
+function stashpull {
+  stash pull-request $(parse_git_branch) master @mik
+}
+
 # open chrome with web secuity disabled
 alias xsschrome='open /Applications/Google\ Chrome.app --args --disable-web-security'
 

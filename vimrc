@@ -358,9 +358,10 @@ endfu
 map <Leader>rw :call ReplaceWhatever()<cr>
 
 " Invoke Tabularized
-map <Leader>ta :Tabularize /
-map <Leader>tj :Tabularize /=<cr>
-map <Leader>ib vip:Tabularize /=<cr>
+nmap <Leader>ta :Tabularize /
+vmap <Leader>tj :Tabularize /=<cr>
+vmap <Leader>tk :Tabularize/:\zs<cr>
+
 
 " close buffers without need switching to them
 map <Leader>hd <C-w>h:bd<cr>
@@ -502,6 +503,7 @@ map <Leader>fts :set ft=sql<cr>
 map <Leader>ftt :set ft=txt<cr>
 map <Leader>ftm :set ft=markdown<cr>
 map <Leader>ftc :set ft=coffee<cr>
+map <Leader>ftf :set ft=
 
 " Fugitive
 map <Leader>gd :Gdiff<cr>
