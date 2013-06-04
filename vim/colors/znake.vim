@@ -26,13 +26,14 @@ let s:grey2      = "191919"
 let s:grey3      = "868686"
 let s:darkgrey   = "0b0b0b"
 
-let s:comment = "2a5680"
-let s:linenr  = "333333"
+let s:comment    = "2a5680"
+let s:linenr     = "333333"
+let s:linecolumn = "051728"
 
 let s:diffgreen  = "033108"
 let s:diffred    = "5e0a06"
 let s:diffchange = "19344e"
-let s:difftext   = "c4c4c4"
+let s:difftext   = "885022"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -280,7 +281,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("LineNr", s:linenr, "", "none")
 		call <SID>X("Cursordarkgrey", "", s:darkred, "none")
 		call <SID>X("CursorColumn", "", s:darkred, "none")
-		call <SID>X("CursorLine", "", s:darkred, "none")
+		call <SID>X("CursorLine", "", s:linecolumn, "none")
 		call <SID>X("CursorLineNr", s:pink, "", "none")
 		call <SID>X("PMenu", s:white, s:darkred, "none")
 		call <SID>X("PMenuSel", s:white, s:darkred, "reverse")
@@ -291,7 +292,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
   call <SID>X("DiffChange", "",s:diffchange, "")
-  call <SID>X("DiffText", s:black, s:difftext, "")
+  call <SID>X("DiffText", "", s:difftext, "")
   call <SID>X("DiffDelete", s:diffred, s:diffred, "")
 
 
