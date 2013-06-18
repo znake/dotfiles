@@ -49,7 +49,7 @@ Bundle "hallison/vim-markdown"
 Bundle "goldfeld/vim-seek"
 Bundle "airblade/vim-gitgutter"
 Bundle "sjl/gundo.vim"
-Bundle 'FredKSchott/CoVim'
+Bundle "nelstrom/vim-visual-star-search"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -97,9 +97,6 @@ map <Leader>tg :GundoToggle<cr>
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
-" taglist
-map <Leader>tl :TlistOpen<cr>
-
 let Tlist_Use_Right_Window = 1
 
 "let g:indent_guides_guide_size = 1
@@ -142,7 +139,7 @@ set showcmd  " Display incomplete commands.
 set showmode " Display the mode you're in.
 
 " find merge conflict markers
-map <Leader>me <ESC>/\v^[<=>]{7}( .*\|$)<cr>
+map <Leader>me <ESC>/\v^[<=>]{7}( .*\|$)<cr>zz
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -199,10 +196,11 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
 let g:NERDTreeMapHelp = '<F1>'
 
+let g:tagbar_autofocus = 1
 " toggle Tagbar
-map <Leader>ä :TagbarToggle<cr>
+map <Leader>tl :TagbarToggle<cr>
 
-"map <Leader><Leader> :ZoomWin<cr>
+map <Leader><Leader> :ZoomWin<cr>
 
 " switch to last opened buffer
 map ä <C-^>
@@ -514,8 +512,9 @@ map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gb :Gblame<cr>
+map <Leader>ge :Gedit 
 
-noremap _ ]c
+noremap _ ]czz
 
 " reverts current file to the last commit
 map <Leader>gr :Git checkout %<cr>
