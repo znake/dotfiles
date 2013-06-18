@@ -28,12 +28,12 @@ let s:darkgrey   = "0b0b0b"
 
 let s:comment    = "2a5680"
 let s:linenr     = "333333"
-let s:linecolumn = "051728"
+let s:linecolumn = "07213a"
 
 let s:diffgreen  = "033108"
 let s:diffred    = "5e0a06"
 let s:diffchange = "19344e"
-let s:difftext   = "885022"
+let s:difftext   = "5b3616"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
