@@ -439,13 +439,17 @@ map <Leader>da ggdG
 map <Leader>va ggVG
 
 " using the surround plugin
+" tip: use S without leader to quote current selection
 " operates on a normal word w
 map <Leader>s csw
 " operates on a big word W
 map <Leader>S csW
 " operates on a line
 map <Leader>sl yss
-" use S without leader to quote current selection
+" change ' to "
+map <Leader>" cs'"
+" change " to '
+map <Leader>' cs"'
 " use cs to change surroundings
 
 map <Leader>aa :Ack<cr>
