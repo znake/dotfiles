@@ -424,9 +424,10 @@ map <Leader>mc :CoffeeMake!<cr>
 map <Leader>sbb :set scrollbind!<cr>
 
 " replaces ruby 1.8 hash syntax with 1.9 in the whole file
-map <Leader>si ma:%s/:\(\w*\) =>/\1:/g<cr>'a
-" just within visual selection
-map <Leader>sI :s/:\(\w*\) =>/\1:/g<cr> 
+map <Leader>sI ma:%s/:\(\w*\) =>/\1:/g<cr>'a
+
+" replaces ruby 1.8 hash syntax with 1.9 within the current selection 
+map <Leader>si :s/:\(\w*\) =>/\1:/g<cr> 
 
 " replaces under_score to camelCase
 map <Leader>Cu ma:%s#_\(\l\)#\u\1#g<cr>'a
