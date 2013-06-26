@@ -50,6 +50,7 @@ Bundle "goldfeld/vim-seek"
 Bundle "airblade/vim-gitgutter"
 Bundle "sjl/gundo.vim"
 Bundle "nelstrom/vim-visual-star-search"
+Bundle "terryma/vim-multiple-cursors"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -97,8 +98,6 @@ map <Leader>tg :GundoToggle<cr>
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
 
-let Tlist_Use_Right_Window = 1
-
 "let g:indent_guides_guide_size = 1
 " Allow the cursor to go in to 'invalid' places
 "set virtualedit=all
@@ -115,11 +114,6 @@ map <Leader>P P'[v']=
 
 " Set encoding
 set encoding=utf-8
-
-" CTags for TList
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let TlistHighlightTag=0
-set runtimepath+=/usr/local/share/vim/vimfiles/
 
 " Autoread, files gets automatically updated when newer files are generated
 " see :h W11
@@ -356,7 +350,7 @@ endfu
 map <Leader>rw :call ReplaceWhatever()<cr>
 
 " Invoke Tabularized
-nmap <Leader>ta :Tabularize /
+vmap <Leader>ta :Tabularize /
 vmap <Leader>tj :Tabularize /=<cr>
 vmap <Leader>tk :Tabularize/:\zs<cr>
 
@@ -410,9 +404,6 @@ cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
 "au BufWritePost *.coffee silent CoffeeMake!
-
-" CoffeeScript for ctags
-let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
 
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
