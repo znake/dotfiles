@@ -1,0 +1,8 @@
+# Setting up my environment for working
+
+setup 'echo "setup"'
+
+tab do
+  run "echo 'hi'"
+  run "mate ."
+end
