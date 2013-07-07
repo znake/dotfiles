@@ -74,6 +74,7 @@ alias xsschrome='open /Applications/Google\ Chrome.app --args --disable-web-secu
 
 # apple scripts
 alias setuprun='osascript ~/Dropbox/Sonst/setuprun.scpt'
+alias setupall='osascript ~/Dropbox/Sonst/setupall.scpt'
 
 # rake
 alias rake='noglob rake'

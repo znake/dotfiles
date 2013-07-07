@@ -188,6 +188,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>
 let g:NERDTreeMapHelp = '<F1>'
 
 let g:tagbar_autofocus = 1
