@@ -1,6 +1,7 @@
 vim/bundle/gundo.vim/tests/*
 vim/bundle/snipmate.vim/snippets/*
 vim/bundle/vim-latex/ftplugin/latex-suite/*
+vim/backup/*
 *.log
 *.pyc
 *.DS_Store
