@@ -168,9 +168,11 @@ snippet tom
 snippet eu
 	expect(${1}).to.equal()
 snippet it
-	it "should ${1}", ->
+	it "${1}", ->
 snippet des
 	describe "${1}", ->
 snippet be
 	beforeEach ->
 		${1}
+snippet dcl
+	$(document).on 'click', '${1}', (event) ->

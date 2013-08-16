@@ -26,7 +26,6 @@ Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 
 Bundle "duwanis/tomdoc.vim"
-Bundle "jc00ke/vim-tomdoc"
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "msanders/snipmate.vim"
@@ -40,7 +39,6 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "mutewinter/vim-indent-guides"
 Bundle "Lokaltog/vim-powerline"
 Bundle "othree/html5.vim"
-Bundle "nono/vim-handlebars"
 Bundle "gmarik/sudo-gui.vim"
 Bundle "jcf/vim-latex"
 Bundle "pangloss/vim-javascript"
@@ -54,7 +52,6 @@ Bundle "terryma/vim-multiple-cursors"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
-Bundle "L9"
 Bundle "hexHighlight.vim"
 Bundle "IndexedSearch"
 Bundle "bufexplorer.zip"
@@ -64,8 +61,6 @@ Bundle "AutoClose--Alves"
 " Utility
 Bundle "vimwiki"
 Bundle "a.vim"
-" (HT|X)ml tool
-Bundle "ragtag.vim"
 " Syntax highlight
 Bundle "cucumber.zip"
 Bundle "jQuery"
@@ -207,6 +202,10 @@ map Ü 0D
 
 " paste clipboard register 0
 map <Leader>ö "0p
+
+" next hunk for gitgutter
+nmap gh <Plug>GitGutterNextHunk
+nmap gH <Plug>GitGutterPrevHunk
 
 " repeat last macro
 map K @@
@@ -376,7 +375,7 @@ map <Leader>4 <C-w>=
 noremap <tab> <C-w>w
 
 " delete last word in normal mode
-noremap <backspace> bdw
+"noremap <backspace> bdw
 
 " move buffers
 map 9 <C-W>L
