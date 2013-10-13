@@ -21,6 +21,8 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-haml"
 
+Bundle "int3/vim-extradite"
+
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
@@ -88,7 +90,7 @@ let g:Powerline_symbols = 'fancy'
 let g:SeekKey = '<Space>'
 let g:SeekBackKey = '<S-Space>'
 
-map <Leader>tg :GundoToggle<cr>
+map <Leader>fe :GundoToggle<cr>
 
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
@@ -107,6 +109,7 @@ syntax on
 map <Leader>p p'[v']=
 map <Leader>P P'[v']=
 
+map <Leader>sn :call ReloadAllSnippets()<cr>
 " Set encoding
 set encoding=utf-8
 
@@ -141,6 +144,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 " disable VIM welcome screen
 set shortmess+=I
+
+let g:ctrlp_max_height = 20
 
 " Alternate plugin
 map <Leader>ma :A<cr>
@@ -403,7 +408,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-au BufWritePost *.coffee silent CoffeeMake!
+"au BufWritePost *.coffee silent CoffeeMake!
 
 " CoffeeScript
 map <Leader>cO :CoffeeCompile watch<cr>
@@ -423,7 +428,7 @@ map <Leader>si :s/:\(\w*\) =>/\1:/g<cr>
 " replaces under_score to camelCase
 map <Leader>Cu ma:%s#_\(\l\)#\u\1#g<cr>'a
 " just within visual selection
-map <Leader>CU :s#_\(\l\)#\u\1#g<cr>
+map <Leader>cu :s#_\(\l\)#\u\1#g<cr>
 
 " delete content of whole buffer
 map <Leader>da ggdG
@@ -507,6 +512,7 @@ map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
+map <Leader>gt :Extradite<cr>
 map <Leader>gb :Gblame<cr>
 map <Leader>ge :Gedit 
 
