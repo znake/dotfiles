@@ -175,4 +175,8 @@ snippet be
 	beforeEach ->
 		${1}
 snippet dcl
-	$(document).on 'click', '${1}', (event) ->
+	$(document).on 'click', '${1}', (e) ->
+snippet timeo
+	setTimeout (->
+		${1}
+	), 1500
