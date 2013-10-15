@@ -188,6 +188,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+map <Leader>nt :NERDTree<cr>
 map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>
 let g:NERDTreeMapHelp = '<F1>'
 
@@ -426,9 +427,9 @@ map <Leader>sI ma:%s/:\(\w*\) =>/\1:/g<cr>'a
 map <Leader>si :s/:\(\w*\) =>/\1:/g<cr> 
 
 " replaces under_score to camelCase
-map <Leader>Cu ma:%s#_\(\l\)#\u\1#g<cr>'a
+map <Leader>CU ma:%s#_\(\l\)#\u\1#g<cr>'a
 " just within visual selection
-map <Leader>cu :s#_\(\l\)#\u\1#g<cr>
+map <Leader>Cu :s#_\(\l\)#\u\1#g<cr>
 
 " delete content of whole buffer
 map <Leader>da ggdG
@@ -514,7 +515,7 @@ map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gt :Extradite<cr>
 map <Leader>gb :Gblame<cr>
-map <Leader>ge :Gedit 
+map <Leader>ge :Gedit master:%
 
 noremap _ ]czz
 
