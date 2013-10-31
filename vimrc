@@ -1,6 +1,12 @@
 set nocompatible
 filetype off
 
+set guifont=Monaco:h12            " Font family and font size. => 1280x800px
+set antialias                     " MacVim: smooth fonts.
+set encoding=utf-8                " Use UTF-8 everywhere.
+set guioptions-=r                 " Don't show right scrollbar
+set go-=L
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -51,6 +57,7 @@ Bundle "airblade/vim-gitgutter"
 Bundle "sjl/gundo.vim"
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "terryma/vim-multiple-cursors"
+Bundle "nono/vim-handlebars"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -68,8 +75,7 @@ Bundle "cucumber.zip"
 Bundle "jQuery"
 
 " currently unused
-"Bundle "rstacruz/sparkup", {"rtp": "vim/"}
-"Bundle "git://git.wincent.com/command-t.git"
+Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 "Bundle "Lokaltog/vim-easymotion"
 
 " Enable file type detection
@@ -90,7 +96,7 @@ let g:Powerline_symbols = 'fancy'
 let g:SeekKey = '<Space>'
 let g:SeekBackKey = '<S-Space>'
 
-map <Leader>fe :GundoToggle<cr>
+map <Leader>gu :GundoToggle<cr>
 
 " vim-indent-guides plugin setup tabs
 map <Leader>ig :IndentGuidesToggle<cr>
@@ -109,7 +115,9 @@ syntax on
 map <Leader>p p'[v']=
 map <Leader>P P'[v']=
 
+" reload all the snippets of snipmate
 map <Leader>sn :call ReloadAllSnippets()<cr>
+
 " Set encoding
 set encoding=utf-8
 
@@ -188,7 +196,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
-map <Leader>nt :NERDTree<cr>
+map <Leader>nt :NERDTree %<cr>
 map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>
 let g:NERDTreeMapHelp = '<F1>'
 
@@ -469,6 +477,9 @@ map <Leader>rr :set makeprg=~/.rvm/bin/ruby-1.9.3-p327\ %<cr>:make<cr>
 
 " Command-Shift-F for Ack
 map <D-F> :Ack<space>
+
+" override default sparkup mapping because this feels better for me
+"let g:sparkupExecuteMapping = '<c-i>'
 
 " Command-Option-ArrowKey to switch viewports
 map <D-M-Up> <C-w>k

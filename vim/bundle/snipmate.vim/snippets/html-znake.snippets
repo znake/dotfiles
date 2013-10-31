@@ -7,32 +7,50 @@ snippet p
 	<p>${1}</p>
 # tr
 snippet tr
-	<tr>
-		${1}
-	</tr>
+	<tr>${1}</tr>
 # td
 snippet td
-	<td${1}>
-		${2}
-	</td>
+	<td}>${2}</td>
 # li
 snippet li
-	<li>
-		${1}
-	</li>
+	<li>${1}</li>
 # ul
 snippet ul
-	<ul>
-		${1}
-	</ul>
+	<ul>${1}</ul>
 # strong
 snippet strong
 	<strong>${1}</strong>
+snippet u
+	<u>${1}</u>
+snippet em
+	<em>${1}</em>
+snippet span
+	<span>${1}</span>
+# snippet h1
+#	<h1>${1}</h1>
+snippet h2
+	<h2>${1}</h2>
+snippet h3
+	<h3>${1}</h3>
+snippet h4
+	<h4>${1}</h4>
+snippet h5
+	<h5>${1}</h5>
+# link
+snippet a
+	<a ${1}>${2}</a>
+# comment
+snippet c
+	<!-- ${1:comment} -->
+# header
+snippet header
+	<header>${1:header}</header>
+# footer
+snippet footer
+	<footer>${1:footer}</footer>
 # div normal
-#snippet div
-#	<div ${1}>
-#		${2}
-#	</div>
+snippet div
+	<div>${1}</div>
 snippet dic
 	<div class="${1:name}">
 		${2}
@@ -59,38 +77,6 @@ snippet ö
 	&ouml;
 snippet ü
 	&uuml;
-snippet u
-	<u>${1}</u>
-snippet em
-	<em>${1}</em>
-snippet span
-	<span>${1}</span>
-# snippet h1
-#	<h1>${1}</h1>
-snippet h2
-	<h2>${1}</h2>
-snippet h3
-	<h3>${1}</h3>
-snippet h4
-	<h4>${1}</h4>
-snippet h5
-	<h5>${1}</h5>
-# link
-snippet a
-	<a ${1}>${2}</a>
-# comment
-snippet c
-	<!-- ${1:comment} -->
-# header
-snippet header
-	<header>
-		${1:header}
-	</header>
-# footer
-snippet footer
-	<footer>
-		${1:footer}
-	</footer>
 # script x-handlebars
 snippet scrx
 	<script type="text/x-handlebars">
