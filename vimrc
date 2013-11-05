@@ -58,6 +58,7 @@ Bundle "sjl/gundo.vim"
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "nono/vim-handlebars"
+Bundle "heartsentwined/vim-emblem"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
