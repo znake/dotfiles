@@ -12,3 +12,6 @@ sass=.sass
 
 --type-set
 hamlbars=.hamlbars
+
+--type-set
+emblem=.emblem
