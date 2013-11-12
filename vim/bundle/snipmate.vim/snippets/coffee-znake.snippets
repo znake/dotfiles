@@ -1,5 +1,6 @@
 snippet cl
 	console.log ${1}
+
 snippet rdy
 	$(document).ready ->
 		${1:ready for jquery fun}
@@ -72,24 +73,16 @@ snippet p
 	<p>${1}</p>
 # tr
 snippet tr
-	<tr>
-		${1}
-	</tr>
+	<tr>${1}</tr>
 # td
 snippet td
-	<td${1}>
-		${2}
-	</td>
+	<td>${2}</td>
 # li
 snippet li
-	<li>
-		${1}
-	</li>
+	<li>${1}</li>
 # ul
 snippet ul
-	<ul>
-		${1}
-	</ul>
+	<ul>${1}</ul>
 # table
 snippet table
 	<table${1}>
@@ -188,3 +181,15 @@ snippet evi
 	App.${1}View = Ember.View.extend
 snippet eob
 	Ember.Object.extend
+snippet cp
+	${1:name}: ( ->
+		${3}
+	).property('${2}')
+snippet (-
+	(
+		${2}
+	).property('${1}'
+snippet pr
+	( ->
+		${2}
+	).property('${1}')
