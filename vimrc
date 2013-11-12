@@ -197,6 +197,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+map <Leader>bb :NERDTreeFromBookmark 
 map <Leader>nt :NERDTree %<cr>
 map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>
 let g:NERDTreeMapHelp = '<F1>'
@@ -420,9 +421,10 @@ cnoreabbrev W w
 " Autocompile coffeescript buffer on save
 "au BufWritePost *.coffee silent CoffeeMake!
 
+map <Leader>c0 :au BufWritePost *.coffee silent CoffeeMake!<cr>
 " CoffeeScript
-map <Leader>cO :CoffeeCompile watch<cr>
 map <Leader>cr :CoffeeCompile watch vert<cr>
+map <Leader>cR :CoffeeCompile watch<cr>
 map <Leader>cP :CoffeeCompile unwatch<cr>
 "map <Leader>cr :CoffeeRun<cr>
 map <Leader>mc :CoffeeMake!<cr>
@@ -540,6 +542,7 @@ map <Leader>gh :Git add %;Git commit -m ""<left>
 map <Leader>bd :bd<cr>
 map <Leader>bn :bn<cr>
 map <Leader>bp :bp<cr>
+map ' :bp<cr>
 map <Leader>bo :only<cr>
 
 " delete empty lines
