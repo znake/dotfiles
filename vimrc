@@ -320,6 +320,7 @@ map <Leader>zi :edit ~/Dropbox/Library/dotfiles/zshrc<cr>
 map <Leader>ti :edit ~/Dropbox/Library/dotfiles/tmux.conf<cr>
 map <Leader>gi :edit ~/Dropbox/Library/dotfiles/gvimrc<cr>
 map <Leader>zn :edit ~/Dropbox/Library/dotfiles/vim/colors/znake.vim<cr>
+map <Leader>bt :edit ~/Dropbox/Library/dotfiles/NERDTreeBookmarks<cr>
 
 " mappings for the quickfix window
 map <Leader>co :copen<cr>
