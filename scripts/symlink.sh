@@ -36,6 +36,9 @@ if [ -d ~/.oh-my-zsh ]; then
   echo ln -nfs ~/Dropbox/Library/dotfiles/NERDTreeBookmarks ~/.NERDTreeBookmarks
   ln -nfs ~/Dropbox/Library/dotfiles/NERDTreeBookmarks ~/.NERDTreeBookmarks
 
+  echo ln -nfs ~/Dropbox/Library/dotfiles/bash_profile ~/.bash_profile
+  ln -nfs ~/Dropbox/Library/dotfiles/bash_profile ~/.bash_profile
+
   echo ln -nfs ~/Dropbox/Library/dotfiles/ctags ~/.ctags
   ln -nfs ~/Dropbox/Library/dotfiles/ctags ~/.ctags
 
