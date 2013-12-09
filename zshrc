@@ -76,7 +76,7 @@ alias setupsmall='osascript ~/Dropbox/Sonst/setupsmall.scpt'
 # rake
 alias rake='noglob rake'
 
-alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
+#alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
 
 alias tide="~/Library/Application\ Support/TideSDK/sdk/osx/1.3.1-beta/tidebuilder.py"
 

@@ -199,7 +199,8 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
 map <Leader>bb :NERDTreeFromBookmark 
 map <Leader>nt :NERDTree %<cr>
-map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>
+map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>R
+map <Leader>cÖ :let NERDTreeIgnore=['\.rbc$', '\~$']<cr>R
 let g:NERDTreeMapHelp = '<F1>'
 
 let g:tagbar_autofocus = 1
@@ -420,7 +421,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-"au BufWritePost *.coffee silent CoffeeMake!
+au BufWritePost *.coffee silent CoffeeMake!
 
 map <Leader>c0 :au BufWritePost *.coffee silent CoffeeMake!<cr>
 " CoffeeScript
