@@ -183,13 +183,13 @@ snippet eob
 	Ember.Object.extend
 snippet cp
 	${1:name}: ( ->
-		${3}
-	).property('${2}')
-snippet (-
-	(
-		${2}
-	).property('${1}'
+		${4}
+	).${2:property}('${3}')
 snippet pr
 	( ->
 		${2}
 	).property('${1}')
+snippet ob
+	( ->
+		${2}
+	).observes('${1}')
