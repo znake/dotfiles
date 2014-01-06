@@ -27,3 +27,10 @@ snippet tib
 		${4:# do something}
 
 	${3:win}.add($1)
+
+snippet tisv
+	${1:scrollView}	= Ti.UI.createScrollView
+		contentHeight: "auto"
+		layout: "${3:vertical}"
+
+	${2:win}.add($1)
