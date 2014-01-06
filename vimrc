@@ -197,8 +197,9 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader><space> :NERDTreeToggle<cr>
+map <Leader>nt :NERDTreeToggle<cr>:NERDTreeToggle<cr>
 map <Leader>bb :NERDTreeFromBookmark 
-map <Leader>nt :NERDTree %<cr>
+"map <Leader>nt :NERDTree %<cr>
 map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>R
 map <Leader>cÖ :let NERDTreeIgnore=['\.rbc$', '\~$']<cr>R
 let g:NERDTreeMapHelp = '<F1>'
@@ -651,6 +652,8 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_SmartKeyQuote = 0
+let g:Imap_UsePlaceHolders = 0
 
 let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi'
@@ -690,7 +693,7 @@ let g:Tex_GotoError = 0
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-"map <Leader>ld :w<cr> ,ll ,ls
+map <Leader>lm :w<cr> ,ll ,ls
 
 " improve performance of ctrlp
 "let ctrlp_filter_greps = "".
