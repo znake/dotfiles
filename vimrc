@@ -248,6 +248,7 @@ map <Leader>tp :tabprevious<cr>
 map <D-L> :tabnext<cr>
 map <D-H> :tabprevious<cr>
 
+
 " set background color
 map <Leader>bl :set background=light<cr>
 map <Leader>bk :set background=dark<cr>
@@ -690,10 +691,16 @@ let g:Tex_GotoError = 0
 "Command: mvim
 "Arguments: --remote-silent +":%line;foldo!" "%file"
 
+let g:Tex_MultipleCompileFormats = 'pdf'
+
 map <Leader>lm :let g:Tex_MultipleCompileFormats = 'pdf'<cr>
+map <D-r> ,ll
+
+let Tex_FoldedSections = ""
+
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
-map <Leader>lm :w<cr> ,ll ,ls
+"map <Leader>lm :w<cr> ,ll ,ls
 
 " improve performance of ctrlp
 "let ctrlp_filter_greps = "".
