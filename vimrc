@@ -349,44 +349,6 @@ fu! ReplaceUmlautsHtml()
   %s/ü/&uuml;/gi
 endfu
 
-fu! DeleteSigns()
-  %s/"//gi
-  %s/“//gi
-  %s/„//gi
-  %s/”//gi
-endfu
-map <Leader>de :call DeleteSigns()<cr>
-
-fu! ReplaceWhatever()
-  %s/"//gi
-  %s/“//gi
-  %s/„//gi
-  %s/”//gi
-  %s/best. /bestimmte /g
-  %s/techn. /teschnische /g
-  %s/=>/d.h./g
-  %s/->/d.h./g
-  %s/- //g
-  %s/u. /und /g
-  %s/v.a. /vor allem /g
-  %s/o.a. /oder anderem/g
-  %s/SW/Software/g
-  %s/HW/Hardware/g
-  %s/ISs/Informationssysteme/g
-  %s/unterschiedl. /unterschiedliche /g
-  %s/unbest. /unbestimmte /g
-  %s/untersch. /unterschiedlich /g
-  %s/bel. /beliebige /g
-  %s/zeitl. /zeitlich /g
-  %s/i.A. /im Allgemeinen /g
-  %s/insbes. /insbesondere /g
-  %s/technolog. /technologische /g
-  %s/BS/Betriebssystem/g
-  %s/DBs/Datenbanken/g
-  %s/zw. /zwischen /g
-endfu
-map <Leader>rw :call ReplaceWhatever()<cr>
-
 " Invoke Tabularized
 vmap <Leader>ta :Tabularize /
 vmap <Leader>tj :Tabularize /=<cr>
