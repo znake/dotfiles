@@ -331,6 +331,24 @@ map + :cnext<cr>
 map <D-+> :cprevious<cr>
 map <Leader>ck :cclose<cr>
 
+fu! ReplaceUmlauts()
+  %s/Ä/AE/gi
+  %s/Ö/OE/gi
+  %s/Ü/UE/gi
+  %s/ä/ae/gi
+  %s/ö/oe/gi
+  %s/ü/ue/gi
+endfu
+
+fu! ReplaceUmlautsHtml()
+  %s/Ä/&Auml;/gi
+  %s/Ö/&Ouml;/gi
+  %s/Ü/&Uuml;/gi
+  %s/ä/&auml;/gi
+  %s/ö/&ouml;/gi
+  %s/ü/&uuml;/gi
+endfu
+
 fu! DeleteSigns()
   %s/"//gi
   %s/“//gi
@@ -423,7 +441,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-au BufWritePost *.coffee silent CoffeeMake!
+"au BufWritePost *.coffee silent CoffeeMake!
 
 map <Leader>c0 :au BufWritePost *.coffee silent CoffeeMake!<cr>
 " CoffeeScript
