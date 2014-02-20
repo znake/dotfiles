@@ -1,7 +1,8 @@
 set nocompatible
 filetype off
 
-set guifont=Monaco:h12            " Font family and font size. => 1280x800px
+set shell=/bin/sh
+set guifont=Monaco:h11            " Font family and font size. => 1280x800px
 set antialias                     " MacVim: smooth fonts.
 set encoding=utf-8                " Use UTF-8 everywhere.
 set guioptions-=r                 " Don't show right scrollbar
@@ -91,6 +92,8 @@ let mapleader = ","
 let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
 
 set cursorline
+
+set foldlevel=99
 
 let g:Powerline_symbols = 'fancy'
 
@@ -222,12 +225,13 @@ map Ü 0D
 map <Leader>ö "0p
 
 " next hunk for gitgutter
-nmap gh <Plug>GitGutterNextHunk
-nmap gH <Plug>GitGutterPrevHunk
+nmap gn <Plug>GitGutterNextHunk
+nmap gl <Plug>GitGutterPrevHunk
 
 " repeat last macro
-map K @@
-map <Leader>K :set hlsearch! hlsearch?<CR>
+map K @q
+map L @w
+map <Leader>hl :set hlsearch! hlsearch?<CR>
 
 " repeat macro q
 map <Leader>q @q
