@@ -2,7 +2,7 @@
 snippet fig
 	\begin{figure}[H]
 		\centering
-			\includegraphics[width=${1}\textwidth]{pics/${2:figure name}.png}
+			\includegraphics[width=${1:0.9}\textwidth]{pics/${2:path}.png}
 		\caption{${3}}
 		\label{fig:${4:$2}}
 	\end{figure}
@@ -59,8 +59,27 @@ snippet ra
 snippet la
 	\leftarrow
 snippet cod
-	\lstinputlisting[language=${1:html}, numbers=left, label={lis:${2:label}}, caption={${3:caption}}]{code/${4:filename}}
+	\lstinputlisting[language=${1:coffee}, numbers=left, label={lis:${2:label}}, caption={${3:caption}}]{code/${4:filename}}
 snippet pla
-	Plattform übergreifende App-Entwicklung
+	plattformübergreifende App-Entwicklung
 snippet inc
 	\lstinline{${1}}
+snippet pita
+	\begin{table}[H]
+		\centering
+		\begin{figure}[H]
+				\centering
+				\includegraphics[width=${1:0.9}\textwidth]{pics/${2:path}.png}
+		\end{figure}
+		\caption{${3}}
+		\label{tab:${4:$2}}
+	\end{table}
+snippet glo
+	\newglossaryentry{${1:name}}
+	{
+		name=$1,
+		plural=$1s,
+		description={${2}}
+	}
+snippet cplus
+	C\texttt{++}
