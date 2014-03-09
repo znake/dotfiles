@@ -50,7 +50,7 @@ Bundle "Lokaltog/vim-powerline"
 Bundle "othree/html5.vim"
 Bundle "gmarik/sudo-gui.vim"
 Bundle "jcf/vim-latex"
-Bundle "pangloss/vim-javascript"
+Bundle 'jelera/vim-javascript-syntax'
 Bundle "leshill/vim-json"
 Bundle "hallison/vim-markdown"
 Bundle "goldfeld/vim-seek"
@@ -397,7 +397,7 @@ map <Leader>sh <c-w>s<c-w>j
 map <Leader>sr <c-w>r
 
 " indent whole file jump back to current position
-map <Leader>id mmgg=G'm
+"map <Leader>id mmgg=G'm
 
 " insert new line
 nmap t o<ESC>k
@@ -436,7 +436,7 @@ map <Leader>da ggdG
 map <Leader>va ggVG
 
 " using the surround plugin
-" tip: use S without leader to quote current selection
+" tip: use S without leader to quote visual selection
 " operates on a normal word w
 map <Leader>s csw
 " operates on a big word W
@@ -515,7 +515,7 @@ map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
-map <Leader>gt :Extradite<cr>
+map <Leader>gt :Extradite!<cr>
 map <Leader>gb :Gblame<cr>
 map <Leader>ge :Gedit master:%
 
@@ -570,7 +570,7 @@ if has("autocmd")
   " Customisations based on house-style (arbitrary)
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 
   " Get standard two-space indentation in CoffeeScript files
   au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
@@ -603,6 +603,7 @@ if has("autocmd")
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4
+  au FileType javascript  set tabstop=4
 endif
 
 " Remove trailing whitespace on save

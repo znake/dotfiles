@@ -22,7 +22,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 
 # Format for parse_git_dirty()
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$RED%}(*)"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$RED%}✭"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Format for git_prompt_status()
@@ -34,7 +34,7 @@ ZSH_THEME_GIT_PROMPT_ADDED=" %{$GREEN%}added"
 ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$WHITE%}untracked"
 
 # Format for git_prompt_ahead()
-ZSH_THEME_GIT_PROMPT_AHEAD=" %{$RED%}(!)"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{$RED%}➜"
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$WHITE%}[%{$YELLOW%}"
