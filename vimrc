@@ -410,6 +410,7 @@ cnoreabbrev W w
 "au BufWritePost *.coffee silent CoffeeMake!
 
 map <Leader>c0 :au BufWritePost *.coffee silent CoffeeMake!<cr>
+map <Leader>C0 :au BufWritePost *.coffee<cr>
 " CoffeeScript
 map <Leader>cr :CoffeeCompile watch vert<cr>
 map <Leader>cR :CoffeeCompile watch<cr>
@@ -517,7 +518,8 @@ map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gt :Extradite!<cr>
 map <Leader>gb :Gblame<cr>
-map <Leader>ge :Gedit master:%
+map <Leader>gm :Gedit master:%
+map <Leader>ge :Gedit 
 
 noremap _ ]czz
 
