@@ -80,6 +80,8 @@ Bundle "jQuery"
 Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 "Bundle "Lokaltog/vim-easymotion"
 
+let base16colorspace=256  " Access colors present in 256 colorspace
+
 " Enable file type detection
 " filetype on
 " load the plugin and indent settings for the detected filetype
@@ -516,7 +518,7 @@ map <Leader>gc :Gwrite<cr>:Gcommit<cr>i
 map <Leader>gl :Git pull<cr>
 map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
-map <Leader>gt :Extradite!<cr>
+map <Leader>gt :Extradite<cr><C-W>H
 map <Leader>gb :Gblame<cr>
 map <Leader>gm :Gedit master:%
 map <Leader>ge :Gedit 
