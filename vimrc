@@ -232,7 +232,8 @@ nmap gl <Plug>GitGutterPrevHunk
 
 " repeat last macro
 map K @q
-map L @w
+map L zz
+
 map <Leader>hl :set hlsearch! hlsearch?<CR>
 
 " repeat macro q
