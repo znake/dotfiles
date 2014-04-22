@@ -61,6 +61,10 @@ bindkey -v
 # Finder
 alias o='open .'
 
+alias gpush="git push --set-upstream origin $(current_branch)"
+
+alias pgit='git push'
+
 # VIM
 alias m='mvim .'
 alias mm='mvim'
