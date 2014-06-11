@@ -1,4 +1,5 @@
-web /Users/jakob/runtastic-meta/runtastic-web
+
+specjs /Users/jakob/runtastic-meta/runtastic-web/spec/javascripts/karma/spec/javascripts
 components /Users/jakob/runtastic-meta/runtastic-web/app/assets/javascripts/ember_apps/components
 js /Users/jakob/runtastic-meta/runtastic-web/app/assets/javascripts
 lib /Users/jakob/runtastic-meta/runtastic-web/app/assets/javascripts/runtastic/lib
@@ -6,5 +7,4 @@ libra /Users/jakob/runtastic-meta/runtastic-web/app/assets/javascripts/ember_app
 ember /Users/jakob/runtastic-meta/runtastic-web/app/assets/javascripts/ember_apps
 spec /Users/jakob/runtastic-meta/runtastic-web/spec
 manifests /Users/jakob/runtastic-meta/runtastic-web/app/assets/javascripts/manifests
-specjs /Users/jakob/runtastic-meta/runtastic-web/spec/javascripts/karma/spec/javascripts
-
+web /Users/jakob/runtastic-meta/runtastic-web

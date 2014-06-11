@@ -1,4 +1,4 @@
-set guifont=Monaco:h11            " Font family and font size. => 1280x800px
+set guifont=Ubuntu_Mono:h13            " Font family and font size. => 1280x800px
 set antialias                     " MacVim: smooth fonts.
 set encoding=utf-8                " Use UTF-8 everywhere.
 set guioptions-=r                 " Don't show right scrollbar

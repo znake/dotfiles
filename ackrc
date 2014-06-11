@@ -15,3 +15,6 @@ hamlbars=.hamlbars
 
 --type-set
 emblem=.emblem
+
+--ignore-dir=public/assets
+--ignore-dir=public/assets_staging

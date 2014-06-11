@@ -60,6 +60,7 @@ Bundle "nelstrom/vim-visual-star-search"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "nono/vim-handlebars"
 Bundle "heartsentwined/vim-emblem"
+Bundle "wikitopian/hardmode"
 
 " vim-scripts github repos
 Bundle "ZoomWin"
@@ -370,6 +371,8 @@ map <Leader>jd <C-w>j:bd<cr>
 map <Leader>dd <C-w>h:bd<cr>:Gstatus<cr>:bd<cr>
 map <Leader>dg :Gstatus<cr>:bd<cr>
 
+map <leader>hh <Esc>:call ToggleHardMode()<CR>
+
 " make it easy to resize windows
 map 6 <C-W>6<
 map 7 <C-W>6>
@@ -468,7 +471,7 @@ set spelllang=de_at
 map <Leader>se :set spelllang=en_gb<cr>
 map <Leader>sd :set spelllang=de_at<cr>
 
-map <Leader>rr :set makeprg=~/.rvm/bin/ruby-1.9.3-p327\ %<cr>:make<cr>
+map <Leader>rr :set makeprg=~/.rvm/rubies/ruby-1.9.3-p392/bin/ruby\ %<cr>:make<cr>
 
 " Command-Shift-F for Ack
 map <D-F> :Ack<space>
@@ -575,7 +578,7 @@ if has("autocmd")
   " Customisations based on house-style (arbitrary)
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 
   " Get standard two-space indentation in CoffeeScript files
   au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
