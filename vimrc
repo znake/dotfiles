@@ -216,8 +216,6 @@ map <Leader>tl :TagbarToggle<cr>
 
 map <Leader><Leader> :ZoomWin<cr>
 
-" switch to last opened buffer
-map ä <C-^>
 map Ä @@
 
 map ü ''
@@ -362,6 +360,30 @@ vmap <Leader>ta :Tabularize /
 vmap <Leader>tj :Tabularize /=<cr>
 vmap <Leader>tk :Tabularize/:\zs<cr>
 
+" cycle between last opened buffer and back
+map ä <C-^>
+
+" use tab to switch buffers
+noremap <tab> <C-w>w
+
+" move buffer to the right
+map 9 <C-W>L 
+" move buffer to the left
+map 8 <C-W>H
+
+" close buffer with strg+c
+map <C-c> <c-w>c
+
+" split buffers faster
+map <Leader>sv <c-w>v<c-w>l
+map <Leader>sh <c-w>s<c-w>j
+map <Leader>sr <c-w>r
+map <leader>hh <Esc>:call ToggleHardMode()<CR>
+
+" delete content of whole buffer
+map <Leader>da ggdG
+" select content of whole buffer
+map <Leader>va ggVG
 
 " close buffers without need switching to them
 map <Leader>hd <C-w>h:bd<cr>
@@ -371,8 +393,6 @@ map <Leader>jd <C-w>j:bd<cr>
 map <Leader>dd <C-w>h:bd<cr>:Gstatus<cr>:bd<cr>
 map <Leader>dg :Gstatus<cr>:bd<cr>
 
-map <leader>hh <Esc>:call ToggleHardMode()<CR>
-
 " make it easy to resize windows
 map 6 <C-W>6<
 map 7 <C-W>6>
@@ -381,26 +401,12 @@ map 4 <C-W>4-
 
 map <Leader>4 <C-w>=
 
-" use tab to switch buffers
-noremap <tab> <C-w>w
-
 " delete last word in normal mode
 "noremap <backspace> bdw
 
-" move buffers
-map 9 <C-W>L
-map 8 <C-W>H
-
-" close buffer
-map <C-c> <c-w>c
 
 " sudo save
 cmap w!! %!sudo tee > /dev/null %
-
-" split buffer options
-map <Leader>sv <c-w>v<c-w>l
-map <Leader>sh <c-w>s<c-w>j
-map <Leader>sr <c-w>r
 
 " indent whole file jump back to current position
 "map <Leader>id mmgg=G'm
@@ -437,10 +443,6 @@ map <Leader>CU ma:%s#_\(\l\)#\u\1#g<cr>'a
 " just within visual selection
 map <Leader>Cu :s#_\(\l\)#\u\1#g<cr>
 
-" delete content of whole buffer
-map <Leader>da ggdG
-" select content of whole buffer
-map <Leader>va ggVG
 
 " using the surround plugin
 " tip: use S without leader to quote visual selection
