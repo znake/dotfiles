@@ -16,5 +16,9 @@ hamlbars=.hamlbars
 --type-set
 emblem=.emblem
 
---ignore-dir=public/assets
---ignore-dir=public/assets_staging
+--ignore-dir=.idea/
+--ignore-dir=vendor/
+--ignore-dir=node_modules/
+--ignore-dir=tmp/
+--ignore-dir=public/assets/
+--ignore-dir=public/assets_staging/
