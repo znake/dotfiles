@@ -201,7 +201,8 @@ set laststatus=2
 set noequalalways
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeIgnore = ['\.rbc$', '\~$']
+let NERDSpaceDelims = 1
 map <Leader><space> :NERDTreeToggle<cr>
 map <Leader>nt :NERDTreeToggle<cr>:NERDTreeToggle<cr>
 map <Leader>bb :NERDTreeFromBookmark 
