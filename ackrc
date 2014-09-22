@@ -16,8 +16,11 @@ hamlbars=.hamlbars
 --type-set
 emblem=.emblem
 
+--ignore-file=ext:scssc
+
 --ignore-dir=.idea/
 --ignore-dir=vendor/
+--ignore-dir=dist/
 --ignore-dir=node_modules/
 --ignore-dir=tmp/
 --ignore-dir=public/assets/

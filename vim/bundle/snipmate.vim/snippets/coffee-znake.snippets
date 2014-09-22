@@ -158,9 +158,9 @@ snippet tom
 	# Returns 
 # Testing
 snippet it
-	it "${1}", ->
+	it '${1}', ->
 snippet des
-	describe "${1}", ->
+	describe '${1}', ->
 snippet be
 	beforeEach ->
 		${1}
@@ -194,3 +194,29 @@ snippet ob
 	).observes('${1}')
 snippet t
 	test "${1}", ->
+snippet exp
+	\`export default ${1};`
+snippet imp
+	\`import ${1} from`
+snippet excom
+	\`export default component;`
+snippet excon
+	\`export default controller;`
+snippet exhel
+	\`export default helper;`
+snippet exini
+	\`export default initializers;`
+snippet exlay
+	\`export default layer;`
+snippet exmix
+	\`export default mixin;`
+snippet exmod
+	\`export default model;`
+snippet exrou
+	\`export default route;`
+snippet exser
+	\`export default serializers;`
+snippet exuti
+	\`export default util;`
+snippet exvie
+	\`export default view;`

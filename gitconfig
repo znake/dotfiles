@@ -1,6 +1,6 @@
 [user]
 	name = Jakob Lehner
-	email = jakob.lnr@gmail.com
+	email = jakob.lehner@runtastic.com
 
 [color]
  branch = auto
@@ -44,7 +44,7 @@
 	excludesfile = /Users/jakob/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
-	cmd = /Applications/Kaleidoscope.app/Contents/MacOS/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"

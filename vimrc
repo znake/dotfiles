@@ -189,7 +189,7 @@ set showbreak=>
 " Tab completion
 set wildmenu " Enhanced command line completion.
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*/tmp/*
 
 " Bufferexplorer
 noremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>
@@ -205,7 +205,7 @@ let NERDTreeIgnore = ['\.rbc$', '\~$']
 let NERDSpaceDelims = 1
 map <Leader><space> :NERDTreeToggle<cr>
 map <Leader>nt :NERDTreeToggle<cr>:NERDTreeToggle<cr>
-map <Leader>bb :NERDTreeFromBookmark 
+map <Leader>bb :NERDTreeFromBookmark
 "map <Leader>nt :NERDTree %<cr>
 map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>R
 map <Leader>cÖ :let NERDTreeIgnore=['\.rbc$', '\~$']<cr>R
@@ -368,7 +368,7 @@ map ä <C-^>
 noremap <tab> <C-w>w
 
 " move buffer to the right
-map 9 <C-W>L 
+map 9 <C-W>L
 " move buffer to the left
 map 8 <C-W>H
 
@@ -436,8 +436,8 @@ map <Leader>sbb :set scrollbind!<cr>
 " replaces ruby 1.8 hash syntax with 1.9 in the whole file
 map <Leader>sI ma:%s/:\(\w*\) =>/\1:/g<cr>'a
 
-" replaces ruby 1.8 hash syntax with 1.9 within the current selection 
-map <Leader>si :s/:\(\w*\) =>/\1:/g<cr> 
+" replaces ruby 1.8 hash syntax with 1.9 within the current selection
+map <Leader>si :s/:\(\w*\) =>/\1:/g<cr>
 
 " replaces under_score to camelCase
 map <Leader>CU ma:%s#_\(\l\)#\u\1#g<cr>'a
@@ -527,8 +527,8 @@ map <Leader>gp :Git push<cr>
 map <Leader>gg :Glog -15<cr>
 map <Leader>gt :Extradite<cr><C-W>H
 map <Leader>gb :Gblame<cr>
-map <Leader>gm :Gedit master:%
-map <Leader>ge :Gedit 
+map <Leader>gm :Gedit master:%<cr>
+map <Leader>ge :Gedit
 
 noremap _ ]czz
 
@@ -634,6 +634,8 @@ endfunction
 nmap cp :let @" = expand("%")<cr>"0pBdE:w<cr>
 
 " Execute clear whitespace on save
+map <Leader>sW :autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")<cr>
+
 "autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 map <Leader>sw :call Preserve("%s/\\s\\+$//e")<cr>
 
@@ -697,25 +699,6 @@ let Tex_FoldedSections = ""
 "map <Leader>ld :let g:Tex_DefaultTargetFormat = 'pdf'<cr>
 
 "map <Leader>lm :w<cr> ,ll ,ls
-
-" improve performance of ctrlp
-"let ctrlp_filter_greps = "".
-    "\ "egrep -iv '\\.(" .
-    "\ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
-    "\ ")$' | " .
-    "\ "egrep -v '^(\\./)?(" .
-    "\ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
-    "\ ")'"
-
-"let my_ctrlp_git_command = "" .
-    "\ "cd %s && git ls-files | " .
-    "\ ctrlp_filter_greps
-
-"if has("unix")
-    "let my_ctrlp_user_command = "" .
-    "\ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
-    "\ ctrlp_filter_greps
-"endif
 
 "let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
 if executable('coffeetags')
