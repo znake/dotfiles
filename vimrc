@@ -47,7 +47,6 @@ Bundle "ervandew/supertab"
 Bundle "vim-ruby/vim-ruby"
 Bundle "mutewinter/vim-indent-guides"
 Bundle "Lokaltog/vim-powerline"
-Bundle "othree/html5.vim"
 Bundle "gmarik/sudo-gui.vim"
 Bundle "jcf/vim-latex"
 Bundle 'jelera/vim-javascript-syntax'
@@ -60,25 +59,20 @@ Bundle "nelstrom/vim-visual-star-search"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "nono/vim-handlebars"
 Bundle "heartsentwined/vim-emblem"
-Bundle "wikitopian/hardmode"
 
 " vim-scripts github repos
-Bundle "ZoomWin"
 Bundle "hexHighlight.vim"
-Bundle "IndexedSearch"
 Bundle "bufexplorer.zip"
 Bundle "taglist.vim"
 Bundle "AutoClose--Alves"
 
 " Utility
-Bundle "vimwiki"
 Bundle "a.vim"
 " Syntax highlight
-Bundle "cucumber.zip"
 Bundle "jQuery"
 
 " currently unused
-Bundle "rstacruz/sparkup", {"rtp": "vim/"}
+"Bundle "rstacruz/sparkup", {"rtp": "vim/"}
 "Bundle "Lokaltog/vim-easymotion"
 
 let base16colorspace=256  " Access colors present in 256 colorspace
@@ -161,6 +155,11 @@ let g:syntastic_mode_map = { 'mode': 'active',
 set shortmess+=I
 
 let g:ctrlp_max_height = 20
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|node_modules\|bower_components\|dist\||tmp\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 
 " Alternate plugin
 map <Leader>ma :A<cr>
@@ -189,7 +188,7 @@ set showbreak=>
 " Tab completion
 set wildmenu " Enhanced command line completion.
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*/tmp/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*/tmp/*,*/dist/*
 
 " Bufferexplorer
 noremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>

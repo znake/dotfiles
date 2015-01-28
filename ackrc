@@ -20,8 +20,9 @@ emblem=.emblem
 
 --ignore-dir=.idea/
 --ignore-dir=vendor/
---ignore-dir=dist/
 --ignore-dir=node_modules/
+--ignore-dir=dist/
 --ignore-dir=tmp/
 --ignore-dir=public/assets/
 --ignore-dir=public/assets_staging/
+--ignore-dir=bower_components/

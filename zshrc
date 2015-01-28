@@ -91,7 +91,7 @@ bindkey \\C-R history-incremental-search-backward
 # install NPM packages in the home directory $HOME/bin. $HOME/bin must be in your PATH
 export NPM_CONFIG_PREFIX=$HOME
 
-export PATH="$HOME/bin/Sencha/Cmd/4.0.2.67:/usr/local/bin:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/Dropbox/Library/dotfiles/vim/bin:$HOME./rvm/bin:/usr/local/bin/npm:/usr/local/share/npm/bin:$HOME/bin:$HOME/bin.:$PATH"
+export PATH="/usr/local/bin:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/Dropbox/Library/dotfiles/vim/bin:$HOME./rvm/bin:/usr/local/bin/npm:/usr/local/share/npm/bin:$HOME/bin:/usr/texbin:$PATH"
 # no need for :$HOME/android-sdks/platforms
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

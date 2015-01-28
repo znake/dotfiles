@@ -94,11 +94,17 @@ snippet templ
 	<html>
 
 		<head>
-			<script type="text/javascript" charset="utf-8">${1}</script>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8">
+			<title>${1}</title>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		</head>
 
 		<body>
-
+			<script type="text/javascript" charset="utf-8">
+				$(document).ready(function() {
+					console.log('y0 I am ready')
+				});
+			</script>
 		</body>
 
 	</html>
@@ -113,4 +119,7 @@ snippet hb
 	</script>
 snippet bp
 	binding.pry
-	
+snippet cl
+	console.log('${1}')
+snippet linksrc
+	<link rel="stylesheet" href="${1}">

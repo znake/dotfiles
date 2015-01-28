@@ -197,10 +197,12 @@ snippet t
 snippet exp
 	\`export default ${1};`
 snippet imp
-	\`import ${1} from`
+	\`import ${1} from ${2}`
 snippet excom
 	\`export default component;`
 snippet excon
+	controller = ${1:ObjectController}.extend
+	  ${2}
 	\`export default controller;`
 snippet exhel
 	\`export default helper;`
@@ -213,10 +215,14 @@ snippet exmix
 snippet exmod
 	\`export default model;`
 snippet exrou
+	route = Ember.Route.extend
+	  ${1}
 	\`export default route;`
 snippet exser
 	\`export default serializers;`
 snippet exuti
 	\`export default util;`
 snippet exvie
+	view = Ember.View.extend
+	  ${1}
 	\`export default view;`
