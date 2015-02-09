@@ -41,7 +41,7 @@
 	create-pull-request = !sh -c 'stash pull-request $0'
 
 [core]
-	excludesfile = /Users/jakoblehner/.gitignore_global
+	excludesfile = /Users/jakob/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
