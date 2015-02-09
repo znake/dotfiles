@@ -86,7 +86,7 @@ filetype indent on
 
 let mapleader = ","
 
-let coffee_compiler = '/Users/jakob/lib/node_modules/coffee-script/bin/coffee'
+let coffee_compiler = '/Users/jakob/bin/coffee'
 
 set cursorline
 
@@ -419,7 +419,7 @@ nmap T O<ESC>j
 cnoreabbrev W w
 
 " Autocompile coffeescript buffer on save
-"au BufWritePost *.coffee silent CoffeeMake!
+" au BufWritePost *.coffee silent CoffeeMake!
 
 map <Leader>c0 :au BufWritePost *.coffee silent CoffeeMake!<cr>
 map <Leader>C0 :au BufWritePost *.coffee<cr>
@@ -580,7 +580,7 @@ if has("autocmd")
   " Customisations based on house-style (arbitrary)
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
   " Get standard two-space indentation in CoffeeScript files
   au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
@@ -613,7 +613,7 @@ if has("autocmd")
 
   " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python  set tabstop=4
-  au FileType javascript  set tabstop=4
+  au FileType javascript set tabstop=2
 endif
 
 " Remove trailing whitespace on save
