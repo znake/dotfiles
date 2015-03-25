@@ -45,6 +45,9 @@ if [ -d ~/.oh-my-zsh ]; then
   echo ln -nfs ~/Dropbox/Library/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
   ln -nfs ~/Dropbox/Library/dotfiles/zsh/themes/znake.zsh-theme ~/.oh-my-zsh/themes
 
+  echo create backup dir for vim
+  mkdir ~/Dropbox/Library/dotfiles/vim/backup
+
   echo ***** symlinking END
 else
   echo "please install oh-my-zsh"
