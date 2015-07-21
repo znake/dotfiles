@@ -25,4 +25,5 @@ emblem=.emblem
 --ignore-dir=tmp/
 --ignore-dir=public/assets/
 --ignore-dir=public/assets_staging/
+--ignore-dir=public/assets_pre_production/
 --ignore-dir=bower_components/

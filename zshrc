@@ -72,17 +72,8 @@ alias mm='mvim'
 # open chrome with web secuity disabled
 alias xsschrome='open /Applications/Google\ Chrome.app --args --disable-web-security'
 
-# apple scripts
-alias setuprun='osascript ~/Dropbox/Sonst/setuprun.scpt'
-alias setupall='osascript ~/Dropbox/Sonst/setupall.scpt'
-alias setupsmall='osascript ~/Dropbox/Sonst/setupsmall.scpt'
-
 # rake
 alias rake='noglob rake'
-
-#alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.3.GA/titanium.py"
-
-alias tide="~/Library/Application\ Support/TideSDK/sdk/osx/1.3.1-beta/tidebuilder.py"
 
 alias so="source ~/.zshrc"
 
@@ -90,6 +81,12 @@ bindkey \\C-R history-incremental-search-backward
 
 # install NPM packages in the home directory $HOME/bin. $HOME/bin must be in your PATH
 export NPM_CONFIG_PREFIX=$HOME
+
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+export railsrepo=~/runtastic/rails/
+export emberrepo=~/runtastic/ember/
 
 export PATH="/usr/local/bin:/usr/local/bin/node:/usr/bin:$HOME/android-sdks/tools:$HOME/android-sdks/platform-tools:$HOME/Dropbox/Library/dotfiles/vim/bin:$HOME./rvm/bin:/usr/local/bin/npm:/usr/local/share/npm/bin:$HOME/bin:/usr/texbin:$PATH"
 # no need for :$HOME/android-sdks/platforms

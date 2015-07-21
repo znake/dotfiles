@@ -29,6 +29,7 @@ Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-haml"
 
 Bundle "int3/vim-extradite"
+Bundle "Valloric/YouCompleteMe"
 
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
@@ -156,10 +157,10 @@ set shortmess+=I
 
 let g:ctrlp_max_height = 20
 " Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|node_modules\|bower_components\|dist\||tmp\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
+" let g:ctrlp_custom_ignore = {
+  " \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|node_modules\|bower_components\|dist\||tmp\|public\/system\|data\|log\|tmp$',
+  " \ 'file': '\.exe$\|\.so$\|\.dat$'
+  " \ }
 
 " Alternate plugin
 map <Leader>ma :A<cr>
@@ -206,7 +207,7 @@ map <Leader><space> :NERDTreeToggle<cr>
 map <Leader>nt :NERDTreeToggle<cr>:NERDTreeToggle<cr>
 map <Leader>bb :NERDTreeFromBookmark
 "map <Leader>nt :NERDTree %<cr>
-map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js']<cr>R
+map <Leader>cö :let NERDTreeIgnore=['\.rbc$', '\~$', '\.js', '\.class']<cr>R
 map <Leader>cÖ :let NERDTreeIgnore=['\.rbc$', '\~$']<cr>R
 let g:NERDTreeMapHelp = '<F1>'
 
@@ -336,6 +337,29 @@ map <Leader>co :copen<cr>
 map + :cnext<cr>
 map <D-+> :cprevious<cr>
 map <Leader>ck :cclose<cr>
+
+fu! Um()
+  %s/ä/ä/gi
+  %s/ü/ü/gi
+  %s/ö/ö/gi
+  %s/Ü/Ü/gi
+  %s/Ä/Ä/gi
+  %s/- //gi
+  %s/ //gi
+  %s/„//gi
+  %s/“//gi
+  %s/”//gi
+  %s/􏰀//gi
+  %s/z. B./zum Beispiel/gi
+  %s/d.h./das heißt/gi
+  %s/ IE / Informations Engineering /gi
+  %s/ QM / Qualitätsmanagement /gi
+  %s/Informationsund/Informations- und/gi
+endfu
+
+map <Leader>uu :call Um()<cr>
+
+map <leader>. :s/$/.<cr>
 
 fu! ReplaceUmlauts()
   %s/Ä/AE/gi
