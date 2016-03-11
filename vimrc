@@ -61,7 +61,6 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle "nono/vim-handlebars"
 Bundle "heartsentwined/vim-emblem"
 
-" vim-scripts github repos
 Bundle "hexHighlight.vim"
 Bundle "bufexplorer.zip"
 Bundle "taglist.vim"
